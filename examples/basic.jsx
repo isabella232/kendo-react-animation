@@ -1,8 +1,8 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import Component from '@telerik/kendo-react-component-base';
+import Animation from '@telerik/kendo-react-animation';
 
 ReactDOM.render(
-  <Component />,
+  <Animation />,
   document.getElementById('app')
 );
