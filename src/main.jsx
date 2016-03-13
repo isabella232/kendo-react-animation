@@ -1,3 +1,3 @@
-import Component from './Component';
+import Animation from './Animation';
 
-module.exports = Component;
+module.exports = Animation;
