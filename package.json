@@ -1,10 +1,10 @@
 {
-  "name": "@telerik/kendo-react-component-base",
-  "description": "Kendo UI React component starter template",
+  "name": "@telerik/kendo-react-animation",
+  "description": "Kendo UI React Animation component",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/telerik/kendo-react-component-base.git"
+    "url": "https://github.com/telerik/kendo-react-animation.git"
   },
   "main": "dist/npm/js/main.js",
   "scripts": {
