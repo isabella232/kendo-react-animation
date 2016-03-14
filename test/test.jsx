@@ -59,7 +59,7 @@ describe('Animation with a single component', () => {
 
         const transitionGroup = result.find(ReactCssTransitionGroup);
 
-        expect(transitionGroup.props().className).toEqual("animation-container");
+        expect(transitionGroup.props().className).toEqual("k-animation-container");
     });
 
     it('should pass an additional className', () => {
@@ -67,7 +67,7 @@ describe('Animation with a single component', () => {
 
         const transitionGroup = result.find(ReactCssTransitionGroup);
 
-        expect(transitionGroup.props().className).toEqual("animation-container custom");
+        expect(transitionGroup.props().className).toEqual("k-animation-container custom");
     });
 
     it('should render passed effect', () => {
@@ -92,5 +92,27 @@ describe('Animation with a single component', () => {
         const transitionGroup = result.find(ReactCssTransitionGroup);
 
         expect(transitionGroup.props().transitionLeaveTimeout).toEqual(500);
+    });
+
+    it('should render children with key', () => {
+        const keyValue = "key1";
+
+        result = shallow(<Animation className="custom"><div key={keyValue}></div></Animation>);
+
+        const transitionGroup = result.find(ReactCssTransitionGroup);
+
+        const key = transitionGroup.props().children[0].key;
+
+        expect(key).toContain(keyValue);
+    });
+
+    it('should render children with custom key', () => {
+        result = shallow(<Animation className="custom"><div></div></Animation>);
+
+        const transitionGroup = result.find(ReactCssTransitionGroup);
+
+        const key = transitionGroup.props().children[0].key;
+
+        expect(key).toBeDefined();
     });
 });

@@ -2,7 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssTransitionGroup from 'react-addons-css-transition-group';
 
+import util from './util';
+
+import styles from '@telerik/kendo-theme-default/styles/animation/main';
+
 export default class Animation extends React.Component {
+
     static propTypes = {
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
@@ -16,24 +21,47 @@ export default class Animation extends React.Component {
     }
 
     componentWillUpdate() {
-        this.height = this.getContentHeight();
+        this.dimensions = this.getContentDimensions();
     }
 
     componentDidUpdate() {
-        this.height = this.getContentHeight();
+        this.dimensions = this.getContentDimensions();
     }
 
-    getContentHeight() {
-        const child = ReactDOM.findDOMNode(this).firstChild;
-        let height;
+    getContentDimensions() {
+        const component = ReactDOM.findDOMNode(this);
+        let dimensions = {
+            heigth: "100%",
+            width: "100%"
+        };
 
-        if (child) {
-            height = getComputedStyle(child).height;
-        } else {
-            height = "100%";
+        if (!component) {
+            return dimensions;
         }
 
-        return height;
+        const child = component.firstChild;
+
+        if (child) {
+            const computedStyles = getComputedStyle(child);
+            dimensions.heigth = computedStyles.height;
+            dimensions.width = computedStyles.width;
+        }
+
+        return dimensions;
+    }
+
+    renderChildren() {
+        return React.Children.map(this.props.children, child => {
+            let props = {
+                key: child.key
+            };
+
+            if (!props.key) {
+                props.key = util.guid();
+            }
+
+            return React.cloneElement(child, props);
+        });
     }
 
     render() {
@@ -46,25 +74,23 @@ export default class Animation extends React.Component {
             ...otherProps
         } = this.props;
 
-        const style = {
-            height: this.height
+        const space = className ? " " : "";
+        const containerClassName = `${styles["animation-container"]}${space}${className}`;
+
+        const transitionGroupProps = {
+            className: containerClassName,
+            component: component,
+            style: this.dimensions,
+            transitionEnter: Boolean(effect),
+            transitionEnterTimeout: enterDuration,
+            transitionLeave: Boolean(effect),
+            transitionLeaveTimeout: leaveDuration,
+            transitionName: effect
         };
 
-        const classNames = `animation-container${className ? " " : ""}${className}`;
-
         return (
-            <CssTransitionGroup
-                className = {classNames}
-                component = {component}
-                style = {style}
-                transitionEnter = {Boolean(effect)}
-                transitionEnterTimeout = {enterDuration}
-                transitionLeave = {Boolean(effect)}
-                transitionLeaveTimeout = {leaveDuration}
-                transitionName = {effect}
-                {...otherProps}
-            >
-                {this.props.children}
+            <CssTransitionGroup {...transitionGroupProps} {...otherProps}>
+                {this.renderChildren()}
             </CssTransitionGroup>
         );
     }
