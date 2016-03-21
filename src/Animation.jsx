@@ -9,6 +9,8 @@ import styles from '@telerik/kendo-theme-default/styles/animation/main';
 export default class Animation extends React.Component {
 
     static propTypes = {
+        animateAppear: React.PropTypes.bool,
+        appearDuration: React.PropTypes.number,
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
@@ -77,6 +79,8 @@ export default class Animation extends React.Component {
 
     render() {
         const {
+            animateAppear = false,
+            appearDuration = 300,
             className = "",
             component = "div",
             effect = "",
@@ -92,6 +96,8 @@ export default class Animation extends React.Component {
             className: containerClassName,
             component: component,
             style: this.dimensions,
+            transitionAppear: animateAppear,
+            transitionAppearTimeout: appearDuration,
             transitionEnter: Boolean(effect),
             transitionEnterTimeout: enterDuration,
             transitionLeave: Boolean(effect),
