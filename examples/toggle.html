@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .content {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .visible {
+        display: inherit;
+    }
+
+    .tabstrip .k-animation-container {
+        position: absolute;
+    }
+
+    .k-hide-leave {
+        background: blue;
+        opacity: 1;
+    }
+
+    .k-hide-leave-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+    }
+
+    .k-show-enter {
+        background: red;
+        opacity: 0;
+    }
+
+    .k-show-enter-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+    }
+
+</style>
+</head>
+<body>
+    <div id="tabstrip"></div>
+    <script src="TabStrip.js"></script>
+</body>
+</html>
