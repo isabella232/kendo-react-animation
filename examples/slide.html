@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//kendo.cdn.telerik.com/2016.1.226/styles/kendo.common.min.css" rel="stylesheet" />
+<link href="//kendo.cdn.telerik.com/2016.1.226/styles/kendo.default.min.css" rel="stylesheet" />
+<style>
+    .k-slide-right-enter {
+        transform: translate(-100%, 0);
+    }
+
+    .k-slide-right-enter-active {
+        transform: translate(0, 0);
+        transition: transform 300ms ease-in-out;
+    }
+
+    .k-slide-left-leave {
+        transform: translate(0, 0);
+    }
+
+    .k-slide-left-leave-active {
+        transform: translate(-100%, 0);
+        transition: transform 300ms ease-in-out;
+    }
+</style>
+</head>
+<body>
+    <div id="tasks"></div>
+    <script src="Tasks.js"></script>
+</body>
+</html>
