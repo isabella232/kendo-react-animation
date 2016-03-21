@@ -25,12 +25,23 @@ class App extends React.Component {
     }
 
     renderOptions() {
-        return [ "left", "right", "up", "down", "zoom-in", "zoom-out" ].map(function(item) {
+        return [ "left", "right", "up", "down", "toggle", "zoom-in", "zoom-out" ].map(function(item) {
             return <option key={item} value={item}>{item}</option>;
         });
     }
 
     render() {
+        const { effect, index } = this.state;
+        const duration = effect === 'toggle' ? 500 : 300;
+
+        const animationProps = {
+            className: 'parent-div',
+            effect: Styles[effect],
+            enterDuration: duration,
+            leaveDuration: duration,
+            single: true
+        };
+
         return (
             <div>
                 <dl>
@@ -53,8 +64,8 @@ class App extends React.Component {
                     </dd>
                 </dl>
 
-                <Animation className="parent" effect={Styles[this.state.effect]} single="true">
-                    <div className="child-div">{this.state.index}</div>
+                <Animation {...animationProps}>
+                    <div className="child-div">{index}</div>
                 </Animation>
             </div>
         );
