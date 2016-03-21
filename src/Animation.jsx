@@ -17,21 +17,22 @@ export default class Animation extends React.Component {
         component: React.PropTypes.string,
         effect: React.PropTypes.string,
         enterDuration: React.PropTypes.number,
-        leaveDuration: React.PropTypes.number
+        leaveDuration: React.PropTypes.number,
+        single: React.PropTypes.bool
     }
 
     componentWillUpdate() {
-        this.dimensions = this.getContentDimensions();
+        this.updateContentDimensions();
     }
 
     componentDidUpdate() {
-        this.dimensions = this.getContentDimensions();
+        this.updateContentDimensions();
     }
 
     getContentDimensions() {
         const component = ReactDOM.findDOMNode(this);
         let dimensions = {
-            heigth: "100%",
+            height: "100%",
             width: "100%"
         };
 
@@ -43,11 +44,21 @@ export default class Animation extends React.Component {
 
         if (child) {
             const computedStyles = getComputedStyle(child);
-            dimensions.heigth = computedStyles.height;
+            dimensions.height = computedStyles.height;
             dimensions.width = computedStyles.width;
         }
 
         return dimensions;
+    }
+
+    updateContentDimensions() {
+        let dimensions = null;
+
+        if (this.props.single) {
+            dimensions = this.getContentDimensions();
+        }
+
+        this.dimensions = dimensions;
     }
 
     renderChildren() {
