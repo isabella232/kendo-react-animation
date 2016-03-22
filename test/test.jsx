@@ -94,6 +94,26 @@ describe('Animation with a single component', () => {
         expect(transitionGroup.props().transitionLeaveTimeout).toEqual(500);
     });
 
+    it('should render passed transitionAppear', () => {
+        const animateAppear = true;
+
+        result = shallow(<Animation animateAppear={animateAppear}><div></div></Animation>);
+
+        const transitionGroup = result.find(ReactCssTransitionGroup);
+
+        expect(transitionGroup.props().transitionAppear).toEqual(true);
+    });
+
+    it('should render passed appear duration', () => {
+        const animateAppear = true;
+
+        result = shallow(<Animation animateAppear={animateAppear} appearDuration={500}><div></div></Animation>);
+
+        const transitionGroup = result.find(ReactCssTransitionGroup);
+
+        expect(transitionGroup.props().transitionAppearTimeout).toEqual(500);
+    });
+
     it('should render children with key', () => {
         const keyValue = "key1";
 
