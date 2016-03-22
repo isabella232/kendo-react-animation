@@ -24,11 +24,13 @@ export default class Animation extends React.Component {
     }
 
     componentWillUpdate() {
-        this.updateContentDimensions();
-    }
+        let dimensions = null;
 
-    componentDidUpdate() {
-        this.updateContentDimensions();
+        if (this.props.single) {
+            dimensions = this.getContentDimensions();
+        }
+
+        this.dimensions = dimensions;
     }
 
     getContentDimensions() {
@@ -51,16 +53,6 @@ export default class Animation extends React.Component {
         }
 
         return dimensions;
-    }
-
-    updateContentDimensions() {
-        let dimensions = null;
-
-        if (this.props.single) {
-            dimensions = this.getContentDimensions();
-        }
-
-        this.dimensions = dimensions;
     }
 
     renderChildren() {
