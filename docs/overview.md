@@ -10,7 +10,7 @@ position: 1
 
 The Kendo UI Animation component for React is a thin wrapper over the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html) component. It provides default animation effects that work both with single/zero or multiple elements animation.
 
-> To use the ReactCSSTransitionGroup component, make sure you get familiar with it.
+> To use the Kendo UI Animation component, make sure you get familiar with the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html).
 
 ## Configuration
 
@@ -109,7 +109,17 @@ ReactDOM.render(
 
 ### Built-In Effects
 
-To see the full list of available effects, refer to the [Effects article](https://github.com/telerik/kendo-theme-default/blob/master/styles/animation/_effect.scss).
+The following list describes the available effects:
+
+    - 'k-left': slide the content to the left
+    - 'k-right': slide the content to the right
+    - 'k-up': slide the content in up direction
+    - 'k-down': slide the content in down direction
+    - 'k-toggle': fade out the old content and fade in the new content
+    - 'k-zoom-in': fades out the old content and zooms in the new one
+    - 'k-zoom-out': zooms out the old content and fades in the new one
+
+To see the full list of available effects, refer to the [Effects sass file](https://github.com/telerik/kendo-theme-default/blob/master/styles/animation/_effect.scss).
 
 Basically, to define the animation effect, define the `effect` option of the component. Below is the list for you to follow when using the built-in effects from the from 'kendo-theme-default' repository.
 
@@ -126,10 +136,6 @@ import styles from '@telerik/kendo-theme-default/styles/animation/main';
     <div className="child-div">{index}</div>
 </Animation>
 ```
-
-## Keyboard Navigation
-
-//Below is the list with the keyboard shortcuts the Animation supports. - applicable?
 
 ## Accessibility
 
