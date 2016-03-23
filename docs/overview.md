@@ -10,8 +10,6 @@ position: 1
 
 The Kendo UI Animation component for React is a thin wrapper over the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html) component. It provides default animation effects that work both with single/zero or multiple elements animation.
 
-> **Note**
->
 > To use the ReactCSSTransitionGroup component, make sure you get familiar with it.
 
 ## Configuration
@@ -24,8 +22,6 @@ For more details on this requirement, refer to the [Animating One or Zero Items]
 
 The Kendo UI Animation component also sizes the animation container to the first content element. Thus it ensures the proper `enter` and `leave` transitions of the old and new elements.
 
-> **Important**
->
 > To enable the single-element animation, set the `single` property to `true`.
 
 ```html
