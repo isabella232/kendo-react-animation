@@ -1,24 +1,32 @@
-# Kendo React Animation Overview
+---
+title: Overview
+page_title: Overview | Kendo UI Animation for React
+description: "Use the Kendo UI Animation component in a React project."
+slug: overview_animation_kendouiforreact
+position: 1
+---
 
-The Kendo React Animation component is a thin wrapper over the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html)
-component. It provides a default animation effects that work both with single/zero or multiple elements animation.
+# Kendo UI Animation for React Overview
 
-> You need to be familiar with the **ReactCSSTransitionGroup** component in order to use this one.
+The Kendo UI Animation component for React is a thin wrapper over the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html) component. It provides default animation effects that work both with single/zero or multiple elements animation.
 
-## Animating single element
+> **Note**
+>
+> To use the ReactCSSTransitionGroup component, make sure you get familiar with it.
 
-As the component uses the `ReactCSSTransitionGroup` under the hood, animating a single element is pretty simple. Our component
-will set a `key` attribute to the child automatically to honor the proper content update. More details about this requirement
-can be found in the corresponding React documentation:
+## Configuration
 
-- [Animating One or Zero Items](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items)
+### Animate Single Elements
 
-The Kendo React Animation component will also size the animation container to the first content element. Thus it will
-ensure the proper `enter` and `leave` transitions of the old and new elements.
+As the component uses the ReactCSSTransitionGroup component under the hood, animating a single element is simple. The Kendo UI Animation component automatically sets a `key` attribute to the child to honor the proper content update. 
 
-> Set `single` property to **true** in order to enable single element animation
+For more details on this requirement, refer to the [Animating One or Zero Items](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items) article from the React documentation. 
 
-#### Demo
+The Kendo UI Animation component also sizes the animation container to the first content element. Thus it ensures the proper `enter` and `leave` transitions of the old and new elements.
+
+> **Important** 
+>
+> To enable the single-element animation, set the `single` property to `true`.
 
 ```html
   <div id="app"></div>
@@ -33,7 +41,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-//Second rendering will trigger the animation
+//The second rendering triggers the animation
 ReactDOM.render(
   (
     <Animation effect="k-left" single={true}>
@@ -44,11 +52,9 @@ ReactDOM.render(
 );
 ```
 
-## Animating multiple elements
+### Animate Multiple Elements
 
-This is the default state of the component. It will animate any entering and/or leaving elements based on the defined `effect` prop.
-
-#### Demo
+Animating multiple elements is the default state of the Kendo UI Animation component. It animates each entering and/or leaving elements based on the defined `effect` property.
 
 ```html
   <div id="app"></div>
@@ -63,7 +69,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-//Second rendering will trigger the animation
+//The second rendering triggers the animation
 ReactDOM.render(
   (
     <Animation effect="k-zoom-in">
@@ -75,12 +81,9 @@ ReactDOM.render(
 );
 ```
 
-## Animating initial mount
+### Animate Initial Mounts
 
-By default animation component will animate only subsequent DOM update. If you would like to animate initial mount of the
-content then you will need to enable it using `animateAppear` prop.
-
-#### Demo
+By default, the Animation component animates subsequent DOM updates only. To animate the initial mount of the content, enable it using the `animateAppear` property.
 
 ```html
   <div id="app"></div>
@@ -108,23 +111,19 @@ ReactDOM.render(
 );
 ```
 
-## Built-in effects
+## Built-In Effects
 
-The available effects can be found here:
+To see the full list of available effects, refer to the [Effects article](https://github.com/telerik/kendo-theme-default/blob/master/styles/animation/_effect.scss).
 
-- [Effects](https://github.com/telerik/kendo-theme-default/blob/master/styles/animation/_effect.scss)
+Basically, to define the animation effect, define the `effect` option of the component. Below is the list for you to follow when using the built-in effects from the from 'kendo-theme-default' repository.
 
-Basically, you will need to define the `effect` option of the component to define the animation effect:
-
-### Using the built-in effects from 'kendo-theme-default' repo
-
-1. Import styles from `@telerik/kendo-theme-default/styles/animation/main`
+**Step 1** Import styles from `@telerik/kendo-theme-default/styles/animation/main`.
 
 ```jsx
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
 ```
 
-2. Use them directly in the `Animation` configuration
+**Step2** Use the styles directly in the `Animation` configuration.
 
 ```jsx
 <Animation effect={styles.left}>
