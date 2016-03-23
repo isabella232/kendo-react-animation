@@ -1,24 +1,84 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-A starter repository for Kendo UI React components, which provides the basic directory structure and dependencies.
+# Kendo UI Animation Package for React
 
-## Structure
+* [Overview](https://github.com/telerik/kendo-react-animation#overview)
+* [Glossary](https://github.com/telerik/kendo-react-animation#glossary)
+  * [Component](https://github.com/telerik/kendo-react-animation#component)
+  * [Package](https://github.com/telerik/kendo-react-animation#package)
+  * [Package Version](https://github.com/telerik/kendo-react-animation#package-version)
+* [Animation Package Component](https://github.com/telerik/kendo-react-animation#inputs-package-components)
+* [Basic Usage](https://github.com/telerik/kendo-react-animation#basic-usage)
+* [Get Started](https://github.com/telerik/kendo-react-animation#get-started)
+  * [Installation](https://github.com/telerik/kendo-react-animation#installation)
+  * [Browser Support](https://github.com/telerik/kendo-react-animation#browser-support)
 
-- The `src` directory contains the component source code. All files should be have the `.jsx` extensions so that the build scripts may pick them.
-- The `src/main.jsx` file should import and re-export all public components of the package. It is used for the `build-cdn` task. It is also the main entry point for the NPM package (as specified by the `package.json`). The `build-npm-package` transpiles it to `dist/npm/js/main.js`;
-- The `src/Component.jsx` file is the actual sample component implementation.
-- The `src/util.jsx` is an optional example of an additional file - you may remove it if unnecessary.
+## Overview
 
-- The `examples` directory hosts the demos for the component. As a bare minimum, the component should have a `basic usage` and a `CDN` example.  The `CDN` example should work as expected after the `build-cdn` task has been run.
-- The `test` directory contains the component tests. They are transpiled just like the source code itself, and are run with Jasmine in NodeJS.
-- The `e2e` directory contains the end-to-end tests. They are transpiled just like the source code itself, and are run with Karma and Jasmine in the browser.
-- The `docs` directory contains markdown files that document the specifics of the component.
+This repository holds the source code files and documentation of the Kendo UI Animation components for React.
 
-## Gulp tasks
+## Glossary
 
-- `build-npm-package` - builds the scripts and styles in `dist/npm` in CommonJS format;
-- `build-cdn` - builds the scripts and styles in `dist/cdn` in UMD format.
-- `start` - starts the webpack-dev-server (with browsersync in front of it) - suitable for example preview, development and testing.
-- `test` - runs the tests with Jasmine in NodeJS.
-- `watch-test` - runs the tests in watch mode.
-- `docs` - launches a preview server for the documentation in the `docs` directory
+Below are explained the basic terms used the Kendo UI suite for React applies.
+
+### Component
+
+A Component is a Kendo UI control developed to operate in the React ecosystem. For example, the Kendo UI Animation for React is a component.
+
+### Package
+
+A package is a conventional term used to designate:
+
+* A complex or core suite component such as the Kendo UI Animation for React.
+* A group of several components which share common functionalities and/or common codebase. For example, the Kendo UI Slider, MaskedTextBox, NumericTextBox, and Switch components for React are part of the Inputs Package.
+
+### Package Version
+
+Each package has a package release version of its own&mdash;for example, Animation v.3.5.
+
+Because of the continuous release cycle, Marketing Releases include packages with different versions. For example, the R2 2016 Marketing Release may feature the Animation v.3.5 and Buttons v.2.1 releases.
+
+## Animation Package Components
+
+The Kendo UI Animation package for React consists of the Animation component.
+
+For more information on forthcoming Animation features, refer to the [Roadmap of the Kendo UI Animation for React](https://github.com/telerik/kendo-react-animation/blob/master/docs/roadmap.md).
+
+## Basic Usage
+
+The section below demonstrates the basic usage of the Kendo UI Animation component.
+
+### Kendo UI Animation for React
+
+The Animation is a thin wrapper over the ReactCSSTransitionGroup component and provides default animation effects.
+
+The demo below demonstrates the basic usage of the component.
+
+```html-preview
+  //code goes here
+```
+```jsx
+
+```
+
+For more information, refer to the [documentation on the Animation](https://github.com/telerik/kendo-react-animation/blob/master/docs/overview.md).
+
+## Get Started
+
+The sections below demonstrate how to set up and run the Animation component, and add it to your project.
+
+### Installation
+
+To install the Kendo UI Animation for React, run the command below.
+
+//update for the Animation
+    npm install kendo-react-inputs;
+
+    //ES6 Modules
+    import Slider from 'kendo-react-inputs';
+    //or
+    import { Slider } from 'kendo-react-inputs';
+
+### Browser Support
+
+The Kendo UI Animation component for React supports all browsers that are supported by the React framework&mdash;Internet Explorer 9 and later versions.

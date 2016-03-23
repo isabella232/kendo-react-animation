@@ -16,15 +16,15 @@ The Kendo UI Animation component for React is a thin wrapper over the [ReactCSST
 
 ## Configuration
 
-### Animate Single Elements
+### Single Elements
 
-As the component uses the ReactCSSTransitionGroup component under the hood, animating a single element is simple. The Kendo UI Animation component automatically sets a `key` attribute to the child to honor the proper content update. 
+As the component uses the ReactCSSTransitionGroup component under the hood, animating a single element is simple. The Kendo UI Animation component automatically sets a `key` attribute to the child to honor the proper content update.
 
-For more details on this requirement, refer to the [Animating One or Zero Items](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items) article from the React documentation. 
+For more details on this requirement, refer to the [Animating One or Zero Items](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items) article from the React documentation.
 
 The Kendo UI Animation component also sizes the animation container to the first content element. Thus it ensures the proper `enter` and `leave` transitions of the old and new elements.
 
-> **Important** 
+> **Important**
 >
 > To enable the single-element animation, set the `single` property to `true`.
 
@@ -52,7 +52,7 @@ ReactDOM.render(
 );
 ```
 
-### Animate Multiple Elements
+### Multiple Elements
 
 Animating multiple elements is the default state of the Kendo UI Animation component. It animates each entering and/or leaving elements based on the defined `effect` property.
 
@@ -81,7 +81,7 @@ ReactDOM.render(
 );
 ```
 
-### Animate Initial Mounts
+### Initial Mounts
 
 By default, the Animation component animates subsequent DOM updates only. To animate the initial mount of the content, enable it using the `animateAppear` property.
 
@@ -111,7 +111,7 @@ ReactDOM.render(
 );
 ```
 
-## Built-In Effects
+### Built-In Effects
 
 To see the full list of available effects, refer to the [Effects article](https://github.com/telerik/kendo-theme-default/blob/master/styles/animation/_effect.scss).
 
@@ -130,3 +130,36 @@ import styles from '@telerik/kendo-theme-default/styles/animation/main';
     <div className="child-div">{index}</div>
 </Animation>
 ```
+
+## Keyboard Navigation
+
+//Below is the list with the keyboard shortcuts the Animation supports. - applicable?
+
+## Accessibility
+
+//The Animation is WAI ARIA-accessible through the `Tab` key. The `aria-disabled` option defines the accessibility setting when an attribute is disabled. - applicable?
+
+## Demos
+
+### Default Setup
+
+//The example below demonstrates the default setup of a Kendo UI Animation for React. - applicable?
+
+```html-preview
+
+```
+```jsx
+
+```
+
+### Scenario 1
+
+//The example below demonstrates a Kendo UI Animation for React with ... (describe scenario). - applicable?
+
+```html-preview
+
+```
+
+## Suggested Links
+
+* [Client-Side API Reference for the Kendo UI Animation Component]({% slug api_animation_kendouiforreact %})

@@ -1,38 +1,51 @@
-# Kendo React Animation
+---
+title: Client-Side API
+page_title: Client-Side API | Kendo UI Animation for React
+description: "Configure and customize the Kendo UI Animation for React through its client-side API reference."
+slug: api_animation_kendouiforreact
+position: 2
+---
 
-## API
+# Animation Client-Side API
 
-The available options are:
+Represents the Kendo UI Animation component for React.
 
-### animateAppear(bool)
+### Single Elements
 
-Enable initial animation of the mounted children
+#### single `String`
 
-### appearDuration(number)
+Defines whether the animation content a zero or single element.
 
-Define the duration of the appear animation
+### Multiple Elements
 
-### className(string)
+#### enterDuration `String`
 
-Define the class names that you would like to append to the animation container. Default class added to the wrapper is
-`k-animation-container`.
+Defines the duration of the enter animation.
 
-### component(string)
+#### leaveDuration `String`
 
-Defines the HTML tag type of the rendered wrapper. By default component renders `div`.
+Defines the duration of the leave animation.
 
-### effect(string)
+### Initial Mounts
 
-Defines effect type that will be used to animate the component
+#### animateAppear `Boolean`*(default: "true")*
 
-### enterDuration(string)
+Enables initial animation of the mounted children.
 
-Defines the duration of the enter animation
+#### appearDuration `Number`
 
-### leaveDuration(string)
+Defines the duration of the appearing animation.
 
-Defines the duration of the leave animation
+#### component `String`
 
-### single(string)
+Defines the HTML tag type of the rendered wrapper. By default, the component renders the `div` element.
 
-Defines whether the animate content will be a zero/single element
+### Built-In Effects
+
+#### className `String`
+
+Defines the class names you want to append to the animation container. By default, the `k-animation-container` class is added to the wrapper.
+
+#### effect `String`
+
+Defines the effect type that is used to animate the component.
