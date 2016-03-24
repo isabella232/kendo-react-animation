@@ -31,7 +31,7 @@ export default class Animation extends React.Component {
         if (this.props.fixedContainer) {
             const component = ReactDOM.findDOMNode(this);
 
-            if (!component || !component.firstChild) {
+            if (component && component.firstChild) {
                 const child = component.firstChild;
 
                 dimensions = {
