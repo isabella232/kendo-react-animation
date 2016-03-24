@@ -111,13 +111,15 @@ ReactDOM.render(
 
 The list below describes the available built-in effects.
 
-- `k-left`&mdash;Slide the content to the left.
-- `k-right`&mdash;Slide the content to the right.
-- `k-up`&mdash;Slide the content in up direction.
-- `k-down`&mdash;Slide the content in down direction.
-- `k-toggle`&mdash;Fade out the old content and fade in the new content.
-- `k-zoom-in`&mdash;Fade out the old content and zooms in the new one.
-- `k-zoom-out`&mdash;Zoom out the old content and fades in the new one.
+|Configuration | Effect |
+|:---          |:---    |
+| `k-left`     |Slide the content to the left.|
+| `k-right`    |Slide the content to the right.|
+| `k-up`       |Slide the content in up direction.|
+| `k-down`     |Slide the content in down direction.|
+| `k-toggle`   |Fade out the old content and fade in the new content.|
+| `k-zoom-in`  |Fade out the old content and zooms in the new one.|
+| `k-zoom-out` |Zoom out the old content and fades in the new one.|
 
 To see the full list of available effects, refer to the [Effects sass file](https://github.com/telerik/kendo-theme-default/blob/master/styles/animation/_effect.scss).
 
