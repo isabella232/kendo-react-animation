@@ -1,3 +1,2 @@
-import Animation from './Animation';
-
-module.exports = Animation;
+export Animation from './Animation';
+export ToggleAnimation from './ToggleAnimation';
