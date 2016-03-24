@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssTransitionGroup from 'react-addons-css-transition-group';
 
-import classNames from 'classname';
+import classNames from 'classnames';
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
 import util from './util';
 
