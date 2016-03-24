@@ -29,32 +29,19 @@ export default class Animation extends React.Component {
         let dimensions = null;
 
         if (this.props.fixedContainer) {
-            dimensions = this.getContentDimensions();
+            const component = ReactDOM.findDOMNode(this);
+
+            if (!component || !component.firstChild) {
+                const child = component.firstChild;
+
+                dimensions = {
+                    height: child.offsetHeight,
+                    width: child.offsetWidth
+                };
+            }
         }
 
         this.dimensions = dimensions;
-    }
-
-    getContentDimensions() {
-        const component = ReactDOM.findDOMNode(this);
-        let dimensions = {
-            height: "100%",
-            width: "100%"
-        };
-
-        if (!component) {
-            return dimensions;
-        }
-
-        const child = component.firstChild;
-
-        if (child) {
-            const computedStyles = getComputedStyle(child);
-            dimensions.height = computedStyles.height;
-            dimensions.width = computedStyles.width;
-        }
-
-        return dimensions;
     }
 
     renderChildren() {
