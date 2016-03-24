@@ -35,7 +35,7 @@ export default class Animation extends React.Component {
                 const child = component.firstChild;
 
                 dimensions = {
-                    height: child.offsetHeight,
+                    height: component.clientHeight,
                     width: child.offsetWidth
                 };
             }

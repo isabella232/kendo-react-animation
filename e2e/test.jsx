@@ -11,13 +11,18 @@ import { withRoot } from 'e2e-utils';
 // See https://github.com/chaijs/chai-jquery#assertions for available assertions.
 describe('Animation', withRoot(root => {
     it('should size animation container when a single element is animated', () => {
+        let wrapperProps = {
+            border: '1px solid black'
+        };
+
         let contentProps = {
             height: '200px',
+            marginTop: '30px',
             width: '100px'
         };
 
         let component = (
-            <Animation fixedContainer>
+            <Animation fixedContainer style={wrapperProps}>
                 <div style={contentProps}>
                     content
                 </div>
@@ -38,7 +43,7 @@ describe('Animation', withRoot(root => {
         ReactDOM.render(component, root[0]);
 
         root.find("div.k-animation-container").should.have.css('width', '100px');
-        root.find("div.k-animation-container").should.have.css('height', '200px');
+        root.find("div.k-animation-container").should.have.css('height', '230px');
     });
 
     it('should skip animation container sizing if multiple elements are animated', () => {
