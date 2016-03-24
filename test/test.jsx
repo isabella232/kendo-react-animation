@@ -71,7 +71,7 @@ describe('Animation with a single component', () => {
     });
 
     it('should render passed effect', () => {
-        result = shallow(<Animation effect="custom"><div></div></Animation>);
+        result = shallow(<Animation transitionName="custom"><div></div></Animation>);
 
         const transitionGroup = result.find(ReactCssTransitionGroup);
 
@@ -79,7 +79,7 @@ describe('Animation with a single component', () => {
     });
 
     it('should render passed transitionEnterTimeout', () => {
-        result = shallow(<Animation enterDuration={500}><div></div></Animation>);
+        result = shallow(<Animation transitionEnterTimeout={500}><div></div></Animation>);
 
         const transitionGroup = result.find(ReactCssTransitionGroup);
 
@@ -87,7 +87,7 @@ describe('Animation with a single component', () => {
     });
 
     it('should render passed transitionLeaveTimeout', () => {
-        result = shallow(<Animation leaveDuration={500}><div></div></Animation>);
+        result = shallow(<Animation transitionLeaveTimeout={500}><div></div></Animation>);
 
         const transitionGroup = result.find(ReactCssTransitionGroup);
 
@@ -95,9 +95,9 @@ describe('Animation with a single component', () => {
     });
 
     it('should render passed transitionAppear', () => {
-        const animateAppear = true;
+        const transitionAppear = true;
 
-        result = shallow(<Animation animateAppear={animateAppear}><div></div></Animation>);
+        result = shallow(<Animation transitionAppear={transitionAppear}><div></div></Animation>);
 
         const transitionGroup = result.find(ReactCssTransitionGroup);
 
@@ -105,9 +105,9 @@ describe('Animation with a single component', () => {
     });
 
     it('should render passed appear duration', () => {
-        const animateAppear = true;
+        const transitionAppear = true;
 
-        result = shallow(<Animation animateAppear={animateAppear} appearDuration={500}><div></div></Animation>);
+        result = shallow(<Animation transitionAppear={transitionAppear} transitionAppearTimeout={500}><div></div></Animation>);
 
         const transitionGroup = result.find(ReactCssTransitionGroup);
 

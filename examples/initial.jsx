@@ -7,7 +7,7 @@ const Content = () => {
     const appearDuration = 800;
 
     return (
-        <Animation animateAppear={animateOnAppear} appearDuration={appearDuration} effect="zoom">
+        <Animation transitionAppear={animateOnAppear} transitionAppearTimeout={appearDuration} transitionName="zoom">
             <div className="content">
                 This is the content!
             </div>

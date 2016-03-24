@@ -36,10 +36,10 @@ class App extends React.Component {
 
         const animationProps = {
             className: 'parent-div',
-            effect: Styles[effect],
-            enterDuration: duration,
-            leaveDuration: duration,
-            single: true
+            fixedContainer: true,
+            transitionEnterTimeout: duration,
+            transitionLeaveTimeout: duration,
+            transitionName: Styles[effect]
         };
 
         return (

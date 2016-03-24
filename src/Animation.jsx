@@ -2,31 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssTransitionGroup from 'react-addons-css-transition-group';
 
-import util from './util';
-
+import classNames from 'classname';
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
+import util from './util';
 
 export default class Animation extends React.Component {
 
     static propTypes = {
-        animateAppear: React.PropTypes.bool,
-        appearDuration: React.PropTypes.number,
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
         ]),
         className: React.PropTypes.string,
         component: React.PropTypes.string,
-        effect: React.PropTypes.string,
-        enterDuration: React.PropTypes.number,
-        leaveDuration: React.PropTypes.number,
-        single: React.PropTypes.bool
+        fixedContainer: React.PropTypes.bool,
+        transitionAppear: React.PropTypes.bool,
+        transitionAppearTimeout: React.PropTypes.number,
+        transitionEnter: React.PropTypes.bool,
+        transitionEnterTimeout: React.PropTypes.number,
+        transitionLeave: React.PropTypes.bool,
+        transitionLeaveTimeout: React.PropTypes.number,
+        transitionName: React.PropTypes.string
     }
 
     componentWillUpdate() {
         let dimensions = null;
 
-        if (this.props.single) {
+        if (this.props.fixedContainer) {
             dimensions = this.getContentDimensions();
         }
 
@@ -71,30 +73,23 @@ export default class Animation extends React.Component {
 
     render() {
         const {
-            animateAppear = false,
-            appearDuration = 300,
             className = "",
-            component = "div",
-            effect = "",
-            enterDuration = 300,
-            leaveDuration = 300,
+            component = 'div',
+            transitionAppearTimeout = 300,
+            transitionEnterTimeout = 300,
+            transitionLeaveTimeout = 300,
+            transitionName = '',
             ...otherProps
         } = this.props;
 
-        const space = className ? " " : "";
-        const containerClassName = `${styles["animation-container"]}${space}${className}`;
-
         const transitionGroupProps = {
-            className: containerClassName,
+            className: classNames(styles['animation-container'], className),
             component: component,
             style: this.dimensions,
-            transitionAppear: animateAppear,
-            transitionAppearTimeout: appearDuration,
-            transitionEnter: Boolean(effect),
-            transitionEnterTimeout: enterDuration,
-            transitionLeave: Boolean(effect),
-            transitionLeaveTimeout: leaveDuration,
-            transitionName: effect
+            transitionAppearTimeout: transitionAppearTimeout,
+            transitionEnterTimeout: transitionEnterTimeout,
+            transitionLeaveTimeout: transitionLeaveTimeout,
+            transitionName: transitionName
         };
 
         return (

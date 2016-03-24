@@ -22,7 +22,7 @@ For more details on this requirement, refer to the [Animating One or Zero Items]
 
 The Kendo UI Animation component also sizes the animation container to the first content element. Thus it ensures the proper `enter` and `leave` transitions of the old and new elements.
 
-> To enable the single-element animation, set the `single` property to `true`.
+> To enable the single-element animation, set the `fixedContainer` property to `true`.
 
 ```html
   <div id="app"></div>
@@ -30,7 +30,7 @@ The Kendo UI Animation component also sizes the animation container to the first
 ```jsx
 ReactDOM.render(
   (
-    <Animation effect="k-left" single={true}>
+    <Animation transitionName="k-left" fixedContainer>
         <div>content</div>
     </Animation>
   ),
@@ -40,7 +40,7 @@ ReactDOM.render(
 //The second rendering triggers the animation
 ReactDOM.render(
   (
-    <Animation effect="k-left" single={true}>
+    <Animation transitionName="k-left" fixedContainer>
         <div>content2</div>
     </Animation>
   ),
@@ -50,7 +50,7 @@ ReactDOM.render(
 
 ### Multiple Elements
 
-Animating multiple elements is the default state of the Kendo UI Animation component. It animates each entering and/or leaving elements based on the defined `effect` property.
+Animating multiple elements is the default state of the Kendo UI Animation component. It animates each entering and/or leaving elements based on the defined `transitionName` property.
 
 ```html
   <div id="app"></div>
@@ -58,7 +58,7 @@ Animating multiple elements is the default state of the Kendo UI Animation compo
 ```jsx
 ReactDOM.render(
   (
-    <Animation effect="k-zoom-in">
+    <Animation transitionName="k-zoom-in">
         <div>content</div>
     </Animation>
   ),
@@ -68,7 +68,7 @@ ReactDOM.render(
 //The second rendering triggers the animation
 ReactDOM.render(
   (
-    <Animation effect="k-zoom-in">
+    <Animation transitionName="k-zoom-in">
         <div>content</div>
         <div>content2</div>
     </Animation>
@@ -79,7 +79,7 @@ ReactDOM.render(
 
 ### Initial Mounts
 
-By default, the Animation component animates subsequent DOM updates only. To animate the initial mount of the content, enable it using the `animateAppear` property.
+By default, the Animation component animates subsequent DOM updates only. To animate the initial mount of the content, enable it using the `transitionAppear` property.
 
 ```html
   <div id="app"></div>
@@ -99,7 +99,7 @@ By default, the Animation component animates subsequent DOM updates only. To ani
 ```jsx
 ReactDOM.render(
   (
-    <Animation animateAppear={true} effect="zoom">
+    <Animation transitionAppear={true} transitionName="zoom">
         <div>content</div>
     </Animation>
   ),
@@ -132,7 +132,7 @@ import styles from '@telerik/kendo-theme-default/styles/animation/main';
 **Step2** Use the styles directly in the `Animation` configuration.
 
 ```jsx
-<Animation effect={styles.left}>
+<Animation transitionName={styles.left}>
     <div className="child-div">{index}</div>
 </Animation>
 ```

@@ -10,15 +10,14 @@ import { withRoot } from 'e2e-utils';
 // chai-jquery adds a should method to the jQuery object.
 // See https://github.com/chaijs/chai-jquery#assertions for available assertions.
 describe('Animation', withRoot(root => {
-    it('should size animation container when single element is animated', () => {
-        const useSingle = true;
+    it('should size animation container when a single element is animated', () => {
         let contentProps = {
             height: '200px',
             width: '100px'
         };
 
         let component = (
-            <Animation single={useSingle}>
+            <Animation fixedContainer>
                 <div style={contentProps}>
                     content
                 </div>
@@ -28,7 +27,7 @@ describe('Animation', withRoot(root => {
         ReactDOM.render(component, root[0]);
 
         component = (
-            <Animation single={useSingle}>
+            <Animation fixedContainer>
                 <div style={contentProps}>
                     content
                 </div>

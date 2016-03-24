@@ -70,7 +70,7 @@ class Tasks extends React.Component {
                     <button onClick={this.add}>Add</button>
                 </fieldset>
 
-                <Animation className="k-list k-reset" effect={effect}>
+                <Animation className="k-list k-reset" transitionName={effect}>
                     {this.renderTasks()}
                 </Animation>
             </div>

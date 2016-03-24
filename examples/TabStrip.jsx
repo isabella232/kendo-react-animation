@@ -35,7 +35,7 @@ class TabStrip extends React.Component {
             const contentStyle = `content ${active ? 'visible' : 'hidden'}`;
 
             return (
-                <Animation effect={effect} key={idx}>
+                <Animation key={idx} transitionName={effect}>
                     <div className={contentStyle}>
                         {content}
                     </div>
