@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import Animation from '@telerik/kendo-react-animation';
+import { Animation } from '@telerik/kendo-react-animation';
 
 const Task = ({ dataItem, onRemove }) => {
     const click = function() {

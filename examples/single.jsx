@@ -1,8 +1,8 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import Animation from '@telerik/kendo-react-animation';
+import { Animation } from '@telerik/kendo-react-animation';
 
-import Styles from '@telerik/kendo-theme-default/styles/animation/main';
+import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
 class App extends React.Component {
     constructor(props) {
@@ -39,7 +39,7 @@ class App extends React.Component {
             fixedContainer: true,
             transitionEnterTimeout: duration,
             transitionLeaveTimeout: duration,
-            transitionName: Styles[effect]
+            transitionName: styles[effect]
         };
 
         return (

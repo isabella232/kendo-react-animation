@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import Animation from '@telerik/kendo-react-animation';
+import { Animation } from '@telerik/kendo-react-animation';
 
 class TabStrip extends React.Component {
     constructor(props) {
