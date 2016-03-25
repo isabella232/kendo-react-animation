@@ -138,7 +138,7 @@ To see the full list of available effects, refer to the [Effects sass file](http
 
 Basically, to define the animation effect, define the `effect` option of the component. 
 
-Below is the list for you to follow when using the built-in effects from the from 'kendo-theme-default' repository.
+Below are the steps for you to follow when using the built-in effects from the from 'kendo-theme-default' repository.
 
 **Step 1** Import styles from `@telerik/kendo-theme-default/styles/animation/main`.
 
