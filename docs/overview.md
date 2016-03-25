@@ -6,11 +6,24 @@ slug: overview_animation_kendouiforreact
 position: 1
 ---
 
-# Kendo UI Animation for React Overview
+# Animation Overview
 
 The Kendo UI Animation component for React is a thin wrapper over the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html) component. It provides default animation effects that work both with single/zero or multiple elements animation.
 
 > To use the Kendo UI Animation component, make sure you get familiar with the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html).
+
+## Demos
+
+### Default Setup
+
+//The example below demonstrates the default setup of a Kendo UI Animation for React. - applicable?
+
+```html-preview
+
+```
+```jsx
+
+```
 
 ## Configuration
 
@@ -123,7 +136,9 @@ The list below describes the available built-in effects.
 
 To see the full list of available effects, refer to the [Effects sass file](https://github.com/telerik/kendo-theme-default/blob/master/styles/animation/_effect.scss).
 
-Basically, to define the animation effect, define the `effect` option of the component. Below is the list for you to follow when using the built-in effects from the from 'kendo-theme-default' repository.
+Basically, to define the animation effect, define the `effect` option of the component. 
+
+Below is the list for you to follow when using the built-in effects from the from 'kendo-theme-default' repository.
 
 **Step 1** Import styles from `@telerik/kendo-theme-default/styles/animation/main`.
 
@@ -143,27 +158,6 @@ import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
 //The Animation is WAI ARIA-accessible through the `Tab` key. The `aria-disabled` option defines the accessibility setting when an attribute is disabled. - applicable?
 
-## Demos
-
-### Default Setup
-
-//The example below demonstrates the default setup of a Kendo UI Animation for React. - applicable?
-
-```html-preview
-
-```
-```jsx
-
-```
-
-### Scenario 1
-
-//The example below demonstrates a Kendo UI Animation for React with ... (describe scenario). - applicable?
-
-```html-preview
-
-```
-
 ## Suggested Links
 
-* [Client-Side API Reference for the Kendo UI Animation Component]({% slug api_animation_kendouiforreact %})
+* [Client-Side API Reference for the Kendo UI Animation Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/api.md)
