@@ -6,8 +6,11 @@ import classNames from 'classnames';
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
 import util from './util';
 
-export default class Animation extends React.Component {
+const APPEAR_TIMEOUT = 300;
+const ENTER_TIMEOUT = 300;
+const LEAVE_TIMEOUT = 300;
 
+export default class Animation extends React.Component {
     static propTypes = {
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
@@ -32,16 +35,39 @@ export default class Animation extends React.Component {
             const component = ReactDOM.findDOMNode(this);
 
             if (component && component.firstChild) {
-                const child = component.firstChild;
+                component.style.width = '';
 
                 dimensions = {
-                    height: component.clientHeight,
-                    width: child.offsetWidth
+                    height: window.getComputedStyle(component).height,
+                    width: component.firstChild.offsetWidth
                 };
             }
         }
 
         this.dimensions = dimensions;
+    }
+
+    componentDidUpdate() {
+        const { fixedContainer, transitionEnterTimeout = ENTER_TIMEOUT } = this.props;
+
+        clearTimeout(this.transitionEnterTimeout);
+
+        if (!fixedContainer) {
+            return;
+        }
+
+        this.enterTransitionTimeout = setTimeout(this.clearStyle, transitionEnterTimeout);
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.transitionEnterTimeout);
+    }
+
+    clearStyle = () => {
+        const component = ReactDOM.findDOMNode(this);
+        if (component) {
+            component.setAttribute('style', '');
+        }
     }
 
     renderChildren() {
@@ -62,9 +88,9 @@ export default class Animation extends React.Component {
         const {
             className = "",
             component = 'div',
-            transitionAppearTimeout = 300,
-            transitionEnterTimeout = 300,
-            transitionLeaveTimeout = 300,
+            transitionAppearTimeout = APPEAR_TIMEOUT,
+            transitionEnterTimeout = ENTER_TIMEOUT,
+            transitionLeaveTimeout = LEAVE_TIMEOUT,
             transitionName = '',
             ...otherProps
         } = this.props;
