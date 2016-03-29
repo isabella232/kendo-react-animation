@@ -10,16 +10,6 @@ import { withRoot } from 'e2e-utils';
 // chai-jquery adds a should method to the jQuery object.
 // See https://github.com/chaijs/chai-jquery#assertions for available assertions.
 describe('Animation', withRoot(root => {
-    let asyncContext = (contextCallback) => {
-        const defaultSetTimeout = window.setTimeout;
-
-        window.setTimeout = function(callback) { callback(); };
-
-        contextCallback();
-
-        window.setTimeout = defaultSetTimeout;
-    };
-
     it('should size animation container when a single element is animated', () => {
         let wrapperProps = {
             border: '1px solid black'
@@ -81,43 +71,5 @@ describe('Animation', withRoot(root => {
         ReactDOM.render(component, root[0]);
 
         root.find("div.k-animation-container").attr('style', undefined);
-    });
-
-    it('should clear animation container styles on transition end', () => {
-        asyncContext(() => {
-            let wrapperProps = {
-                border: '1px solid black'
-            };
-
-            let contentProps = {
-                height: '200px',
-                marginTop: '30px',
-                width: '100px'
-            };
-
-            let component = (
-                <Animation fixedContainer style={wrapperProps}>
-                    <div style={contentProps}>
-                        content
-                    </div>
-                </Animation>
-            );
-
-            ReactDOM.render(component, root[0]);
-
-            component = (
-                <Animation fixedContainer>
-                    <div style={contentProps}>
-                        content
-                    </div>
-                </Animation>
-            );
-
-            //render again to initiate animation
-            ReactDOM.render(component, root[0]);
-
-            expect(root.find("div.k-animation-container")[0].style.height).toEqual('');
-            expect(root.find("div.k-animation-container")[0].style.width).toEqual('');
-        });
     });
 }));

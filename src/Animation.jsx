@@ -47,29 +47,6 @@ export default class Animation extends React.Component {
         this.dimensions = dimensions;
     }
 
-    componentDidUpdate() {
-        const { fixedContainer, transitionEnterTimeout = ENTER_TIMEOUT } = this.props;
-
-        clearTimeout(this.transitionEnterTimeout);
-
-        if (!fixedContainer) {
-            return;
-        }
-
-        this.enterTransitionTimeout = setTimeout(this.clearStyle, transitionEnterTimeout);
-    }
-
-    componentWillUnmount() {
-        clearTimeout(this.transitionEnterTimeout);
-    }
-
-    clearStyle = () => {
-        const component = ReactDOM.findDOMNode(this);
-        if (component) {
-            component.setAttribute('style', '');
-        }
-    }
-
     renderChildren() {
         return React.Children.map(this.props.children, child => {
             let props = {
