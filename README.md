@@ -29,7 +29,7 @@ The Animation is a thin wrapper over the ReactCSSTransitionGroup component and p
 
 ```
 
-For more examples and available configuration options, refer to the [Animation documentation section](https://github.com/telerik/kendo-react-animation/blob/master/docs/overview.md).
+For more examples and available configuration options, refer to the [Animation documentation section](https://github.com/telerik/kendo-react-animation/blob/master/docs/index.md).
 
 ## Installation
 
