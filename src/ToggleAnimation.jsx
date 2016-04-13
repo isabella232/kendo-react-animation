@@ -23,7 +23,11 @@ export default class ToggleAnimation extends React.Component {
         const transitionGroupProps = {
             transitionEnterTimeout: duration,
             transitionLeave: false,
-            transitionName: styles.toggle
+            transitionName: {
+                appear: styles['toggle-appear'],
+                enter: styles['toggle-enter'],
+                leave: styles['toggle-leave']
+            }
         };
 
         return (

@@ -35,7 +35,11 @@ export default class SlideAnimation extends React.Component {
             }),
             transitionEnter: transitionEnter,
             transitionLeave: !transitionEnter,
-            transitionName: styles[direction]
+            transitionName: {
+                appear: styles[`${direction}-appear`],
+                enter: styles[`${direction}-enter`],
+                leave: styles[`${direction}-leave`]
+            }
         };
 
         return (
