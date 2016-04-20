@@ -1,7 +1,7 @@
 import React from 'react';
-import TransitionGroup from 'react-addons-transition-group';
+import AnimationGroup from './AnimationGroup';
 
-import ToggleChild from './ToggleChild';
+import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
 export default class Toggle extends React.Component {
     static propTypes = {
@@ -9,34 +9,38 @@ export default class Toggle extends React.Component {
             React.PropTypes.element,
             React.PropTypes.node
         ]),
-        toggleTimeout: React.PropTypes.number
+        toggleTimeout: React.PropTypes.number,
+        transitionName: React.PropTypes.oneOfType([
+            React.PropTypes.string,
+            React.PropTypes.shape({
+                enter: React.PropTypes.string,
+                enterActive: React.PropTypes.string
+            })
+        ])
     }
 
     static defaultProps = {
-        toggleTimeout: 300
-    }
-
-    componentWillReceiveProps() {
-        const childRefs = this.refs.group.refs;
-
-        for (let key in childRefs) {
-            childRefs[key].stop();
+        toggleTimeout: 500,
+        transitionName: {
+            enter: styles['toggle-enter'],
+            enterActive: styles['toggle-enter-active']
         }
     }
 
     render() {
-        const { children, ...other } = this.props;
+        const { children, toggleTimeout, transitionName } = this.props;
 
-        const content = React.Children.map(children, (child, idx) => (
-            <ToggleChild {...other} key={idx}>
-                {child}
-            </ToggleChild>
-        ));
+        const animationProps = {
+            transitionAppear: false,
+            transitionEnterTimeout: toggleTimeout,
+            transitionLeave: false,
+            transitionName: transitionName
+        };
 
         return (
-            <TransitionGroup component="div" ref="group">
-                {content}
-            </TransitionGroup>
+            <AnimationGroup {...animationProps}>
+                {children}
+            </AnimationGroup>
         );
     }
 }
