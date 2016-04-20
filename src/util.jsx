@@ -1,3 +1,32 @@
+const animationType = {
+    'appear': 'appear',
+    'enter': 'enter',
+    'leave': 'leave'
+};
+
+const capitilize = (value) => {
+    if (!value) {
+        return value;
+    }
+
+    const valueArray = [ ...value ];
+    const firstLetter = valueArray.shift();
+
+    return `${firstLetter.toUpperCase()}${valueArray.join('')}`;
+};
+
+const getAnimationClasses = (name, type) => {
+    const className = name[type] || `${name}-${type}`;
+
+    return {
+        className: className,
+        activeClassName: name[`${type}Active`] || `${className}-active`
+    };
+};
+
+const getAnimationField = (type) => (`${type}AnimationId`);
+const getTimeoutField = (type) => (`${type}TimeoutId`);
+
 const guid = function() {
     let id = "";
     let random;
@@ -16,6 +45,14 @@ const guid = function() {
     return id;
 };
 
+const noop = function() {};
+
 export default {
-    guid: guid
+    animationType: animationType,
+    capitilize: capitilize,
+    getAnimationClasses: getAnimationClasses,
+    getAnimationField: getAnimationField,
+    getTimeoutField: getTimeoutField,
+    guid: guid,
+    noop: noop
 };
