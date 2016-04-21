@@ -2,6 +2,7 @@ import React from 'react';
 import AnimationGroup from './AnimationGroup';
 
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
+import util from './util';
 
 export default class FadeIn extends React.Component {
     static propTypes = {
@@ -35,7 +36,7 @@ export default class FadeIn extends React.Component {
             transitionAppear: false,
             transitionEnterTimeout: duration,
             transitionLeave: false,
-            transitionName: transitionName
+            transitionName: util.mapTransitionClasses(transitionName, 'fadeIn', 'enter')
         };
 
         return (

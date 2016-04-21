@@ -15,7 +15,7 @@ const capitilize = (value) => {
     return `${firstLetter.toUpperCase()}${valueArray.join('')}`;
 };
 
-const getAnimationClasses = (name, type) => {
+const getTransitionClasses = (name, type) => {
     const className = name[type] || `${name}-${type}`;
 
     return {
@@ -45,14 +45,24 @@ const guid = function() {
     return id;
 };
 
+const mapTransitionClasses = (name, inputName, outputName) => {
+    const className = name[inputName] || `${name}-${outputName}`;
+
+    return {
+        [outputName]: className,
+        [`${outputName}Active`]: name[`${inputName}Active`] || `${className}-active`
+    };
+};
+
 const noop = function() {};
 
 export default {
     animationType: animationType,
     capitilize: capitilize,
-    getAnimationClasses: getAnimationClasses,
+    getTransitionClasses: getTransitionClasses,
     getAnimationField: getAnimationField,
     getTimeoutField: getTimeoutField,
     guid: guid,
+    mapTransitionClasses: mapTransitionClasses,
     noop: noop
 };

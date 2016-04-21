@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import { Toggle } from '@telerik/kendo-react-animation';
+import { FadeIn } from '@telerik/kendo-react-animation';
 
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
@@ -18,9 +18,9 @@ class App extends React.Component {
     }
 
     render() {
-        const toggleClassNames = {
-            enter: styles['toggle-enter'],
-            enterActive: styles['toggle-enter-active']
+        const fadeInClassNames = {
+            fadeIn: styles['toggle-enter'],
+            fadeInActive: styles['toggle-enter-active']
         };
 
         const key = new Date().getTime();
@@ -36,9 +36,9 @@ class App extends React.Component {
                     </dd>
                 </dl>
 
-                <Toggle name={toggleClassNames} toggleTimeout={500}>
+                <FadeIn duration={500} transitionName={fadeInClassNames}>
                     <div className="child" key={key}>{this.state.index}</div>
-                </Toggle>
+                </FadeIn>
             </div>
         );
     }

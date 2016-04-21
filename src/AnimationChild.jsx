@@ -59,7 +59,7 @@ export default class AnimationChild extends React.Component {
         const animationIdName = util.getAnimationField(type);
         const timeoutIdName = util.getTimeoutField(type);
 
-        const { className, activeClassName } = util.getAnimationClasses(
+        const { className, activeClassName } = util.getTransitionClasses(
             this.props.transitionName,
             util.animationType[type]
         );
