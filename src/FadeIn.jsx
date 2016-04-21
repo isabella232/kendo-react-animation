@@ -3,36 +3,37 @@ import AnimationGroup from './AnimationGroup';
 
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
-export default class Toggle extends React.Component {
+export default class FadeIn extends React.Component {
     static propTypes = {
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
         ]),
-        toggleTimeout: React.PropTypes.number,
+
+        duration: React.PropTypes.number,
         transitionName: React.PropTypes.oneOfType([
             React.PropTypes.string,
             React.PropTypes.shape({
-                enter: React.PropTypes.string,
-                enterActive: React.PropTypes.string
+                fadeIn: React.PropTypes.string,
+                fadeInActive: React.PropTypes.string
             })
         ])
     }
 
     static defaultProps = {
-        toggleTimeout: 500,
+        duration: 500,
         transitionName: {
-            enter: styles['toggle-enter'],
-            enterActive: styles['toggle-enter-active']
+            fadeIn: styles['fade-in-enter'],
+            fadeInActive: styles['fade-in-enter-active']
         }
     }
 
     render() {
-        const { children, toggleTimeout, transitionName } = this.props;
+        const { children, duration, transitionName } = this.props;
 
         const animationProps = {
             transitionAppear: false,
-            transitionEnterTimeout: toggleTimeout,
+            transitionEnterTimeout: duration,
             transitionLeave: false,
             transitionName: transitionName
         };
