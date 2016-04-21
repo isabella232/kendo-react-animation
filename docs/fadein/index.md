@@ -50,9 +50,9 @@ class App extends React.Component {
                     </dd>
                 </dl>
 
-                <FadeIn>
+                <KendoReactAnimation.FadeIn>
                     <div key={index}>{index}</div>
-                </FadeIn>
+                </KendoReactAnimation.FadeIn>
             </div>
         );
     }
@@ -119,9 +119,9 @@ class App extends React.Component {
                     </dd>
                 </dl>
 
-                <FadeIn duration={800} transitionName="fade-in">
+                <KendoReactAnimation.FadeIn duration={800} transitionName="fade-in">
                     <div key={index}>{index}</div>
-                </FadeIn>
+                </KendoReactAnimation.FadeIn>
             </div>
         );
     }
@@ -144,6 +144,7 @@ The `fade in` animation can be modified using custom CSS classes. They can be de
     .fade-in-enter {
         opacity: 0;
         transform: scale(0);
+        transform-origin: top left;
     }
 
     .fade-in-enter-active {
@@ -182,9 +183,9 @@ class App extends React.Component {
                     </dd>
                 </dl>
 
-                <FadeIn transitionName="fade-in">
+                <KendoReactAnimation.FadeIn transitionName="fade-in">
                     <div key={index}>{index}</div>
-                </FadeIn>
+                </KendoReactAnimation.FadeIn>
             </div>
         );
     }
