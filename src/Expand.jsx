@@ -1,7 +1,11 @@
 import React from 'react';
 import TransitionGroup from 'react-addons-transition-group';
-
 import ExpandChild from './ExpandChild';
+
+import classNames from 'classnames';
+import styles from '@telerik/kendo-theme-default/styles/animation/main';
+
+/*eslint react/forbid-prop-types:0*/
 
 export default class Expand extends React.Component {
     static propTypes = {
@@ -11,8 +15,10 @@ export default class Expand extends React.Component {
             React.PropTypes.element,
             React.PropTypes.node
         ]),
+        className: React.PropTypes.string,
         collapseDuration: React.PropTypes.number,
-        expandDuration: React.PropTypes.number
+        expandDuration: React.PropTypes.number,
+        style: React.PropTypes.object
     }
 
     static defaultProps = {
@@ -33,8 +39,11 @@ export default class Expand extends React.Component {
     }
 
     render() {
+        const { className, style } = this.props;
+        const combinedClasses = classNames(styles['animation-container'], className);
+
         return (
-            <TransitionGroup component="div">
+            <TransitionGroup className={combinedClasses} component="div" style={style}>
                 {this.renderChildren()}
             </TransitionGroup>
         );

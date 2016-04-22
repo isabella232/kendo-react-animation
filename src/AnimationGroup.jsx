@@ -1,7 +1,11 @@
 import React from 'react';
 import TransitionGroup from 'react-addons-transition-group';
-
 import AnimationChild from './AnimationChild';
+
+import classNames from 'classnames';
+import styles from '@telerik/kendo-theme-default/styles/animation/main';
+
+/*eslint react/forbid-prop-types:0*/
 
 export default class AnimationGroup extends React.Component {
     static propTypes = {
@@ -11,6 +15,7 @@ export default class AnimationGroup extends React.Component {
         ]),
         className: React.PropTypes.string,
         component: React.PropTypes.string,
+        style: React.PropTypes.object,
         transitionAppear: React.PropTypes.bool,
         transitionAppearTimeout: React.PropTypes.number,
         transitionEnter: React.PropTypes.bool,
@@ -54,7 +59,8 @@ export default class AnimationGroup extends React.Component {
     }
 
     render() {
-        const { children, className, component, ...other } = this.props;
+        const { children, className, component, style, ...other } = this.props;
+        const combinedClasses = classNames(styles['animation-container'], className);
 
         const content = React.Children.map(children, (child, idx) => (
             <AnimationChild {...other} key={idx}>
@@ -63,7 +69,7 @@ export default class AnimationGroup extends React.Component {
         ));
 
         return (
-            <TransitionGroup className={className} component={component} ref="group">
+            <TransitionGroup className={combinedClasses} component={component} ref="group" style={style}>
                 {content}
             </TransitionGroup>
         );

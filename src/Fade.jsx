@@ -4,6 +4,8 @@ import AnimationGroup from './AnimationGroup';
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
 import util from './util';
 
+/*eslint react/forbid-prop-types:0*/
+
 export default class Fade extends React.Component {
     static propTypes = {
         animateOnFadeIn: React.PropTypes.bool,
@@ -12,8 +14,10 @@ export default class Fade extends React.Component {
             React.PropTypes.element,
             React.PropTypes.node
         ]),
+        className: React.PropTypes.string,
         fadeInDuration: React.PropTypes.number,
         fadeOutDuration: React.PropTypes.number,
+        style: React.PropTypes.object,
         transitionName: React.PropTypes.oneOfType([
             React.PropTypes.string,
             React.PropTypes.shape({
@@ -43,8 +47,10 @@ export default class Fade extends React.Component {
             animateOnFadeIn,
             animateOnFadeOut,
             children,
+            className,
             fadeInDuration,
             fadeOutDuration,
+            style,
             transitionName
         } = this.props;
 
@@ -64,7 +70,7 @@ export default class Fade extends React.Component {
         };
 
         return (
-            <AnimationGroup {...animationProps}>
+            <AnimationGroup className={className} style={style} {...animationProps}>
                 {children}
             </AnimationGroup>
         );

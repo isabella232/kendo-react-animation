@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import raf from 'raf';
-import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
 export default class ExpandChild extends React.Component {
     static propTypes = {
@@ -110,7 +109,7 @@ export default class ExpandChild extends React.Component {
 
     render() {
         return (
-            <div className={styles['animation-container']} style={this.state.style}>
+            <div style={this.state.style}>
                 {this.props.children}
             </div>
         );

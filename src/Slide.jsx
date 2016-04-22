@@ -4,6 +4,8 @@ import AnimationGroup from './AnimationGroup';
 import styles from '@telerik/kendo-theme-default/styles/animation/main';
 import util from './util';
 
+/*eslint react/forbid-prop-types:0*/
+
 export default class Slide extends React.Component {
     static propTypes = {
         animateOnSlideIn: React.PropTypes.bool,
@@ -12,9 +14,11 @@ export default class Slide extends React.Component {
             React.PropTypes.element,
             React.PropTypes.node
         ]),
+        className: React.PropTypes.string,
         direction: React.PropTypes.oneOf([ 'up', 'down' ]),
         slideInDuration: React.PropTypes.number,
         slideOutDuration: React.PropTypes.number,
+        style: React.PropTypes.object,
         transitionName: React.PropTypes.oneOfType([
             React.PropTypes.string,
             React.PropTypes.shape({
@@ -50,8 +54,10 @@ export default class Slide extends React.Component {
             animateOnSlideIn,
             animateOnSlideOut,
             children,
+            className,
             slideInDuration,
             slideOutDuration,
+            style,
             transitionName = this.getDefaultTransitionName()
         } = this.props;
 
@@ -71,7 +77,7 @@ export default class Slide extends React.Component {
         };
 
         return (
-            <AnimationGroup className={styles['animation-container']} {...animationProps}>
+            <AnimationGroup className={className} style={style} {...animationProps}>
                 {children}
             </AnimationGroup>
         );
