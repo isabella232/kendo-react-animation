@@ -13,7 +13,8 @@ export default class Slide extends React.Component {
             React.PropTypes.node
         ]),
         direction: React.PropTypes.oneOf([ 'up', 'down' ]),
-        duration: React.PropTypes.number,
+        slideInDuration: React.PropTypes.number,
+        slideOutDuration: React.PropTypes.number,
         transitionName: React.PropTypes.oneOfType([
             React.PropTypes.string,
             React.PropTypes.shape({
@@ -28,7 +29,8 @@ export default class Slide extends React.Component {
     static defaultProps = {
         animateOnSlideIn: true,
         animateOnSlideOut: true,
-        duration: 300,
+        slideInDuration: 300,
+        slideOutDuration: 300,
         direction: "down"
     }
 
@@ -48,7 +50,8 @@ export default class Slide extends React.Component {
             animateOnSlideIn,
             animateOnSlideOut,
             children,
-            duration,
+            slideInDuration,
+            slideOutDuration,
             transitionName = this.getDefaultTransitionName()
         } = this.props;
 
@@ -61,9 +64,9 @@ export default class Slide extends React.Component {
         const animationProps = {
             transitionAppear: false,
             transitionEnter: animateOnSlideIn,
-            transitionEnterTimeout: duration,
+            transitionEnterTimeout: slideInDuration,
             transitionLeave: animateOnSlideOut,
-            transitionLeaveTimeout: duration,
+            transitionLeaveTimeout: slideOutDuration,
             transitionName: mappedTransitionName
         };
 
