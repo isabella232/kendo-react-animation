@@ -26,6 +26,8 @@ export default class Fade extends React.Component {
     }
 
     static defaultProps = {
+        animateOnFadeIn: true,
+        animateOnFadeOut: false,
         fadeInDuration: 500,
         fadeOutDuration: 500,
         transitionName: {
