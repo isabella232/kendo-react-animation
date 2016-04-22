@@ -9,7 +9,9 @@ position: 1
 # Expand Overview
 
 The Kendo UI Expand component for React shows/hides a single element animating the height of the container element. The component utilizes [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) to detect which children is entering or leaving.
-**Note that only entering or leaving from the DOM elements will be animated**. The entering element will be shown with a gradual `height` transition from 0% to 100%. Conversely, the leaving element will be hidden with a gradual `height` transition from 100% to 0%.
+The entering element will be shown with a gradual `height` transition from 0% to 100%. Conversely, the leaving element will be hidden with a gradual `height` transition from 100% to 0%.
+
+> **Note that only entering or leaving from the DOM elements will be animated**.
 
 > The Kendo UI Expand component should be always present in the virtual DOM in order to work
 
@@ -172,7 +174,7 @@ ReactDOM.render(
 
 ### Disable expand animation
 
-The Expand allows to disable the showing animation, which will result in instant element display. To disable animation, you will need to define the `animateOnExpand` option to `false`.
+The Expand component allows to disable the showing animation, which will result in instant element display. To disable animation, you will need to define the `animateOnExpand` option to `false`.
 
 ```html-preview
   <div id="app"></div>
