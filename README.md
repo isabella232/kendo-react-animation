@@ -14,19 +14,59 @@
 
 This repository contains the source code and documentation of the Kendo UI Animation component for React.
 
-The package includes the Animation component.
+The package includes the Animation, Fade, Expand, Slide components.
 
 For more information on forthcoming Animation package features, refer to the [Roadmap](https://github.com/telerik/kendo-react-animation/blob/master/docs/roadmap.md).
 
 ## Basic Usage
 
-The Animation is a thin wrapper over the ReactCSSTransitionGroup component and provides default animation effects.
+The Animation components utilize the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to animate elements that appear, enter or leave.
+
+Here is a simple demo how to use the Fade animation:
 
 ```html-preview
-  //code goes here
+  <div id="app"></div>
 ```
 ```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
 
+        this.state = { index: 1 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div>
+                <dl>
+                    <dt>
+                        Fade:
+                    </dt>
+                    <dd>
+                        <button onClick={this.onClick}>Animate</button>
+                    </dd>
+                </dl>
+
+                <KendoReactAnimation.Fade>
+                    <div key={index}>{index}</div>
+                </KendoReactAnimation.Fade>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
 ```
 
 For more examples and available configuration options, refer to the [Animation documentation section](https://github.com/telerik/kendo-react-animation/blob/master/docs/index.md).
@@ -37,21 +77,19 @@ The React Animation is published as a [public scoped NPM package](https://docs.n
 
 Install it using NPM:
 
-//change acc to this package
-
 ```sh
-npm install --save @telerik/kendo-react-inputs;
+npm install --save @telerik/kendo-react-animation;
 ```
 
 Once installed, import the module:
 
 ```jsx
 // ES2015 module syntax
-import {Slider} from 'kendo-react-inputs';
+import {Fade} from 'kendo-react-animation';
 ```
 ```jsx
 // CommonJS format
-var Slider = require('kendo-react-inputs').Slider;
+var Fade = require('kendo-react-animation').Fade;
 ```
 
 ## Browser Support
@@ -68,4 +106,4 @@ A Component refers to a [React Component](https://facebook.github.io/react/docs/
 
 ### Package
 
-A package contains one or more components, developed in a single repository and distributed in a single NPM package. For example, the Kendo UI Animation component for React is part of the Animation Package.
+A package contains one or more components, developed in a single repository and distributed in a single NPM package. For example, the Kendo UI Fade component for React is part of the Animation Package.
