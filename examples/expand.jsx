@@ -18,7 +18,7 @@ class App extends React.Component {
     render() {
         const { expand } = this.state;
 
-        const children = expand ? (<div>Content</div>) : null;
+        const children = expand ? (<div className="wrapper">Content</div>) : null;
 
         return (
             <div>
