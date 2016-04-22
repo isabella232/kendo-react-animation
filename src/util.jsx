@@ -1,3 +1,5 @@
+import assign from 'object-assign';
+
 const animationType = {
     'appear': 'appear',
     'enter': 'enter',
@@ -45,13 +47,21 @@ const guid = function() {
     return id;
 };
 
-const mapTransitionClasses = (name, inputName, outputName) => {
+const mapTransitionClass = (name, inputName, outputName) => {
     const className = name[inputName] || `${name}-${outputName}`;
 
     return {
         [outputName]: className,
         [`${outputName}Active`]: name[`${inputName}Active`] || `${className}-active`
     };
+};
+
+const mapTransitionClasses = (name, inputNames, outputNames) => {
+    const mappedClasses = inputNames.map((_, idx) => (
+        mapTransitionClass(name, inputNames[idx], outputNames[idx])
+    ));
+
+    return assign({}, ...mappedClasses);
 };
 
 const noop = function() {};

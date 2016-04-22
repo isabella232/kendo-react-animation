@@ -1,4 +1,4 @@
 export Animation from './Animation';
-export FadeIn from './FadeIn';
+export Fade from './Fade';
 export Expand from './Expand';
 export SlideAnimation from './SlideAnimation';
