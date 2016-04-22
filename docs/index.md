@@ -18,7 +18,12 @@ The FadeIn component animates newly added children with `fade in` effect.
 
 The Expand component animates the `CSS height property` of the container element.
 
+## Kendo UI Slide component for React
+
+The Slide component slides a single content vertically.
+
 ## Suggested Links
 
 * [Client-Side API Reference for the Kendo UI FadeIn Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/fadein/api.md)
 * [Client-Side API Reference for the Kendo UI Expand Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/expand/api.md)
+* [Client-Side API Reference for the Kendo UI Slide Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/slide/api.md)
