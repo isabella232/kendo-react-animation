@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import raf from 'raf';
+import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
 export default class ExpandChild extends React.Component {
     static propTypes = {
+        animateOnCollapse: React.PropTypes.bool,
+        animateOnExpand: React.PropTypes.bool,
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
         ]),
-        collapseTimeout: React.PropTypes.number,
-        expandTimeout: React.PropTypes.number
+        collapseDuration: React.PropTypes.number,
+        expandDuration: React.PropTypes.number
     }
 
     constructor(props) {
@@ -65,15 +68,26 @@ export default class ExpandChild extends React.Component {
         this.style = null;
     }
 
+    componentHeight() {
+        const domElement = ReactDOM.findDOMNode(this);
+        const rect = domElement ? domElement.getBoundingClientRect() : {};
+        const height = rect ? rect.height : 0;
+
+        return height;
+    }
+
     componentWillEnter(done) {
-        const domEl = ReactDOM.findDOMNode(this);
-        const rect = domEl.getBoundingClientRect();
-        const maxHeight = rect.height;
+        const { animateOnExpand, expandDuration } = this.props;
+        const maxHeight = this.componentHeight();
         const calc = (progress) => maxHeight * progress;
 
         this.style = { height: 0 };
 
-        this.animate(calc, this.props.expandTimeout, done);
+        if (animateOnExpand) {
+            this.animate(calc, expandDuration, done);
+        } else {
+            done();
+        }
     }
 
     componentDidEnter() {
@@ -81,19 +95,22 @@ export default class ExpandChild extends React.Component {
     }
 
     componentWillLeave(done) {
-        const domEl = ReactDOM.findDOMNode(this);
-        const rect = domEl.getBoundingClientRect();
-        const maxHeight = rect.height;
+        const { animateOnCollapse, collapseDuration } = this.props;
+        const maxHeight = this.componentHeight();
         const calc = (progress) => maxHeight - (maxHeight * progress);
 
         this.style = { height: maxHeight };
 
-        this.animate(calc, this.props.collapseTimeout, done);
+        if (animateOnCollapse) {
+            this.animate(calc, collapseDuration, done);
+        } else {
+            done();
+        }
     }
 
     render() {
         return (
-            <div className="wrapper" style={this.state.style}>
+            <div className={styles['animation-container']} style={this.state.style}>
                 {this.props.children}
             </div>
         );

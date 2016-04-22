@@ -5,17 +5,21 @@ import ExpandChild from './ExpandChild';
 
 export default class Expand extends React.Component {
     static propTypes = {
+        animateOnCollapse: React.PropTypes.bool,
+        animateOnExpand: React.PropTypes.bool,
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
         ]),
-        collapseTimeout: React.PropTypes.number,
-        expandTimeout: React.PropTypes.number
+        collapseDuration: React.PropTypes.number,
+        expandDuration: React.PropTypes.number
     }
 
     static defaultProps = {
-        collapseTimeout: 300,
-        expandTimeout: 300
+        animateOnCollapse: true,
+        animateOnExpand: true,
+        collapseDuration: 300,
+        expandDuration: 300
     }
 
     renderChildren() {
