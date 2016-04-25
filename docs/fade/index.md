@@ -13,15 +13,26 @@ All leaving elements will be removed with animated `opacity` from 1 to 0. Conver
 
 > **Note that only entering or leaving elements from the DOM will be animated**.
 
-> The Kendo UI Fade component should be always present in the `rendering tree` in order to work
-
-## Demos
+> **The Kendo UI Fade component should be always present in the `rendering tree` in order to work**
 
 ### Default Setup
 
 The example below demonstrates the default setup of a Kendo UI Fade Animation for React.
 
 ```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -53,7 +64,7 @@ class App extends React.Component {
                 </dl>
 
                 <KendoReactAnimation.Fade>
-                    <div key={index}>{index}</div>
+                    <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Fade>
             </div>
         );
@@ -71,25 +82,26 @@ ReactDOM.render(
 
 ### Fade In Duration
 
-The component can control the duration of the `fade in` animation. This configuration is similar to the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items) component.
-To update the `fade-in` duration, 2 properties should be modified:
+The component can control the duration of the `fade in` animation. To modify the `fade in` duration, you will need to update the `fadeInDuration` property and
+update the duration in the corresponding CSS class.
 
-- fadeInDuration - defines the duration of the `fade-in` animation
-- transitionName - defines the CSS class that include the updated transition duration
-
-The `fadeInDuration` property controls the duration of the animation. After the time runs out, the animation will be cut out even if the actual CSS transition hasn't finished yet.
-The `transitionName` property defines the class name that will be added to the entering element. If a string name, e.g. 'fade-in', is defined then it will be prefixed with `-enter` and `-enter-active` values.
-The first class name will be added on initial render and after one animation frame (~16ms), the second one that contains the CSS transition configuration will be added.
+> Sync up the `fadeInDuration` property with the transition duration defined in the static `k-fade-in-enter-active` CSS class.
 
 ```html
   <style>
-    .fade-in-enter {
-        opacity: 0;
-    }
-
-    .fade-in-enter-active {
-        opacity: 1;
+    .k-fade-in-enter-active {
         transition: opacity 800ms ease-in-out;
+    }
+    .content {
+        width: 100px;
+        padding: 10px;
+        color: #787878;
+        background-color: #fcf7f8;
+        font-size: 13px;
+        font-family: Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+        border: 1px solid rgba(0,0,0,.05);
     }
   </style>
   <div id="app"></div>
@@ -112,8 +124,7 @@ class App extends React.Component {
         const { index } = this.state;
 
         const fadeProps = {
-            fadeInDuration: 800,
-            transitionName: "fade-in"
+            fadeInDuration: 800
         };
 
         return (
@@ -128,7 +139,7 @@ class App extends React.Component {
                 </dl>
 
                 <KendoReactAnimation.Fade {...fadeProps}>
-                    <div key={index}>{index}</div>
+                    <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Fade>
             </div>
         );
@@ -143,25 +154,27 @@ ReactDOM.render(
 
 ### Fade Out Duration
 
-The component can control the duration of the `fade out` animation. This configuration is similar to the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items) component.
-To update the `fade-out` duration, 2 properties should be modified:
+The component can control the duration of the `fade out` animation. To modify the `fade out` duration, you will need to update the `fadeOutDuration` property and
+update the duration in the corresponding CSS class.
 
-- fadeOutDuration - defines the duration of the `fade-out` animation
-- transitionName - defines the CSS class that include the updated transition duration
-
-The `fadeOutDuration` property controls the duration of the animation. After the time runs out, the animation will be cut out even if the actual CSS transition hasn't finished yet.
-The `transitionName` property defines the class name that will be added to the entering element. If a string name, e.g. 'fade', is defined then it will be prefixed with `-leave` and `-leave-active` values.
-The first class name will be added on initial render and after one animation frame (~16ms), the second one that contains the CSS transition configuration will be added.
+> Sync up the `fadeOutDuration` property with the transition duration defined in the static `k-fade-down-leave-active` CSS class.
 
 ```html
   <style>
-    .fade-leave {
-        opacity: 1;
+    .k-fade-leave-active {
+        transition: opacity 800ms ease-in-out;
     }
 
-    .fade-leave-active {
-        opacity: 0;
-        transition: opacity 800ms ease-in-out;
+    .content {
+        width: 100px;
+        padding: 10px;
+        color: #787878;
+        background-color: #fcf7f8;
+        font-size: 13px;
+        font-family: Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+        border: 1px solid rgba(0,0,0,.05);
     }
   </style>
   <div id="app"></div>
@@ -184,10 +197,8 @@ class App extends React.Component {
         const { index } = this.state;
 
         const fadeProps = {
-            animateOnFadeIn: false,
             animateOnFadeOut: true,
-            fadeInDuration: 800,
-            transitionName: "fade"
+            fadeInDuration: 800
         };
 
         return (
@@ -202,141 +213,7 @@ class App extends React.Component {
                 </dl>
 
                 <KendoReactAnimation.Fade {...fadeProps}>
-                    <div key={index}>{index}</div>
-                </KendoReactAnimation.Fade>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Fade In Animation
-
-The `fade in` animation effect can be modified using custom CSS classes. They can be defined using the `transitionName` property.
-
-> If the duration of the animation is different than default `500ms`, then the `fadeInDuration` property should be updated accordingly.
-
-```html
-  <style>
-    .fade-in-enter {
-        opacity: 0;
-        transform: scale(0);
-        transform-origin: top left;
-    }
-
-    .fade-in-enter-active {
-        opacity: 1;
-        transform: scale(1);
-        transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
-    }
-  </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { index: 1 };
-    }
-
-    onClick = () => {
-        this.setState({
-            index: this.state.index + 1
-        });
-    }
-
-    render() {
-        const { index } = this.state;
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Action:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Fade transitionName="fade-in">
-                    <div key={index}>{index}</div>
-                </KendoReactAnimation.Fade>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Fade Out Animation
-
-The `fade out` animation effect can be modified using custom CSS classes. They can be defined using the `transitionName` property.
-
-> If the duration of the animation is different than default `500ms`, then the `fadeOutDuration` property should be updated accordingly.
-
-```html
-  <style>
-    .fade-leave {
-        opacity: 1;
-        transform: scale(1);
-        transform-origin: top left;
-    }
-
-    .fade-leave-active {
-        opacity: 0;
-        transform: scale(0);
-        transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
-    }
-  </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { index: 1 };
-    }
-
-    onClick = () => {
-        this.setState({
-            index: this.state.index + 1
-        });
-    }
-
-    render() {
-        const { index } = this.state;
-
-        const fadeProps = {
-            animateOnFadeIn: false,
-            animateOnFadeOut: true,
-            transitionName: "fade"
-        };
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Action:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Fade {...fadeProps}>
-                    <div key={index}>{index}</div>
+                    <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Fade>
             </div>
         );
@@ -353,7 +230,20 @@ ReactDOM.render(
 
 The Fade component allows to disable the showing animation, which will result in instant element display. To disable animation, you will need to define the `animateOnFadeIn` option to `false`.
 
-```html-preview
+```html
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -385,7 +275,7 @@ class App extends React.Component {
                 </dl>
 
                 <KendoReactAnimation.Fade animateOnFadeIn={false}>
-                    <div key={index}>{index}</div>
+                    <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Fade>
             </div>
         );
@@ -405,7 +295,20 @@ The Fade component allows to disable the hiding animation, which will result in 
 
 > By default, `fade out` animation is disabled
 
-```html-preview
+```html
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -437,7 +340,7 @@ class App extends React.Component {
                 </dl>
 
                 <KendoReactAnimation.Fade animateOnFadeOut={false}>
-                    <div key={index}>{index}</div>
+                    <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Fade>
             </div>
         );
