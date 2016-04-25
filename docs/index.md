@@ -10,9 +10,9 @@ position: 1
 
 Animation components are designed to animate their content using different animation effects. Currently, Animation package includes:
 
-## Kendo UI FadeIn component for React
+## Kendo UI Fade component for React
 
-The FadeIn component animates newly added children with `fade in` effect.
+The Fade component animates newly added children with `fade in` effect.
 
 ## Kendo UI Expand component for React
 
@@ -24,6 +24,6 @@ The Slide component slides a single content vertically.
 
 ## Suggested Links
 
-* [Client-Side API Reference for the Kendo UI FadeIn Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/fadein/api.md)
+* [Client-Side API Reference for the Kendo UI Fade Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/fade/api.md)
 * [Client-Side API Reference for the Kendo UI Expand Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/expand/api.md)
 * [Client-Side API Reference for the Kendo UI Slide Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/slide/api.md)
