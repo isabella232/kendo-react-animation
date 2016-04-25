@@ -9,19 +9,30 @@ position: 1
 # Slide Overview
 
 The Kendo UI Slide component for React shows or hides a single element with vertical sliding effect. The component utilizes [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) to detect whether content is entering or leaving.
-The entering element will be slide in from top to bottom. Conversely, the leaving element will be slide out from bottom to top.
+The entering element will slide from top to bottom. Conversely, the leaving element will slide out from bottom to top.
 
 > **Note that only entering or leaving elements from the DOM will be animated**.
 
-> The Kendo UI Slide component should be always present in the `rendering tree` in order to work
-
-## Demos
+> **The Kendo UI Slide component should be always present in the `rendering tree` in order to work**
 
 ### Default Setup
 
 The example below demonstrates the default setup of a Kendo UI Slide Animation for React.
 
 ```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -41,7 +52,7 @@ class App extends React.Component {
     render() {
         const { show } = this.state;
 
-        const children = show ? (<div>Content</div>) : null;
+        const children = show ? (<div className="content">CONTENT</div>) : null;
 
         return (
             <div>
@@ -79,7 +90,20 @@ The supported directions are:
 - `down` (default) - slide the content from **top** to **bottom** on show and vice-versa.
 - `up` - slide the content from **bottom** to **top** on show and vice-versa.
 
-```html-preview
+```html
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -99,7 +123,7 @@ class App extends React.Component {
     render() {
         const { show } = this.state;
 
-        const children = show ? (<div>Content</div>) : null;
+        const children = show ? (<div className="content">CONTENT</div>) : null;
 
         return (
             <div>
@@ -126,27 +150,29 @@ ReactDOM.render(
 );
 ```
 
-### Animation Duration
+### Slide In Duration
 
-The component can control the duration of the `slide in` animation. This configuration is similar to the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items) component.
-To update the `slide-in` duration, 2 properties should be modified:
+The component can control the duration of the `slide in` animation. To modify the `slide in` duration, you will need to update the `slideInDuration` property and
+update the duration in the corresponding CSS class.
 
-- slideInDuration - defines the duration of the `slide-in` animation
-- transitionName - defines the CSS class that include the updated transition duration
-
-The `slideInDuration` property controls the duration of the animation. After the time runs out, the animation will be cut out even if the actual CSS transition hasn't finished yet.
-The `transitionName` property defines the class name that will be added to the entering element. If a string name, e.g. 'slide-in', is defined then it will be prefixed with `-enter` and `-enter-active` values.
-The first class name will be added on initial render and after one animation frame (~16ms), the second one that contains the CSS transition configuration will be added.
+> Sync up the `slideInDuration` property with the transition duration defined in the static `k-slide-down-enter-active` CSS class.
 
 ```html
   <style>
-    .slide-down-enter {
-        transform: translateY(-100%);
+    .k-slide-down-enter-active {
+        transition: transform 800ms ease-in-out;
     }
 
-    .slide-down-enter-active {
-        transform: translateY(0);
-        transition: transform 800ms ease-in-out;
+    .content {
+        width: 100px;
+        padding: 10px;
+        color: #787878;
+        background-color: #fcf7f8;
+        font-size: 13px;
+        font-family: Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+        border: 1px solid rgba(0,0,0,.05);
     }
   </style>
   <div id="app"></div>
@@ -168,11 +194,10 @@ class App extends React.Component {
     render() {
         const { show } = this.state;
 
-        const children = show ? (<div>Content</div>) : null;
+        const children = show ? (<div className="content">CONTENT</div>) : null;
 
         const slideProps = {
-            slideInDuration: 800,
-            transitionName: "slide-down"
+            slideInDuration: 800
         };
 
         return (
@@ -202,164 +227,28 @@ ReactDOM.render(
 
 ### Slide Out Duration
 
-The component can control the duration of the `slide out` animation. This configuration is similar to the [ReactCSSTransitionGroup](https://facebook.github.io/react/docs/animation.html#animating-one-or-zero-items) component.
-To update the `slide-out` duration, 2 properties should be modified:
+The component can control the duration of the `slide out` animation. To modify the `slide out` duration, you will need to update the `slideOutDuration` property and
+update the duration in the corresponding CSS class.
 
-- slideOutDuration - defines the duration of the `slide-out` animation
-- transitionName - defines the CSS class that include the updated transition duration
-
-The `slideOutDuration` property controls the duration of the animation. After the time runs out, the animation will be cut out even if the actual CSS transition hasn't finished yet.
-The `transitionName` property defines the class name that will be added to the entering element. If a string name, e.g. 'slide', is defined then it will be prefixed with `-leave` and `-leave-active` values.
-The first class name will be added on initial render and after one animation frame (~16ms), the second one that contains the CSS transition configuration will be added.
+> Sync up the `slideOutDuration` property with the transition duration defined in the static `k-slide-down-leave-active` CSS class.
 
 ```html
   <style>
-    .slide-down-leave {
-        transform: translateY(0);
-    }
-
-    .slide-down-leave-active {
-        transform: translateY(-100%);
+    .k-slide-down-leave-active {
         transition: transform 800ms ease-in-out;
     }
   </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { show: true };
-    }
-
-    onClick = () => {
-        this.setState({
-            show: !this.state.show
-        });
-    }
-
-    render() {
-        const { show } = this.state;
-
-        const children = show ? (<div>Content</div>) : null;
-
-        const slideProps = {
-            slideInDuration: 800,
-            transitionName: "slide-down"
-        };
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Slide:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Slide {...slideProps}>
-                    {children}
-                </KendoReactAnimation.Slide>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Slide In Animation
-
-The `slide in` animation effect can be modified using custom CSS classes. They can be defined using the `transitionName` property.
-
-> If the duration of the animation is different than default `300ms`, then the `slideInDuration` property should be updated accordingly.
-
-> The `direction` property will be ignored if custom `transitionName` name is defined
-
-```html
   <style>
-    .slide-up-enter {
-        transform: translateY(100%);
-    }
-
-    .slide-up-enter-active {
-        transform: translateY(0);
-        transition: transform 300ms ease-in-out;
-    }
-  </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { show: false };
-    }
-
-    onClick = () => {
-        this.setState({
-            show: !this.state.show
-        });
-    }
-
-    render() {
-        const { show } = this.state;
-
-        const children = show ? (<div>Content</div>) : null;
-
-        const slideProps = {
-            transitionName: "slide-up"
-        };
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Slide:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Slide {...slideProps}>
-                    {children}
-                </KendoReactAnimation.Slide>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Slide Out Animation
-
-The `slide out` animation effect can be modified using custom CSS classes. They can be defined using the `transitionName` property.
-
-> If the duration of the animation is different than default `300ms`, then the `slideOutDuration` property should be updated accordingly.
-
-> The `direction` property will be ignored if custom `transitionName` name is defined
-
-```html
-  <style>
-    .slide-up-leave {
-        transform: translateY(0);
-    }
-
-    .slide-up-leave-active {
-        transform: translateY(100%);
-        transition: transform 300ms ease-in-out;
+    .content {
+        width: 100px;
+        padding: 10px;
+        color: #787878;
+        background-color: #fcf7f8;
+        font-size: 13px;
+        font-family: Helvetica, Arial, sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+        border: 1px solid rgba(0,0,0,.05);
     }
   </style>
   <div id="app"></div>
@@ -381,10 +270,10 @@ class App extends React.Component {
     render() {
         const { show } = this.state;
 
-        const children = show ? (<div>Content</div>) : null;
+        const children = show ? (<div className="content">CONTENT</div>) : null;
 
         const slideProps = {
-            transitionName: "slide-up"
+            slideOutDuration: 800
         };
 
         return (
@@ -417,6 +306,19 @@ ReactDOM.render(
 The Slide component allows to disable the showing animation, which will result in instant element display. To disable animation, you will need to define the `animateOnSlideIn` option to `false`.
 
 ```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -436,7 +338,7 @@ class App extends React.Component {
     render() {
         const { show } = this.state;
 
-        const children = show ? (<div>Content</div>) : null;
+        const children = show ? (<div className="content">CONTENT</div>) : null;
 
         return (
             <div>
@@ -470,6 +372,19 @@ The Slide component allows to disable the hiding animation, which will result in
 > By default, `slide out` animation is disabled
 
 ```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -489,7 +404,7 @@ class App extends React.Component {
     render() {
         const { show } = this.state;
 
-        const children = show ? (<div>Content</div>) : null;
+        const children = show ? (<div className="content">CONTENT</div>) : null;
 
         return (
             <div>
