@@ -82,7 +82,7 @@ ReactDOM.render(
 
 ## Configuration
 
-### Fade-In Duration
+### Set Fade-In Duration
 
 The component enables you to control the duration of the `fade in` animation. To modify the `fade in` duration, update the `fadeInDuration` property and update the duration in the corresponding CSS class.
 
@@ -153,7 +153,7 @@ ReactDOM.render(
 );
 ```
 
-### Fade-Out Duration
+### Set Fade-Out Duration
 
 The component enables you to control the duration of the `fade out` animation. To modify the `fade out` duration, update the `fadeOutDuration` property and update the duration in the corresponding CSS class.
 
