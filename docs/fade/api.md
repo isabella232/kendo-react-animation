@@ -8,56 +8,56 @@ position: 2
 
 # Fade API
 
-Represents the Kendo UI Fade component for React.
+Represents the Kendo UI Fade Animation component for React.
 
-## Animation duration
+## Duration
 
-### fadeInDuration `Number`*(default: 500)*
+#### fadeInDuration `Number`*(default: 500)*
 
-Specifies the duration of the `fade in` animation. Note that after the time runs out, the animation will be terminated.
+Specifies the duration of the `fade in` animation. After the time runs out, the animation will be terminated.
 
-> The `duration` value should be synchronized with the duration of the CSS transition animation
+> The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-### fadeOutDuration `Number`*(default: 500)*
+#### fadeOutDuration `Number`*(default: 500)*
 
-Specifies the duration of the `fade out` animation. Note that after the time runs out, the animation will be terminated.
+Specifies the duration of the `fade out` animation. After the time runs out, the animation will be terminated.
 
-> The `duration` value should be synchronized with the duration of the CSS transition animation
+> The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-## Animation effect
+## Effect
 
-### transitionName `String|Object`*(default: "k-fade")*
+#### transitionName `String|Object`*(default: "k-fade")*
 
 Specifies the CSS classes used to animate the elements.
 
-> The `duration` value should be synchronized with the duration of the CSS transition animation
+> The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-### transitionName.fadeIn `String`
+#### transitionName.fadeIn `String`
 
-Specifies the CSS class that will be added to the entering element on initial render
+Specifies the CSS class that is added to the entering element on initial render.
 
-### transitionName.fadeInActive `String`
+#### transitionName.fadeInActive `String`
 
-Specifies the CSS class that will be added to the entering element, after `fadeIn` class, to start the animation
+Specifies the CSS class that are added to the entering element after the `fadeIn` class to start the animation.
 
-> Note that `fadeInActive` CSS class should perform the CSS transition effect
+> The `fadeInActive` CSS class should perform the CSS transition effect.
 
-### transitionName.fadeOut `String`
+#### transitionName.fadeOut `String`
 
-Specifies the CSS class that will be added to the leaving element on initial render
+Specifies the CSS class that is added to the leaving element on initial render.
 
-### transitionName.fadeOutActive `String`
+#### transitionName.fadeOutActive `String`
 
-Specifies the CSS class that will be added to the leaving element, after `fadeOut` class, to start the animation
+Specifies the CSS class that is added to the leaving element after `fadeOut` class to start the animation.
 
-> Note that `fadeOutActive` CSS class should perform the CSS transition effect
+> The `fadeOutActive` CSS class should perform the CSS transition effect.
 
-## Disable animation
+## Disable Animation
 
-### animateOnFadeIn `Boolean`*(default: true)*
+#### animateOnFadeIn `Boolean`*(default: true)*
 
-Specifies whether to animate the entering (showing) element.
+Specifies whether to animate or not the entering (showing) element.
 
-### animateOnFadeOut `Boolean`*(default: false)*
+#### animateOnFadeOut `Boolean`*(default: false)*
 
-Specifies whether to animate the leaving (showing) element.
+Specifies whether to animate or not the leaving (showing) element.
