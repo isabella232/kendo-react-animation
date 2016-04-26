@@ -10,7 +10,7 @@ position: 2
 
 Represents the Kendo UI Expand Animation component for React.
 
-## Duration
+## Set Duration
 
 #### collapseDuration `Number`*(default: 300)*
 
