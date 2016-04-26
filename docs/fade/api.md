@@ -24,7 +24,7 @@ Specifies the duration of the `fade out` animation. After the time runs out, the
 
 > The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-## Define Effects
+## Apply Effects
 
 #### transitionName `String|Object`*(default: "k-fade")*
 
