@@ -8,22 +8,28 @@ position: 1
 
 # Animation Package Overview
 
-Animation components are designed to animate their content using different animation effects. Currently, Animation package includes:
+Animation components are designed to animate their content by using different animation effects. Currently, the Animation package includes the following Animation components:
+* Fade 
+* Expand  
+* Slide  
 
-## Kendo UI Fade component for React
+## Kendo UI Fade for React
 
-The Fade component animates newly added children with `fade in` effect.
+The Fade component animates newly-added children with `fade in` effect.
 
-## Kendo UI Expand component for React
+## Kendo UI Expand for React
 
 The Expand component animates the `CSS height property` of the container element.
 
-## Kendo UI Slide component for React
+## Kendo UI Slide for React
 
-The Slide component slides a single content vertically.
+The Slide component slides a single piece of content vertically.
 
 ## Suggested Links
 
-* [Client-Side API Reference for the Kendo UI Fade Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/fade/api.md)
-* [Client-Side API Reference for the Kendo UI Expand Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/expand/api.md)
-* [Client-Side API Reference for the Kendo UI Slide Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/slide/api.md)
+* [Get Started with the Fade Component]({% slug overview_fade_kendouiforreact %})
+* [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
+* [Get Started with the Expand Component]({% slug overview_expand_kendouiforreact %})
+* [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})
+* [Get Started with the Slide Component]({% slug overview_slide_kendouiforreact %})
+* [API Reference of the Slide Component]({% slug api_slide_kendouiforreact %})
