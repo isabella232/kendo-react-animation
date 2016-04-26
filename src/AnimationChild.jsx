@@ -18,6 +18,12 @@ export default class AnimationChild extends React.Component {
             React.PropTypes.element,
             React.PropTypes.node
         ]),
+        componentDidAppear: React.PropTypes.func,
+        componentDidEnter: React.PropTypes.func,
+        componentDidLeave: React.PropTypes.func,
+        componentWillAppear: React.PropTypes.func,
+        componentWillEnter: React.PropTypes.func,
+        componentWillLeave: React.PropTypes.func,
         transitionAppear: React.PropTypes.bool,
         transitionAppearTimeout: React.PropTypes.number,
         transitionEnter: React.PropTypes.bool,
@@ -42,10 +48,19 @@ export default class AnimationChild extends React.Component {
         ])
     }
 
+    static defaultProps = {
+        componentDidAppear: util.noop,
+        componentDidEnter: util.noop,
+        componentDidLeave: util.noop,
+        componentWillAppear: util.noop,
+        componentWillEnter: util.noop,
+        componentWillLeave: util.noop
+    }
+
     constructor(props) {
         super(props);
 
-        this.state = { className: null };
+        this.state = { className: null, style: null };
 
         this.reset();
     }
@@ -113,7 +128,7 @@ export default class AnimationChild extends React.Component {
     }
 
     resetState() {
-        this.setState({ className: null });
+        this.setState({ className: null, style: null });
     }
 
     animateComponent(type, done) {
@@ -126,27 +141,33 @@ export default class AnimationChild extends React.Component {
     }
 
     componentWillAppear(done) {
+        this.props.componentWillAppear();
         this.animateComponent(util.animationType.appear, done);
     }
 
     componentDidAppear() {
         this.resetState();
+        this.props.componentDidAppear();
     }
 
     componentWillEnter(done) {
+        this.props.componentWillEnter();
         this.animateComponent(util.animationType.enter, done);
     }
 
     componentDidEnter() {
         this.resetState();
+        this.props.componentDidEnter();
     }
 
     componentWillLeave(done) {
+        this.props.componentWillLeave();
         this.animateComponent(util.animationType.leave, done);
     }
 
     componentDidLeave() {
         this.resetState();
+        this.props.componentDidLeave();
     }
 
     render() {
