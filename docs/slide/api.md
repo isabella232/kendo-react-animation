@@ -8,75 +8,75 @@ position: 2
 
 # Slide API
 
-Represents the Kendo UI Slide component for React.
+Represents the Kendo UI Slide Animation component for React.
 
-## Animation direction
+## Define Direction
 
-### direction `String`*(default: "down")*
+#### direction `String`*(default: "down")*
 
 Specifies the direction of the `slide` animation.
 
-> Note that `direction` property will be ignored if custom `transitionName` is defined. In that case, you will change direction with the used custom CSS classed.
+> The `direction` property is ignored if a custom `transitionName` configuration is defined. In such cases, change the animation direction with the custom CSS classed that are used.
 
 The supported directions are:
 
-- `down` (default) - slide the content from **top** to **bottom** on show and vice-versa.
-- `up` - slide the content from **bottom** to **top** on show and vice-versa.
+- (Default) The `down` direction&mdash;Slides the content from top to bottom on show, and vice-versa.
+- The `up` direction&mdash;Slides the content from bottom to top on show, and vice-versa.
 
-### slideOutDuration `Number`*(default: 500)*
+#### slideOutDuration `Number`*(default: 500)*
 
-Specifies the duration of the `slide out` animation. Note that after the time runs out, the animation will be terminated.
+Specifies the duration of the `slide out` animation. After the time runs out, the animation will be terminated.
 
-> The `duration` value should be synchronized with the duration of the CSS transition animation
+> The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-## Animation duration
+## Set Duration
 
-### slideInDuration `Number`*(default: 500)*
+#### slideInDuration `Number`*(default: 500)*
 
-Specifies the duration of the `slide in` animation. Note that after the time runs out, the animation will be terminated.
+Specifies the duration of the `slide in` animation. After the time runs out, the animation will be terminated.
 
-> The `duration` value should be synchronized with the duration of the CSS transition animation
+> The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-### slideOutDuration `Number`*(default: 500)*
+#### slideOutDuration `Number`*(default: 500)*
 
-Specifies the duration of the `slide out` animation. Note that after the time runs out, the animation will be terminated.
+Specifies the duration of the `slide out` animation. After the time runs out, the animation will be terminated.
 
-> The `duration` value should be synchronized with the duration of the CSS transition animation
+> The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-## Animation effect
+## Apply Effects
 
-### transitionName `String|Object`*(default: "k-slide")*
+#### transitionName `String|Object`*(default: "k-slide")*
 
 Specifies the CSS classes used to animate the elements.
 
-> The `duration` value should be synchronized with the duration of the CSS transition animation
+> The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-### transitionName.slideIn `String`
+#### transitionName.slideIn `String`
 
-Specifies the CSS class that will be added to the entering element on initial render
+Specifies the CSS class that is added to the entering element on initial render.
 
-### transitionName.slideInActive `String`
+#### transitionName.slideInActive `String`
 
-Specifies the CSS class that will be added to the entering element, after `slideIn` class, to start the animation
+Specifies the CSS class that is added to the entering element after the `slideIn` class to start the animation.
 
-> Note that `slideInActive` CSS class should perform the CSS transition effect
+> The `slideInActive` CSS class should perform the CSS transition effect.
 
-### transitionName.slideOut `String`
+#### transitionName.slideOut `String`
 
-Specifies the CSS class that will be added to the leaving element on initial render
+Specifies the CSS class that is added to the leaving element on initial render.
 
-### transitionName.slideOutActive `String`
+#### transitionName.slideOutActive `String`
 
-Specifies the CSS class that will be added to the leaving element, after `slideOut` class, to start the animation
+Specifies the CSS class that is added to the leaving element after the `slideOut` class to start the animation.
 
-> Note that `slideOutActive` CSS class should perform the CSS transition effect
+> The `slideOutActive` CSS class should perform the CSS transition effect.
 
-## Disable animation
+## Disable Animation
 
-### animateOnSlideIn `Boolean`*(default: true)*
+#### animateOnSlideIn `Boolean`*(default: true)*
 
 Specifies whether to animate the entering (showing) element.
 
-### animateOnSlideOut `Boolean`*(default: false)*
+#### animateOnSlideOut `Boolean`*(default: false)*
 
 Specifies whether to animate the leaving (showing) element.
