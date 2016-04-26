@@ -24,7 +24,7 @@ Specifies the duration of the `fade out` animation. After the time runs out, the
 
 > The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-## Effect
+## Effects
 
 #### transitionName `String|Object`*(default: "k-fade")*
 
@@ -56,8 +56,8 @@ Specifies the CSS class that is added to the leaving element after `fadeOut` cla
 
 #### animateOnFadeIn `Boolean`*(default: true)*
 
-Specifies whether to animate or not the entering (showing) element.
+Specifies whether to animate the entering (showing) element.
 
 #### animateOnFadeOut `Boolean`*(default: false)*
 
-Specifies whether to animate or not the leaving (showing) element.
+Specifies whether to animate the leaving (showing) element.
