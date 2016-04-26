@@ -10,7 +10,7 @@ position: 2
 
 Represents the Kendo UI Fade Animation component for React.
 
-## Duration
+## Set Duration
 
 #### fadeInDuration `Number`*(default: 500)*
 
@@ -24,7 +24,7 @@ Specifies the duration of the `fade out` animation. After the time runs out, the
 
 > The `duration` value should be synchronized with the duration of the CSS transition animation.
 
-## Effects
+## Define Effects
 
 #### transitionName `String|Object`*(default: "k-fade")*
 
