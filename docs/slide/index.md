@@ -88,8 +88,8 @@ ReactDOM.render(
 The component enables you to control the `slide direction` of the entering or leaving element. Use the `direction` property to control the slide direction.
 
 The supported directions are:
-- `down` (default)&mdash;The `down` direction slides the content from top to bottom on show, and vice-versa.
-- `up`&mdash;Slides the content from bottom to top on show, and vice-versa.
+- (Default) The `down` direction&mdash;Slides the content from top to bottom on show, and vice-versa.
+- The `up` direction&mdash;Slides the content from bottom to top on show, and vice-versa.
 
 ```html
   <style>
