@@ -10,9 +10,9 @@ position: 1
 
 The Kendo UI Fade component for React shows or hides the elements with animated opacity. The component applies the [`ReactTransitionGroup`](https://facebook.github.io/react/docs/animation.html) configuration to detect which children are entering or leaving. 
 
-All leave elements will be removed with an animated `opacity` from `1` to `0`. Entering elements will be added with animated `opacity` from `0` to `1`.
+All leaving elements will be removed with an animated `opacity` from `1` to `0`. Entering elements will be added with animated `opacity` from `0` to `1`.
 
-> * Only enter or leave elements from the DOM will be animated.
+> * Only entering or leaving elements from the DOM will be animated.
 > * In order for the Kendo UI Fade component to work, it must always be present in the rendering tree. 
 
 ## Demos 
