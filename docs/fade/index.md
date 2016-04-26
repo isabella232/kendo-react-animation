@@ -1,6 +1,6 @@
 ---
-title: Fade Overview
-page_title: Fade Overview | Kendo UI Fade for React
+title: Overview
+page_title: Overview | Kendo UI Fade for React
 description: "Use the Kendo UI Fade Animation component in a React project."
 slug: overview_fade_kendouiforreact
 position: 1
