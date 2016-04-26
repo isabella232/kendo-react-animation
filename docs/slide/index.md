@@ -1,6 +1,6 @@
 ---
-title: Slide Overview
-page_title: Slide Overview | Kendo UI Slide Animation for React
+title: Overview
+page_title: Overview | Kendo UI Slide Animation for React
 description: "Use the Kendo UI Slide Animation component in a React project."
 slug: overview_slide_kendouiforreact
 position: 1
@@ -8,16 +8,18 @@ position: 1
 
 # Slide Overview
 
-The Kendo UI Slide component for React shows or hides a single element with vertical sliding effect. The component utilizes [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) to detect whether content is entering or leaving.
-The entering element will slide from top to bottom. Conversely, the leaving element will slide out from bottom to top.
+The Kendo UI Slide component for React shows or hides a single element with vertical sliding effect. The component applies the [`ReactTransitionGroup`](https://facebook.github.io/react/docs/animation.html) configuration to detect whether the content is entering or leaving.
 
-> **Note that only entering or leaving elements from the DOM will be animated**.
+The entering element will slide from top to bottom. The leaving element will slide from bottom to top.
 
-> **The Kendo UI Slide component should be always present in the `rendering tree` in order to work**
+> * Only entering or leaving elements from the DOM will be animated.
+> * In order for the Kendo UI Slide component to work, it must always be present in the rendering tree.
+
+## Demos
 
 ### Default Setup
 
-The example below demonstrates the default setup of a Kendo UI Slide Animation for React.
+The example below demonstrates the default setup of a Kendo UI Slide for React.
 
 ```html-preview
   <style>
@@ -81,14 +83,13 @@ ReactDOM.render(
 
 ## Configuration
 
-### Direction
+### Define Direction
 
-The component can control the `slide direction` of the entering/leaving element. Use `direction` property to control the slide direction.
+The component enables you to control the `slide direction` of the entering or leaving element. Use the `direction` property to control the slide direction.
 
 The supported directions are:
-
-- `down` (default) - slide the content from **top** to **bottom** on show and vice-versa.
-- `up` - slide the content from **bottom** to **top** on show and vice-versa.
+- `down` (default)&mdash;The `down` direction slides the content from top to bottom on show, and vice-versa.
+- `up`&mdash;Slides the content from bottom to top on show, and vice-versa.
 
 ```html
   <style>
@@ -150,10 +151,9 @@ ReactDOM.render(
 );
 ```
 
-### Slide In Duration
+### Set Slide-In Duration
 
-The component can control the duration of the `slide in` animation. To modify the `slide in` duration, you will need to update the `slideInDuration` property and
-update the duration in the corresponding CSS class.
+The component enables you to control the duration of the `slide in` animation. To modify the `slide in` duration, update the `slideInDuration` property and update the duration in the corresponding CSS class.
 
 > Sync up the `slideInDuration` property with the transition duration defined in the static `k-slide-down-enter-active` CSS class.
 
@@ -225,10 +225,9 @@ ReactDOM.render(
 );
 ```
 
-### Slide Out Duration
+### Set Slide-Out Duration
 
-The component can control the duration of the `slide out` animation. To modify the `slide out` duration, you will need to update the `slideOutDuration` property and
-update the duration in the corresponding CSS class.
+The component enables you to control the duration of the `slide out` animation. To modify the `slide out` duration, update the `slideOutDuration` property and update the duration in the corresponding CSS class.
 
 > Sync up the `slideOutDuration` property with the transition duration defined in the static `k-slide-down-leave-active` CSS class.
 
@@ -301,9 +300,9 @@ ReactDOM.render(
 );
 ```
 
-### Disable Slide In Animation
+### Disable Slide-In Animation
 
-The Slide component allows to disable the showing animation, which will result in instant element display. To disable animation, you will need to define the `animateOnSlideIn` option to `false`.
+The Slide component allows you to disable the showing animation, which will result in an instant element display. To disable the slide-in animation, set the `animateOnSlideIn` option to `false`.
 
 ```html-preview
   <style>
@@ -365,11 +364,11 @@ ReactDOM.render(
 );
 ```
 
-### Disable Slide Out Animation
+### Disable Slide-Out Animation
 
-The Slide component allows to disable the hiding animation, which will result in instant element hiding. To disable animation, you will need to define the `animateOnSlideOut` option to `false`.
+The Slide component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the slide-out animation, define the `animateOnSlideOut` option to `false`.
 
-> By default, `slide out` animation is disabled
+By default, the `slide out` animation is disabled.
 
 ```html-preview
   <style>
@@ -433,4 +432,4 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [Client-Side API Reference for the Kendo UI Slide Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/slide/api.md)
+* [API Reference of the Slide Component]({% slug api_slide_kendouiforreact %})
