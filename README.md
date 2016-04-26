@@ -12,17 +12,22 @@
 
 ## Overview
 
-This repository contains the source code and documentation of the Kendo UI Animation component for React.
+This repository contains the source code and documentation of the Kendo UI Animation components for React.
 
-The package includes the Animation, Fade, Expand, Slide components.
+Currently, the package includes the following Animation components:
+* Fade 
+* Expand
+* Slide 
 
 For more information on forthcoming Animation package features, refer to the [Roadmap](https://github.com/telerik/kendo-react-animation/blob/master/docs/roadmap.md).
 
 ## Basic Usage
 
-The Animation components utilize the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to animate elements that appear, enter or leave.
+The Animation components utilize the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to animate elements that appear, enter, or leave.
 
-Here is a simple demo how to use the Fade animation:
+### Kendo UI Fade for React 
+
+The Fade component animates newly-added children with `fade in` effect.
 
 ```html-preview
   <div id="app"></div>
@@ -69,6 +74,28 @@ ReactDOM.render(
 );
 ```
 
+### Kendo UI Expand for React 
+
+The Expand component animates the CSS `height` property of the container element.
+
+```html-preview
+// code goes here
+```
+```jsx
+// code 
+```
+
+### Kendo UI Slide for React 
+
+The Slide component slides a single piece of content vertically.
+
+```html-preview
+// code goes here
+```
+```jsx
+// code 
+```
+
 For more examples and available configuration options, refer to the [Animation documentation section](https://github.com/telerik/kendo-react-animation/blob/master/docs/index.md).
 
 ## Installation
@@ -94,7 +121,7 @@ var Fade = require('kendo-react-animation').Fade;
 
 ## Browser Support
 
-The Kendo UI Animation component for React supports all browsers that are supported by the React framework&mdash;Internet Explorer 9 and later versions.
+The Kendo UI Animation components for React supports all browsers that are supported by the React framework&mdash;Internet Explorer 9 and later versions.
 
 ## Glossary
 
