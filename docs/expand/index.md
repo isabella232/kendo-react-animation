@@ -1,6 +1,6 @@
 ---
 title: Expand Overview
-page_title: Expand Overview | Kendo UI Expand Animation for React
+page_title: Expand Overview | Kendo UI Expand for React
 description: "Use the Kendo UI Expand Animation component in a React project."
 slug: overview_expand_kendouiforreact
 position: 1
@@ -8,16 +8,18 @@ position: 1
 
 # Expand Overview
 
-The Kendo UI Expand component for React shows/hides a single element animating the height of the root element. The component utilizes [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) to detect which children are entering or leaving.
-The entering element will be shown with a gradual `height` transition from 0% to 100%. Conversely, the leaving element will be hidden with a gradual `height` transition from 100% to 0%.
+The Kendo UI Expand component for React shows or hides a single element by animating the height of the root element. The component utilizes the [`ReactTransitionGroup`](https://facebook.github.io/react/docs/animation.html) configuration to detect which children are entering or leaving.
 
-> **Note that only entering or leaving elements from the DOM will be animated**.
+The entering element will be shown with a gradual `height` transition from `0%` to `100%`. The leaving element will be hidden with a gradual `height` transition from `100%` to `0%`.
 
-> **The Kendo UI Expand component should be always present in the `rendering tree` in order to work**
+> * Only entering or leaving elements from the DOM will be animated.
+> * In order for the Kendo UI Expand component to work, it must always be present in the rendering tree.
+
+## Demos
 
 ### Default Setup
 
-The example below demonstrates the default setup of a Kendo UI Expand Animation for React.
+The example below demonstrates the default setup of a Kendo UI Expand for React.
 
 ```html-preview
   <style>
@@ -81,9 +83,9 @@ ReactDOM.render(
 
 ## Configuration
 
-### Expand duration
+### Set Expand Duration
 
-The Expand component can control the duration of the expand (showing) effect. To configure the expand duration you will need to define the `expandDuration` property
+The Expand component enables you to control the duration of the expand (showing) effect. To configure the expand duration, define the `expandDuration` property.
 
 ```html
   <style>
@@ -145,9 +147,9 @@ ReactDOM.render(
 );
 ```
 
-### Collapse duration
+### Set Collapse Duration
 
-The Expand component can control the duration of the collapse (hiding) effect. To configure the collapse duration you will need to define the `collapseDuration` property
+The Expand component enables you to control the duration of the collapse (hiding) effect. To configure the collapse duration. define the `collapseDuration` property.
 
 ```html
   <style>
@@ -209,9 +211,9 @@ ReactDOM.render(
 );
 ```
 
-### Disable expand animation
+### Disable Expand Animation
 
-The Expand component allows to disable the showing animation, which will result in instant element display. To disable animation, you will need to define the `animateOnExpand` option to `false`.
+The Expand component allows you to disable the showing animation, which will result in an instant element display. To disable the Expand animation, set the `animateOnExpand` option to `false`.
 
 ```html
   <style>
@@ -273,9 +275,9 @@ ReactDOM.render(
 );
 ```
 
-### Disable collapse animation
+### Disable Collapse Animation
 
-The Expand allows to disable the hiding animation, which will result in instant element hiding. To disable animation, you will need to define the `animateOnCollapse` option to `false`.
+The Expand allows you to disable the hiding animation, which will result in an instant element hiding. To disable animation, ste the `animateOnCollapse` option to `false`.
 
 ```html
   <style>
@@ -339,4 +341,4 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [Client-Side API Reference for the Kendo UI Expand Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/expand/api.md)
+* [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})
