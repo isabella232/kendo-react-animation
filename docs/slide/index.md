@@ -8,7 +8,7 @@ position: 1
 
 # Slide Overview
 
-The Kendo UI Slide component for React shows or hides a single element with vertical sliding effect. The component uses the [`ReactTransitionGroup`](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
+The Kendo UI Slide component for React shows or hides a single element with vertical sliding effect. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
 The entering element will slide from top to bottom. The leaving element will slide from bottom to top.
 
@@ -366,7 +366,7 @@ ReactDOM.render(
 
 ### Disable Slide-Out Animation
 
-The Slide component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the slide-out animation, define the [`animateOnSlideOut`]({% slug api_slide_kendouiforreact %}#animateonslideout-booleandefault-false) option to `false`.
+The Slide component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the slide-out animation, set the [`animateOnSlideOut`]({% slug api_slide_kendouiforreact %}#animateonslideout-booleandefault-false) option to `false`.
 
 By default, the slide-out animation is disabled.
 

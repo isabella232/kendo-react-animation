@@ -8,7 +8,7 @@ position: 1
 
 # Fade Overview
 
-The Kendo UI Fade component for React shows or hides the elements with animated opacity. The component uses the [`ReactTransitionGroup`](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving. 
+The Kendo UI Fade component for React shows or hides the elements with animated opacity. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving.
 
 All leaving elements will be removed with an animated opacity from 1 to 0. Entering elements will be added with animated opacity from 0 to 1.
 
@@ -84,7 +84,7 @@ ReactDOM.render(
 
 ### Set Fade-In Duration
 
-The component enables you to control the duration of the fade-in animation. To modify the fade-in duration, update the [`fadeInDuration`]({% slug api_fade_kendouiforreact %}#fadeinduration-numberdefault-500) property and update the duration in the corresponding CSS class.
+The component enables you to control the duration of the fade-in animation. To modify the fade-in duration, update the [`fadeInDuration`]({% slug api_fade_kendouiforreact %}#fadeinduration-numberdefault-500) property and the duration in the corresponding CSS class.
 
 > Sync up the `fadeInDuration` property with the transition duration defined in the static `k-fade-in-enter-active` CSS class.
 
@@ -155,7 +155,7 @@ ReactDOM.render(
 
 ### Set Fade-Out Duration
 
-The component enables you to control the duration of the fade-out animation. To modify the fade-out duration, update the [`fadeOutDuration`]({% slug api_fade_kendouiforreact %}#fadeoutduration-numberdefault-500) property and update the duration in the corresponding CSS class.
+The component enables you to control the duration of the fade-out animation. To modify the fade-out duration, update the [`fadeOutDuration`]({% slug api_fade_kendouiforreact %}#fadeoutduration-numberdefault-500) property and the duration in the corresponding CSS class.
 
 > Sync up the `fadeOutDuration` property with the transition duration defined in the static `k-fade-down-leave-active` CSS class.
 

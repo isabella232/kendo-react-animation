@@ -8,7 +8,7 @@ position: 1
 
 # Expand Overview
 
-The Kendo UI Expand component for React shows or hides a single element by animating the height of the root element. The component uses the [`ReactTransitionGroup`](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving.
+The Kendo UI Expand component for React shows or hides a single element by animating the height of the root element. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving.
 
 The entering element will be shown with a gradual height transition from 0% to 100%. The leaving element will be hidden with a gradual height transition from 100% to 0%.
 
@@ -149,7 +149,7 @@ ReactDOM.render(
 
 ### Set Collapse Duration
 
-The Expand component enables you to control the duration of the collapse (hiding) effect. To configure the collapse duration. define the [`collapseDuration`]({% slug api_expand_kendouiforreact %}#collapseduration-numberdefault-300) property.
+The Expand component enables you to control the duration of the collapse (hiding) effect. To configure the collapse duration, define the [`collapseDuration`]({% slug api_expand_kendouiforreact %}#collapseduration-numberdefault-300) property.
 
 ```html
   <style>
@@ -277,7 +277,7 @@ ReactDOM.render(
 
 ### Disable Collapse Animation
 
-The Expand allows you to disable the hiding animation, which will result in an instant element hiding. To disable animation, ste the [`animateOnCollapse`]({% slug api_expand_kendouiforreact %}#animateoncollapse-booleandefault-true) option to `false`.
+The Expand allows you to disable the hiding animation, which will result in an instant element hiding. To disable animation, set the [`animateOnCollapse`]({% slug api_expand_kendouiforreact %}#animateoncollapse-booleandefault-true) option to `false`.
 
 ```html
   <style>

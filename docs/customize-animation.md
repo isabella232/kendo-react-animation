@@ -10,7 +10,7 @@ position: 2
 
 The Kendo UI Animation components accept custom CSS classes that can be used to customize the animation effects. Except for the Expand component for React, all Animation components support this functionality.
 
-The Animation effect can be updated through the usage of the `transitionName` property. It defines the class name that will be added to the enter or leave elements. The terms come from the `ReactTransitionGroup` context. 
+The Animation effect can be updated through the usage of the `transitionName` property. It defines the class name that will be added to the enter or leave elements. The terms come from the `ReactTransitionGroup` context.
 
 Below are listed the conventions of their meaning:
 - Appear element&mdash;The Appear element is an element that is part of the rendered Animation component.
@@ -21,7 +21,7 @@ Below are listed the conventions of their meaning:
 
 ### Entering Animation
 
-To configure the entering animation, define the CSS classes with the syntax demonstrated below. 
+To configure the entering animation, define the CSS classes with the syntax demonstrated below.
 
 ```
   .{transition name}-enter {
@@ -112,7 +112,7 @@ ReactDOM.render(
 
 ### Leaving Animation
 
-To configure the leaving animation, define the CSS classes with the syntax demonstrated below. 
+To configure the leaving animation, define the CSS classes with the syntax as demonstrated below.
 
 ```
   .{transition name}-leave {

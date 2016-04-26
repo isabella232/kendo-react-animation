@@ -15,19 +15,19 @@
 This repository contains the source code and documentation of the Kendo UI Animation components for React.
 
 Currently, the package includes the following Animation components:
-* Fade 
+* Fade
 * Expand
-* Slide 
+* Slide
 
 For more information on forthcoming Animation package features, refer to the [Roadmap](https://github.com/telerik/kendo-react-animation/blob/master/docs/roadmap.md).
 
 ## Basic Usage
 
-The Animation components utilize the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to animate elements that appear, enter, or leave.
+The Animation components use the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to animate elements that appear, enter, or leave.
 
-### Kendo UI Fade for React 
+### Kendo UI Fade for React
 
-The Fade component animates newly-added children with `fade in` effect.
+The Fade component animates newly-added children with a fade-in effect.
 
 ```html-preview
   <div id="app"></div>
@@ -74,7 +74,7 @@ ReactDOM.render(
 );
 ```
 
-### Kendo UI Expand for React 
+### Kendo UI Expand for React
 
 The Expand component animates the CSS `height` property of the container element.
 
@@ -82,10 +82,10 @@ The Expand component animates the CSS `height` property of the container element
 // code goes here
 ```
 ```jsx
-// code 
+// code
 ```
 
-### Kendo UI Slide for React 
+### Kendo UI Slide for React
 
 The Slide component slides a single piece of content vertically.
 
@@ -93,7 +93,7 @@ The Slide component slides a single piece of content vertically.
 // code goes here
 ```
 ```jsx
-// code 
+// code
 ```
 
 For more examples and available configuration options, refer to the [Animation documentation section](https://github.com/telerik/kendo-react-animation/blob/master/docs/index.md).
