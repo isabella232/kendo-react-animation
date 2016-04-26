@@ -1,6 +1,6 @@
 ---
-title: Expand Overview
-page_title: Expand Overview | Kendo UI Expand for React
+title: Overview
+page_title: Overview | Kendo UI Expand for React
 description: "Use the Kendo UI Expand Animation component in a React project."
 slug: overview_expand_kendouiforreact
 position: 1
