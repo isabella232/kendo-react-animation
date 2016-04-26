@@ -1,26 +1,27 @@
 ---
-title: Customize animation
-page_title: Customize animation | Kendo UI Animation Package for React
-description: "Learn how to customize the Kendo UI Animation components for React."
-slug: overview_customizeanimation_kendouiforreact
+title: Customize Animation
+page_title: Customize Animation | Kendo UI Animation Package for React
+description: "Customize the Kendo UI Animation components for React."
+slug: customizeanimation_kendouiforreact
 position: 2
 ---
 
 # Customize Animation
 
-The Kendo UI Animation components accept custom CSS classes that could be used customize the animation effects. All animation
-components support that functionality, with the notable exception of the `Expand` component.
+The Kendo UI Animation components accept custom CSS classes that can be used to customize the animation effects. Except for the Expand component for React, all Animation components support this functionality.
 
-The component animation effect can be updated through the usage of `transitionName` property. It defines the class name
-that will be added to the entering/leaving element. The terms come from the `ReactTransitionGroup` context and means:
+The Animation effect can be updated through the usage of the `transitionName` property. It defines the class name that will be added to the enter or leave elements. The terms come from the `ReactTransitionGroup` context. 
 
-- appear element - an element that are part of the rendered animation component
-- enter element - an element that is added to the children collection of the animation component
-- leave element - an element that is removed from the children collection of the animation component
+Below are listed the conventions of their meaning:
+- Appear element&mdash;The Appear element is an element that is part of the rendered Animation component.
+- Enter element&mdash;An element that is added to the children collection of the Animation component.
+- Leave element&mdash;An element that is removed from the children collection of the Animation component.
 
-## Configure entering animation
+## Configuration
 
-To configure the entering animation, you will need to define CSS classes with the following syntax:
+### Entering Animation
+
+To configure the entering animation, define the CSS classes with the syntax demonstrated below. 
 
 ```
   .{transition name}-enter {
@@ -32,7 +33,7 @@ To configure the entering animation, you will need to define CSS classes with th
   }
 ```
 
-#### Demo: customize Slide animation
+The example below demonstrates how to customize the Slide Animation.
 
 ```html
 <style>
@@ -109,9 +110,9 @@ ReactDOM.render(
 );
 ```
 
-## Configure leaving animation
+### Leaving Animation
 
-To configure the leaving animation, you will need to define CSS classes with the following syntax:
+To configure the leaving animation, define the CSS classes with the syntax demonstrated below. 
 
 ```
   .{transition name}-leave {
@@ -123,7 +124,7 @@ To configure the leaving animation, you will need to define CSS classes with the
   }
 ```
 
-#### Demo: customize Slide animation
+The example below demonstrates how to customize the Slide Animation.
 
 ```html
 <style>
@@ -202,5 +203,5 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [Client-Side API Reference for the Kendo UI Fade Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/fade/api.md)
-* [Client-Side API Reference for the Kendo UI Slide Component](https://github.com/telerik/kendo-react-animation/blob/master/docs/slide/api.md)
+* [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
+* [API Reference of the Slide Component]({% slug api_slide_kendouiforreact %})
