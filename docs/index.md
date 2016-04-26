@@ -8,24 +8,17 @@ position: 1
 
 # Animation Package Overview
 
-Animation components are designed to animate their content by using different animation effects. Currently, the Animation package includes the following Animation components:
-* Fade 
-* Expand  
-* Slide  
+Animation components are designed to animate their content by using different animation effects. Currently, the Animation package includes the Kendo UI Fade, Expand, and Slide components for React.   
 
-## Kendo UI Fade for React
+The Kendo UI Fade component for React animates newly-added children with `fade in` effect.
 
-The Fade component animates newly-added children with `fade in` effect.
+The Kendo UI Expand component for React animates the `CSS height property` of the container element.
 
-## Kendo UI Expand for React
-
-The Expand component animates the `CSS height property` of the container element.
-
-## Kendo UI Slide for React
-
-The Slide component slides a single piece of content vertically.
+The Kendo UI Slide component for React slides a single piece of content vertically.
 
 ## Suggested Links
+
+Articles on the Kendo UI Animation components for React:
 
 * [Get Started with the Fade Component]({% slug overview_fade_kendouiforreact %})
 * [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
