@@ -10,7 +10,7 @@ position: 1
 
 The Kendo UI Fade component for React shows or hides the elements with animated opacity. The component applies the [`ReactTransitionGroup`](https://facebook.github.io/react/docs/animation.html) configuration to detect which children are entering or leaving. 
 
-All leaving elements will be removed with an animated `opacity` from `1` to `0`. Entering elements will be added with animated `opacity` from `0` to `1`.
+All leaving elements will be removed with an animated opacity from 1 to 0. Entering elements will be added with animated opacity from 0 to 1.
 
 > * Only entering or leaving elements from the DOM will be animated.
 > * In order for the Kendo UI Fade component to work, it must always be present in the rendering tree. 
@@ -84,7 +84,7 @@ ReactDOM.render(
 
 ### Set Fade-In Duration
 
-The component enables you to control the duration of the `fade in` animation. To modify the `fade in` duration, update the `fadeInDuration` property and update the duration in the corresponding CSS class.
+The component enables you to control the duration of the fade-in animation. To modify the fade-in duration, update the [`fadeInDuration`]({% slug api_fade_kendouiforreact %}#fadeinduration-numberdefault-500) property and update the duration in the corresponding CSS class.
 
 > Sync up the `fadeInDuration` property with the transition duration defined in the static `k-fade-in-enter-active` CSS class.
 
@@ -155,7 +155,7 @@ ReactDOM.render(
 
 ### Set Fade-Out Duration
 
-The component enables you to control the duration of the `fade out` animation. To modify the `fade out` duration, update the `fadeOutDuration` property and update the duration in the corresponding CSS class.
+The component enables you to control the duration of the fade-out animation. To modify the fade-out duration, update the [`fadeOutDuration`]({% slug api_fade_kendouiforreact %}#fadeoutduration-numberdefault-500) property and update the duration in the corresponding CSS class.
 
 > Sync up the `fadeOutDuration` property with the transition duration defined in the static `k-fade-down-leave-active` CSS class.
 
@@ -228,7 +228,7 @@ ReactDOM.render(
 
 ### Disable Fade-In Animations
 
-The Fade component allows you to disable the showing animation, which will result in an instant element display. To disable the fade-in animation, set the `animateOnFadeIn` option to `false`.
+The Fade component allows you to disable the showing animation, which will result in an instant element display. To disable the fade-in animation, set the [`animateOnFadeIn`]({% slug api_fade_kendouiforreact %}#animateonfadein-booleandefault-true) option to `false`.
 
 ```html
   <style>
@@ -291,9 +291,9 @@ ReactDOM.render(
 
 ### Disable Fade-Out Animations
 
-The Fade component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the fade-out animation, set the `animateOnFadeOut` option to `false`.
+The Fade component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the fade-out animation, set the [`animateOnFadeOut`]({% slug api_fade_kendouiforreact %}#animateonfadeout-booleandefault-false) option to `false`.
 
-By default, the `fade out` animation is disabled.
+By default, the fade-out animation is disabled.
 
 ```html
   <style>
