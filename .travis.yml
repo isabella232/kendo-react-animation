@@ -23,7 +23,7 @@ script:
   - npm run build-package
   - npm run build-cdn
 after_success:
-  - npm run semantic-release
+  # - npm run semantic-release
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
