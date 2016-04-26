@@ -12,7 +12,7 @@ Animation components are designed to animate their content by using different an
 
 The Fade component for React animates newly-added children with `fade in` effect.
 
-The Expand component for React animates the `CSS height property` of the container element.
+The Expand component for React animates the CSS `height` property of the container element.
 
 The Slide component for React slides a single piece of content vertically.
 
