@@ -354,6 +354,198 @@ ReactDOM.render(
 
 ```
 
+## Life-cycle hooks
+
+Component calls special hooks when children are declaratively added.
+
+### componentWillFadeIn
+
+Called when a component is added to an existing Fade component and the animation hasn't started yet.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .example > div {
+    width: 200px;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { callbackCalls: [], index: 1 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    onComponentWillFadeIn = () => {
+        const calls = this.state.callbackCalls.slice();
+
+        calls.push("component will fade in");
+
+        this.setState({
+            callbackCalls: calls
+        });
+    }
+
+    renderCallbackCalls() {
+        return this.state.callbackCalls.map((call) => (
+            <li>{call}</li>
+        ));
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Fade:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Fade componentWillFadeIn={this.onComponentWillFadeIn}>
+                        {<div className="content" key={index}>{index}</div>}
+                    </KendoReactAnimation.Fade>
+                </div>
+
+                <div>
+                    <h4>Log:</h4>
+                    <ul>
+                        {this.renderCallbackCalls()}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+### componentDidFadeIn
+
+Called when a component is added to an existing Fade component and the animation is finished.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .example > div {
+    width: 200px;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { callbackCalls: [], index: 1 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    onComponentDidFadeIn = () => {
+        const calls = this.state.callbackCalls.slice();
+
+        calls.push("component did fade in");
+
+        this.setState({
+            callbackCalls: calls
+        });
+    }
+
+    renderCallbackCalls() {
+        return this.state.callbackCalls.map((call) => (
+            <li>{call}</li>
+        ));
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Fade:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Fade componentDidFadeIn={this.onComponentDidFadeIn}>
+                        {<div className="content" key={index}>{index}</div>}
+                    </KendoReactAnimation.Fade>
+                </div>
+
+                <div>
+                    <h4>Log:</h4>
+                    <ul>
+                        {this.renderCallbackCalls()}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
 ## Suggested Links
 
 * [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
