@@ -304,7 +304,7 @@ ReactDOM.render(
 
 The Slide component allows you to disable the showing animation, which will result in an instant element display. To disable the slide-in animation, set the [`animateOnSlideIn`]({% slug api_slide_kendouiforreact %}#animateonslidein-booleandefault-true) option to `false`.
 
-```html-preview
+```html
   <style>
   .content {
     width: 100px;
@@ -370,7 +370,7 @@ The Slide component allows you to disable the hiding animation, which will resul
 
 By default, the slide-out animation is disabled.
 
-```html-preview
+```html
   <style>
   .content {
     width: 100px;
@@ -419,6 +419,202 @@ class App extends React.Component {
                 <KendoReactAnimation.Slide animateOnSlideOut={false}>
                     {children}
                 </KendoReactAnimation.Slide>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+## Life-cycle hooks
+
+Component calls special hooks when children are declaratively added.
+
+### componentWillSlideIn
+
+Called when a component is added to an existing Slide component and the animation hasn't started yet.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .example > div {
+    width: 200px;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { callbackCalls: [], show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    onComponentWillSlideIn = () => {
+        const calls = this.state.callbackCalls.slice();
+
+        calls.push("component will slide in");
+
+        this.setState({
+            callbackCalls: calls
+        });
+    }
+
+    renderCallbackCalls() {
+        return this.state.callbackCalls.map((call) => (
+            <li>{call}</li>
+        ));
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Slide:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Slide componentWillSlideIn={this.onComponentWillSlideIn}>
+                        {children}
+                    </KendoReactAnimation.Slide>
+                </div>
+
+                <div>
+                    <h4>Log:</h4>
+                    <ul>
+                        {this.renderCallbackCalls()}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+### componentDidSlideIn
+
+Called when a component is added to an existing Slide component and the animation is finished.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .example > div {
+    width: 200px;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { callbackCalls: [], show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    onComponentDidSlideIn = () => {
+        const calls = this.state.callbackCalls.slice();
+
+        calls.push("component did slide in");
+
+        this.setState({
+            callbackCalls: calls
+        });
+    }
+
+    renderCallbackCalls() {
+        return this.state.callbackCalls.map((call) => (
+            <li>{call}</li>
+        ));
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Slide:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Slide componentDidSlideIn={this.onComponentDidSlideIn}>
+                        {children}
+                    </KendoReactAnimation.Slide>
+                </div>
+
+                <div>
+                    <h4>Log:</h4>
+                    <ul>
+                        {this.renderCallbackCalls()}
+                    </ul>
+                </div>
             </div>
         );
     }

@@ -15,6 +15,12 @@ export default class AnimationGroup extends React.Component {
         ]),
         className: React.PropTypes.string,
         component: React.PropTypes.string,
+        componentDidAppear: React.PropTypes.func,
+        componentDidEnter: React.PropTypes.func,
+        componentDidLeave: React.PropTypes.func,
+        componentWillAppear: React.PropTypes.func,
+        componentWillEnter: React.PropTypes.func,
+        componentWillLeave: React.PropTypes.func,
         style: React.PropTypes.object,
         transitionAppear: React.PropTypes.bool,
         transitionAppearTimeout: React.PropTypes.number,
@@ -52,15 +58,15 @@ export default class AnimationGroup extends React.Component {
 
     componentWillReceiveProps() {
         const childRefs = this.refs.group.refs;
+        const mute = true;
 
         for (let key in childRefs) {
-            childRefs[key].stop();
+            childRefs[key].stop(mute);
         }
     }
 
     render() {
         const { children, className, component, style, ...other } = this.props;
-        const combinedClasses = classNames(styles['animation-container'], className);
 
         const content = React.Children.map(children, (child, idx) => (
             <AnimationChild {...other} key={idx}>
@@ -68,8 +74,15 @@ export default class AnimationGroup extends React.Component {
             </AnimationChild>
         ));
 
+        const transitionProps = {
+            className: classNames(styles['animation-container'], className),
+            component: component,
+            ref: "group",
+            style: style
+        };
+
         return (
-            <TransitionGroup className={combinedClasses} component={component} ref="group" style={style}>
+            <TransitionGroup {...transitionProps}>
                 {content}
             </TransitionGroup>
         );

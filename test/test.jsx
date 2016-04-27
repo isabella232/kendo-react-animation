@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Animation from '../src/AnimationGroup';
+import AnimationChild from '../src/AnimationChild';
 import ReactTransitionGroup from 'react-addons-transition-group';
 
 describe('Animation with a single component', () => {
@@ -14,7 +15,7 @@ describe('Animation with a single component', () => {
         expect(result.find(ReactTransitionGroup).length).toEqual(1);
     });
 
-    it('should render ReactCSSTransitionGroup as a div', () => {
+    it('should render ReactTransitionGroup as a div', () => {
         result = shallow(<Animation><div></div></Animation>);
 
         const transitionGroup = result.find(ReactTransitionGroup);
@@ -22,7 +23,7 @@ describe('Animation with a single component', () => {
         expect(transitionGroup.props().component).toEqual('div');
     });
 
-    it('should render ReactCSSTransitionGroup as a div', () => {
+    it('should render ReactTransitionGroup as a div', () => {
         result = shallow(<Animation><div></div></Animation>);
 
         const transitionGroup = result.find(ReactTransitionGroup);
@@ -30,7 +31,7 @@ describe('Animation with a single component', () => {
         expect(transitionGroup.props().component).toEqual('div');
     });
 
-    it('should render ReactCSSTransitionGroup with className', () => {
+    it('should render ReactTransitionGroup with className', () => {
         result = shallow(<Animation><div></div></Animation>);
 
         const transitionGroup = result.find(ReactTransitionGroup);
@@ -66,5 +67,13 @@ describe('Animation with a single component', () => {
         const key = transitionGroup.props().children[0].key;
 
         expect(key).toBeDefined();
+    });
+
+    it('should render AnimationChild', () => {
+        result = shallow(<Animation><div></div></Animation>);
+
+        const child = result.find(AnimationChild);
+
+        expect(child.length).toEqual(1);
     });
 });

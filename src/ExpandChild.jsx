@@ -12,6 +12,8 @@ export default class ExpandChild extends React.Component {
             React.PropTypes.node
         ]),
         collapseDuration: React.PropTypes.number,
+        componentDidExpand: React.PropTypes.func,
+        componentWillExpand: React.PropTypes.func,
         expandDuration: React.PropTypes.number
     }
 
@@ -76,16 +78,33 @@ export default class ExpandChild extends React.Component {
     }
 
     componentWillEnter(done) {
-        const { animateOnExpand, expandDuration } = this.props;
+        const {
+            animateOnExpand,
+            componentDidExpand,
+            componentWillExpand,
+            expandDuration
+        } = this.props;
+
         const maxHeight = this.componentHeight();
         const calc = (progress) => maxHeight * progress;
 
         this.style = { height: 0 };
 
-        if (animateOnExpand) {
-            this.animate(calc, expandDuration, done);
-        } else {
+        const callback = () => {
+            if (componentDidExpand) {
+                componentDidExpand();
+            }
             done();
+        };
+
+        if (componentWillExpand) {
+            componentWillExpand();
+        }
+
+        if (animateOnExpand) {
+            this.animate(calc, expandDuration, callback);
+        } else {
+            callback();
         }
     }
 

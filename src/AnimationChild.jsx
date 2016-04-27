@@ -18,6 +18,12 @@ export default class AnimationChild extends React.Component {
             React.PropTypes.element,
             React.PropTypes.node
         ]),
+        componentDidAppear: React.PropTypes.func,
+        componentDidEnter: React.PropTypes.func,
+        componentDidLeave: React.PropTypes.func,
+        componentWillAppear: React.PropTypes.func,
+        componentWillEnter: React.PropTypes.func,
+        componentWillLeave: React.PropTypes.func,
         transitionAppear: React.PropTypes.bool,
         transitionAppearTimeout: React.PropTypes.number,
         transitionEnter: React.PropTypes.bool,
@@ -45,7 +51,7 @@ export default class AnimationChild extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { className: null };
+        this.state = { className: null, style: null };
 
         this.reset();
     }
@@ -100,20 +106,24 @@ export default class AnimationChild extends React.Component {
         this.leaveCallback = util.noop;
     }
 
-    stop() {
+    stop(mute) {
         clearTimeout(this[APPEAR_TIMEOUT_ID]);
         clearTimeout(this[ENTER_TIMEOUT_ID]);
         clearTimeout(this[LEAVE_TIMEOUT_ID]);
+
+        this._mute = mute;
 
         this.appearCallback();
         this.enterCallback();
         this.leaveCallback();
 
+        this._mute = false;
+
         this.reset();
     }
 
     resetState() {
-        this.setState({ className: null });
+        this.setState({ className: null, style: null });
     }
 
     animateComponent(type, done) {
@@ -125,28 +135,42 @@ export default class AnimationChild extends React.Component {
         }
     }
 
+    callHook(callback) {
+        if (this._mute || !callback) {
+            return;
+        }
+
+        callback();
+    }
+
     componentWillAppear(done) {
+        this.callHook(this.props.componentWillAppear);
         this.animateComponent(util.animationType.appear, done);
     }
 
     componentDidAppear() {
         this.resetState();
+        this.callHook(this.props.componentDidAppear);
     }
 
     componentWillEnter(done) {
+        this.callHook(this.props.componentWillEnter);
         this.animateComponent(util.animationType.enter, done);
     }
 
     componentDidEnter() {
         this.resetState();
+        this.callHook(this.props.componentDidEnter);
     }
 
     componentWillLeave(done) {
+        this.callHook(this.props.componentWillLeave);
         this.animateComponent(util.animationType.leave, done);
     }
 
     componentDidLeave() {
         this.resetState();
+        this.callHook(this.props.componentDidLeave);
     }
 
     render() {

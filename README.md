@@ -30,6 +30,19 @@ The Animation components use the [ReactTransitionGroup](https://facebook.github.
 The Fade component animates newly-added children with a fade-in effect.
 
 ```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
   <div id="app"></div>
 ```
 ```jsx
@@ -61,8 +74,73 @@ class App extends React.Component {
                 </dl>
 
                 <KendoReactAnimation.Fade>
-                    <div key={index}>{index}</div>
+                    <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Fade>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+
+```
+
+### Kendo UI Expand for React
+
+The Expand component animates the CSS `height` property of the container element.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { expand: true };
+    }
+
+    onClick = () => {
+        this.setState({
+            expand: !this.state.expand
+        });
+    }
+
+    render() {
+        const { expand } = this.state;
+
+        const children = expand ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div>
+                <dl>
+                    <dt>
+                        Animate:
+                    </dt>
+                    <dd>
+                        <button onClick={this.onClick}>Animate</button>
+                    </dd>
+                </dl>
+
+                <KendoReactAnimation.Expand>
+                    {children}
+                </KendoReactAnimation.Expand>
             </div>
         );
     }
@@ -74,26 +152,68 @@ ReactDOM.render(
 );
 ```
 
-### Kendo UI Expand for React
-
-The Expand component animates the CSS `height` property of the container element.
-
-```html-preview
-// code goes here
-```
-```jsx
-// code
-```
-
 ### Kendo UI Slide for React
 
 The Slide component slides a single piece of content vertically.
 
 ```html-preview
-// code goes here
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
+  <div id="app"></div>
 ```
 ```jsx
-// code
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { show: true };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div>
+                <dl>
+                    <dt>
+                        Slide:
+                    </dt>
+                    <dd>
+                        <button onClick={this.onClick}>Animate</button>
+                    </dd>
+                </dl>
+
+                <KendoReactAnimation.Slide>
+                    {children}
+                </KendoReactAnimation.Slide>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
 ```
 
 For more examples and available configuration options, refer to the [Animation documentation section](https://github.com/telerik/kendo-react-animation/blob/master/docs/index.md).

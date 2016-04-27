@@ -339,6 +339,202 @@ ReactDOM.render(
 );
 ```
 
+## Life-cycle hooks
+
+Component calls special hooks when children are declaratively added.
+
+### componentWillExpand
+
+Called when a component is added to an existing Expand component and the animation hasn't started yet.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .example > div {
+    width: 200px;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { callbackCalls: [], show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    onComponentWillExpand = () => {
+        const calls = this.state.callbackCalls.slice();
+
+        calls.push("component will expand");
+
+        this.setState({
+            callbackCalls: calls
+        });
+    }
+
+    renderCallbackCalls() {
+        return this.state.callbackCalls.map((call) => (
+            <li>{call}</li>
+        ));
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Expand:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Expand componentWillExpand={this.onComponentWillExpand}>
+                        {children}
+                    </KendoReactAnimation.Expand>
+                </div>
+
+                <div>
+                    <h4>Log:</h4>
+                    <ul>
+                        {this.renderCallbackCalls()}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+### componentDidExpand
+
+Called when a component is added to an existing Expand component and the animation is finished.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .example > div {
+    width: 200px;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { callbackCalls: [], show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    onComponentDidExpand = () => {
+        const calls = this.state.callbackCalls.slice();
+
+        calls.push("component did expand");
+
+        this.setState({
+            callbackCalls: calls
+        });
+    }
+
+    renderCallbackCalls() {
+        return this.state.callbackCalls.map((call) => (
+            <li>{call}</li>
+        ));
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Expand:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Expand componentDidExpand={this.onComponentDidExpand}>
+                        {children}
+                    </KendoReactAnimation.Expand>
+                </div>
+
+                <div>
+                    <h4>Log:</h4>
+                    <ul>
+                        {this.renderCallbackCalls()}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
 ## Suggested Links
 
 * [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})

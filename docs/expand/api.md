@@ -29,3 +29,13 @@ Specifies whether to animate the leaving (hiding) element.
 #### animateOnExpand `Boolean`*(default: true)*
 
 Specifies whether to animate the entering (showing) element.
+
+## Wire Life-Cycle Hooks
+
+### componentWillExpand
+
+Called when a component is added to an existing Expand component and the animation hasn't started yet.
+
+### componentDidExpand
+
+Called when a component is added to an existing Expand component and the animation is finished.
