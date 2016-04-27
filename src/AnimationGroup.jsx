@@ -58,9 +58,10 @@ export default class AnimationGroup extends React.Component {
 
     componentWillReceiveProps() {
         const childRefs = this.refs.group.refs;
+        const mute = true;
 
         for (let key in childRefs) {
-            childRefs[key].stop();
+            childRefs[key].stop(mute);
         }
     }
 

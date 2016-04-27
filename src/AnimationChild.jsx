@@ -48,15 +48,6 @@ export default class AnimationChild extends React.Component {
         ])
     }
 
-    static defaultProps = {
-        componentDidAppear: util.noop,
-        componentDidEnter: util.noop,
-        componentDidLeave: util.noop,
-        componentWillAppear: util.noop,
-        componentWillEnter: util.noop,
-        componentWillLeave: util.noop
-    }
-
     constructor(props) {
         super(props);
 
@@ -115,14 +106,18 @@ export default class AnimationChild extends React.Component {
         this.leaveCallback = util.noop;
     }
 
-    stop() {
+    stop(mute) {
         clearTimeout(this[APPEAR_TIMEOUT_ID]);
         clearTimeout(this[ENTER_TIMEOUT_ID]);
         clearTimeout(this[LEAVE_TIMEOUT_ID]);
 
+        this._mute = mute;
+
         this.appearCallback();
         this.enterCallback();
         this.leaveCallback();
+
+        this._mute = false;
 
         this.reset();
     }
@@ -140,34 +135,42 @@ export default class AnimationChild extends React.Component {
         }
     }
 
+    callHook(callback) {
+        if (this._mute || !callback) {
+            return;
+        }
+
+        callback();
+    }
+
     componentWillAppear(done) {
-        this.props.componentWillAppear();
+        this.callHook(this.props.componentWillAppear);
         this.animateComponent(util.animationType.appear, done);
     }
 
     componentDidAppear() {
         this.resetState();
-        this.props.componentDidAppear();
+        this.callHook(this.props.componentDidAppear);
     }
 
     componentWillEnter(done) {
-        this.props.componentWillEnter();
+        this.callHook(this.props.componentWillEnter);
         this.animateComponent(util.animationType.enter, done);
     }
 
     componentDidEnter() {
         this.resetState();
-        this.props.componentDidEnter();
+        this.callHook(this.props.componentDidEnter);
     }
 
     componentWillLeave(done) {
-        this.props.componentWillLeave();
+        this.callHook(this.props.componentWillLeave);
         this.animateComponent(util.animationType.leave, done);
     }
 
     componentDidLeave() {
         this.resetState();
-        this.props.componentDidLeave();
+        this.callHook(this.props.componentDidLeave);
     }
 
     render() {
