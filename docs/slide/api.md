@@ -90,3 +90,13 @@ Called when a component is added to an existing Slide component and the animatio
 ### componentDidSlideIn
 
 Called when a component is added to an existing Slide component and the animation is finished.
+
+## Class Name Decoration
+
+#### className `String`
+
+Specifies CSS class name(s), rendered to the animation component
+
+#### componentChildClassName `String`
+
+Specifies CSS class name(s), rendered to each of the animated children components
