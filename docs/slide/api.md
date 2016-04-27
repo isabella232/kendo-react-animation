@@ -80,3 +80,13 @@ Specifies whether to animate the entering (showing) element.
 #### animateOnSlideOut `Boolean`*(default: false)*
 
 Specifies whether to animate the leaving (showing) element.
+
+## Wire Life-cycle hooks
+
+### componentWillSlideIn
+
+Called when a component is added to an existing Slide component and the animation hasn't started yet.
+
+### componentDidSlideIn
+
+Called when a component is added to an existing Slide component and the animation is finished.

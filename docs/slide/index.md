@@ -432,7 +432,7 @@ ReactDOM.render(
 
 ## Life-cycle hooks
 
-Component calls special hooks when children are declaratively added or removed.
+Component calls special hooks when children are declaratively added.
 
 ### componentWillSlideIn
 
