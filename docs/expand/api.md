@@ -39,3 +39,13 @@ Called when a component is added to an existing Expand component and the animati
 ### componentDidExpand
 
 Called when a component is added to an existing Expand component and the animation is finished.
+
+## Class Name Decoration
+
+#### className `String`
+
+Specifies CSS class name(s), rendered to the animation component
+
+#### componentChildClassName `String`
+
+Specifies CSS class name(s), rendered to each of the animated children components
