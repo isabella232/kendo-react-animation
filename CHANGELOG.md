@@ -1,9 +1,17 @@
 <a name="0.2.0"></a>
-## 0.2.0 (2016-04-27)
+# [0.2.0](https://github.com/telerik/kendo-react-animation/compare/e8f42e6...v0.2.0) (2016-04-27)
 
-* feat(expand-animation): add life-cycle hooks for the entering component ([96bfda3](https://github.com/telerik/kendo-react-animation/commit/96bfda3))
-* feat(fade-animation): add life-cycle hooks for the entering component ([28a1143](https://github.com/telerik/kendo-react-animation/commit/28a1143))
-* feat(slide-animation): add life-cycle hooks for the entering component ([be1ee1b](https://github.com/telerik/kendo-react-animation/commit/be1ee1b))
+### Bug Fixes
+
+* **animation-group:** do not call life-cycle hooks when animation is terminated explicitly ([c92222f](https://github.com/telerik/kendo-react-animation/commit/c92222f))
+* **slide-animation:** stop calling component leave hooks as they are unstable ([eba4c15](https://github.com/telerik/kendo-react-animation/commit/eba4c15))
+
+### Features
+
+* **animation-group:** add life-cycle hooks notifying for the appearing/entering/leaving components ([e8f42e6](https://github.com/telerik/kendo-react-animation/commit/e8f42e6))
+* **expand-animation:** add life-cycle hooks for the entering component ([96bfda3](https://github.com/telerik/kendo-react-animation/commit/96bfda3))
+* **fade-animation:** add life-cycle hooks for the entering component ([28a1143](https://github.com/telerik/kendo-react-animation/commit/28a1143))
+* **slide-animation:** life-cycle hooks called when component slides in/out ([be1ee1b](https://github.com/telerik/kendo-react-animation/commit/be1ee1b))
 
 <a name="0.1.0"></a>
 # 0.1.0 (2016-04-26)
