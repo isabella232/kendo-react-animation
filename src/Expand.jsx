@@ -17,6 +17,8 @@ export default class Expand extends React.Component {
         ]),
         className: React.PropTypes.string,
         collapseDuration: React.PropTypes.number,
+        componentDidExpand: React.PropTypes.func,
+        componentWillExpand: React.PropTypes.func,
         expandDuration: React.PropTypes.number,
         style: React.PropTypes.object
     }
