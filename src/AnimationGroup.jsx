@@ -15,6 +15,7 @@ export default class AnimationGroup extends React.Component {
         ]),
         className: React.PropTypes.string,
         component: React.PropTypes.string,
+        componentChildClassName: React.PropTypes.string,
         componentDidAppear: React.PropTypes.func,
         componentDidEnter: React.PropTypes.func,
         componentDidLeave: React.PropTypes.func,

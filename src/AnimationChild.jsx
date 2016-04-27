@@ -1,8 +1,8 @@
 import React from 'react';
 
-import util from './util';
 import classnames from 'classnames';
 import raf from 'raf';
+import util from './util';
 
 const APPEAR_ANIMATION_ID = util.getAnimationField(util.animationType.appear);
 const ENTER_ANIMATION_ID = util.getAnimationField(util.animationType.enter);
@@ -18,6 +18,7 @@ export default class AnimationChild extends React.Component {
             React.PropTypes.element,
             React.PropTypes.node
         ]),
+        componentChildClassName: React.PropTypes.string,
         componentDidAppear: React.PropTypes.func,
         componentDidEnter: React.PropTypes.func,
         componentDidLeave: React.PropTypes.func,
@@ -174,7 +175,7 @@ export default class AnimationChild extends React.Component {
     }
 
     render() {
-        const { className } = this.state;
+        const className = classnames(this.state.className, this.props.componentChildClassName);
 
         return (
             <div className={className}>
