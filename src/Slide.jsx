@@ -15,6 +15,7 @@ export default class Slide extends React.Component {
             React.PropTypes.node
         ]),
         className: React.PropTypes.string,
+        componentChildClassName: React.PropTypes.string,
         componentDidSlideIn: React.PropTypes.func,
         componentWillSlideIn: React.PropTypes.func,
         direction: React.PropTypes.oneOf([ 'up', 'down' ]),
@@ -57,6 +58,7 @@ export default class Slide extends React.Component {
             animateOnSlideOut,
             children,
             className,
+            componentChildClassName,
             componentWillSlideIn,
             componentDidSlideIn,
             slideInDuration,
@@ -72,6 +74,7 @@ export default class Slide extends React.Component {
         );
 
         const animationProps = {
+            componentChildClassName: componentChildClassName,
             componentDidEnter: componentDidSlideIn,
             componentWillEnter: componentWillSlideIn,
             transitionAppear: false,
