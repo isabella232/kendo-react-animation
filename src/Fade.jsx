@@ -15,6 +15,7 @@ export default class Fade extends React.Component {
             React.PropTypes.node
         ]),
         className: React.PropTypes.string,
+        componentChildClassName: React.PropTypes.string,
         componentDidFadeIn: React.PropTypes.func,
         componentWillFadeIn: React.PropTypes.func,
         fadeInDuration: React.PropTypes.number,
@@ -50,6 +51,7 @@ export default class Fade extends React.Component {
             animateOnFadeOut,
             children,
             className,
+            componentChildClassName,
             componentDidFadeIn,
             componentWillFadeIn,
             fadeInDuration,
@@ -65,6 +67,7 @@ export default class Fade extends React.Component {
         );
 
         const animationProps = {
+            componentChildClassName: componentChildClassName,
             componentDidEnter: componentDidFadeIn,
             componentWillEnter: componentWillFadeIn,
             transitionAppear: false,
