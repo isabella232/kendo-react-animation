@@ -129,7 +129,7 @@ export default class ExpandChild extends React.Component {
 
     render() {
         return (
-            <div classNames={this.props.componentChildClassName} style={this.state.style}>
+            <div className={this.props.componentChildClassName} style={this.state.style}>
                 {this.props.children}
             </div>
         );
