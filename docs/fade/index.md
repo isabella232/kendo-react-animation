@@ -546,6 +546,152 @@ ReactDOM.render(
 );
 ```
 
+## Styling
+
+Custom CSS classes can be set to the Fade component and to its children components.
+
+### className
+
+To set a CSS class to the Fade component use the `className` property.
+
+```html
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .wrapper {
+    width: 200px;
+    background-color: red;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { index: 0 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Fade:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Fade className="wrapper">
+                        {<div className="content" key={index}>{index}</div>}
+                    </KendoReactAnimation.Fade>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+### componentChildClassName
+
+To set a CSS class to the Fade children components use the `componentChildClassName` property. Use it to style the animated content.
+
+```html
+  <style>
+  .child {
+    color: black;
+    background-color: orange;
+  }
+
+  .content {
+    width: 100px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { index: 0 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Fade:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Fade componentChildClassName="child">
+                        {<div className="content" key={index}>{index}</div>}
+                    </KendoReactAnimation.Fade>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
 ## Suggested Links
 
 * [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})

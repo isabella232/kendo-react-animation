@@ -61,3 +61,13 @@ Specifies whether to animate the entering (showing) element.
 #### animateOnFadeOut `Boolean`*(default: false)*
 
 Specifies whether to animate the leaving (showing) element.
+
+## Class Name Decoration
+
+#### className `String`
+
+Specifies CSS class name(s), set to the animation component
+
+#### componentChildClassName `String`
+
+Specifies CSS class name(s), set to each of the animated children components

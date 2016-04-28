@@ -12,6 +12,7 @@ export default class ExpandChild extends React.Component {
             React.PropTypes.node
         ]),
         collapseDuration: React.PropTypes.number,
+        componentChildClassName: React.PropTypes.string,
         componentDidExpand: React.PropTypes.func,
         componentWillExpand: React.PropTypes.func,
         expandDuration: React.PropTypes.number
@@ -128,7 +129,7 @@ export default class ExpandChild extends React.Component {
 
     render() {
         return (
-            <div style={this.state.style}>
+            <div className={this.props.componentChildClassName} style={this.state.style}>
                 {this.props.children}
             </div>
         );
