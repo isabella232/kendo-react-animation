@@ -66,8 +66,8 @@ Specifies whether to animate the leaving (showing) element.
 
 #### className `String`
 
-Specifies CSS class name(s), rendered to the animation component
+Specifies CSS class name(s), set to the animation component
 
 #### componentChildClassName `String`
 
-Specifies CSS class name(s), rendered to each of the animated children components
+Specifies CSS class name(s), set to each of the animated children components
