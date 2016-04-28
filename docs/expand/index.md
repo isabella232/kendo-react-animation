@@ -535,6 +535,156 @@ ReactDOM.render(
 );
 ```
 
+## Styling
+
+Custom CSS classes can be set to the Expand component and to its children components.
+
+### className
+
+To set a CSS class to the Expand component use the `className` property.
+
+```html
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+
+  .wrapper {
+    width: 200px;
+    background-color: red;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Expand:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Expand className="wrapper">
+                        {children}
+                    </KendoReactAnimation.Expand>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+### componentChildClassName
+
+To set a CSS class to the Expand children components use the `componentChildClassName` property. Use it to style the animated content.
+
+```html
+  <style>
+  .child {
+    color: black;
+    background-color: orange;
+  }
+
+  .content {
+    width: 100px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Expand:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Expand componentChildClassName="child">
+                        {children}
+                    </KendoReactAnimation.Expand>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
 ## Suggested Links
 
 * [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})
