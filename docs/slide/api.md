@@ -95,7 +95,7 @@ Called when a component is added to an existing Slide component and the animatio
 
 #### className `String`
 
-Specifies CSS class names, set to the animation component.
+Specifies CSS class names, set to the Animation component.
 
 #### componentChildClassName `String`
 
