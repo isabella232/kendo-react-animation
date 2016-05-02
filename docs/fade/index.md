@@ -360,7 +360,7 @@ The Fade Animation component calls special hooks when children are declaratively
 
 ### Before Animation Starts
 
-The `componentWillFadeIn` hook is called when a component is added to an existing Fade component and the animation has not started yet.
+The [`componentWillFadeIn`]({% slug api_fade_kendouiforreact %}#componentwillfadein) hook is called when a component is added to an existing Fade component and the animation has not started yet.
 
 ```html-preview
   <style>
@@ -454,7 +454,7 @@ ReactDOM.render(
 
 ### After Animation Finishes
 
-The `componentDidFadeIn` hook is called when a component is added to an existing Fade component and the animation is now finished.
+The [`componentDidFadeIn`]({% slug api_fade_kendouiforreact %}#componentdidfadein) hook is called when a component is added to an existing Fade component and the animation is now finished.
 
 ```html-preview
   <style>
