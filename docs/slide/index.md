@@ -436,7 +436,7 @@ The Slide Animation component calls special hooks when children are declarativel
 
 ### Before Animation Starts
 
-The `componentWillSlideIn` hook is called when a component is added to an existing Slide component and the animation has not started yet.
+The [`componentWillSlideIn`]({% slug api_slide_kendouiforreact %}#componentwillslidein) hook is called when a component is added to an existing Slide component and the animation has not started yet.
 
 ```html-preview
   <style>
@@ -532,7 +532,7 @@ ReactDOM.render(
 
 ### After Animation Finishes
 
-The `componentDidSlideIn` hook is called when a component is added to an existing Slide component and the animation is now finished.
+The [`componentDidSlideIn`]({% slug api_slide_kendouiforreact %}#componentdidslidein) hook is called when a component is added to an existing Slide component and the animation is now finished.
 
 ```html-preview
   <style>
