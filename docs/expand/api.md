@@ -34,18 +34,18 @@ Specifies whether to animate the entering (showing) element.
 
 ### componentWillExpand
 
-Called when a component is added to an existing Expand component and the animation hasn't started yet.
+Called when a component is added to an existing Expand component and the animation has not started yet.
 
 ### componentDidExpand
 
-Called when a component is added to an existing Expand component and the animation is finished.
+Called when a component is added to an existing Expand component and the animation is now finished.
 
-## Class Name Decoration
+## Style the Appearance
 
 #### className `String`
 
-Specifies CSS class name(s), set to the animation component
+Specifies CSS class names, set to the Animation component.
 
 #### componentChildClassName `String`
 
-Specifies CSS class name(s), set to each of the animated children components
+Specifies CSS class names, set to each of the animated children components.
