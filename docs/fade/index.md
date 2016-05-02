@@ -354,13 +354,13 @@ ReactDOM.render(
 
 ```
 
-## Life-cycle hooks
+## Wire Life-Cycle Hooks
 
-Component calls special hooks when children are declaratively added.
+The Fade Animation component calls special hooks when children are declaratively added.
 
 ### componentWillFadeIn
 
-Called when a component is added to an existing Fade component and the animation hasn't started yet.
+The `componentWillFadeIn` hook is called when a component is added to an existing Fade component and the animation has not started yet.
 
 ```html-preview
   <style>
@@ -454,7 +454,7 @@ ReactDOM.render(
 
 ### componentDidFadeIn
 
-Called when a component is added to an existing Fade component and the animation is finished.
+The `componentDidFadeIn` hook is called when a component is added to an existing Fade component and the animation is now finished.
 
 ```html-preview
   <style>
@@ -546,13 +546,13 @@ ReactDOM.render(
 );
 ```
 
-## Styling
+## Style the Appearance
 
 Custom CSS classes can be set to the Fade component and to its children components.
 
-### className
+### Decorate the Fade
 
-To set a CSS class to the Fade component use the `className` property.
+To set a CSS class to the Fade component, use the [`className`]({% slug api_fade_kendouiforreact %}#classname-string) property.
 
 ```html
   <style>
@@ -622,9 +622,9 @@ ReactDOM.render(
 );
 ```
 
-### componentChildClassName
+### Decorate the Children
 
-To set a CSS class to the Fade children components use the `componentChildClassName` property. Use it to style the animated content.
+To set a CSS class to the Fade children components, use the [`componentChildClassName`]({% slug api_fade_kendouiforreact %}#componentchildclassname-string) property. Apply it to style the animated content.
 
 ```html
   <style>
