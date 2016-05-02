@@ -89,9 +89,9 @@ Called when a component is added to an existing Slide component and the animatio
 
 ### componentDidSlideIn
 
-Called when a component is added to an existing Slide component and the animation is finished.
+Called when a component is added to an existing Slide component and the animation is now finished.
 
-## Decorate Class Names
+## Style the Appearance
 
 #### className `String`
 
