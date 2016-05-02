@@ -62,12 +62,12 @@ Specifies whether to animate the entering (showing) element.
 
 Specifies whether to animate the leaving (showing) element.
 
-## Class Name Decoration
+## Style the Appearance
 
 #### className `String`
 
-Specifies CSS class name(s), set to the animation component
+Specifies CSS class names, set to the Animation component.
 
 #### componentChildClassName `String`
 
-Specifies CSS class name(s), set to each of the animated children components
+Specifies CSS class names, set to each of the animated children components.
