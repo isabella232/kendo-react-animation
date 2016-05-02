@@ -62,6 +62,16 @@ Specifies whether to animate the entering (showing) element.
 
 Specifies whether to animate the leaving (showing) element.
 
+## Wire Life-Cycle Hooks
+
+### componentWillFadeIn
+
+Called when a component is added to an existing Fade component and the animation has not started yet.
+
+### componentDidFadeIn
+
+Called when a component is added to an existing Fade component and the animation is now finished.
+
 ## Style the Appearance
 
 #### className `String`
