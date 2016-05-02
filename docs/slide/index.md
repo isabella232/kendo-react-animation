@@ -430,13 +430,13 @@ ReactDOM.render(
 );
 ```
 
-## Life-cycle hooks
+## Wire Life-Cycle Hooks
 
-Component calls special hooks when children are declaratively added.
+The Slide Animation component calls special hooks when children are declaratively added.
 
 ### componentWillSlideIn
 
-Called when a component is added to an existing Slide component and the animation hasn't started yet.
+The `componentWillSlideIn` configuration is called when a component is added to an existing Slide component and the animation has not started yet.
 
 ```html-preview
   <style>
@@ -532,7 +532,7 @@ ReactDOM.render(
 
 ### componentDidSlideIn
 
-Called when a component is added to an existing Slide component and the animation is finished.
+The `componentDidSlideIn` configuration is called when a component is added to an existing Slide component and the animation is now finished.
 
 ```html-preview
   <style>
@@ -626,13 +626,13 @@ ReactDOM.render(
 );
 ```
 
-## Styling
+## Style the Appearance
 
 Custom CSS classes can be set to the Slide component and to its children components.
 
-### className
+### Decorate the Slide
 
-To set a CSS class to the Slide component use the `className` property.
+To set a CSS class to the Slide component, use the `className` property.
 
 ```html
   <style>
@@ -704,9 +704,9 @@ ReactDOM.render(
 );
 ```
 
-### componentChildClassName
+### Decorate the Children
 
-To set a CSS class to the Slide children components use the `componentChildClassName` property. Use it to style the animated content.
+To set a CSS class to the Slide children components, use the `componentChildClassName` property. Apply it to style the animated content.
 
 ```html
   <style>
