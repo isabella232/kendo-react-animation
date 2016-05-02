@@ -358,7 +358,7 @@ ReactDOM.render(
 
 The Fade Animation component calls special hooks when children are declaratively added.
 
-### componentWillFadeIn
+### Before Animation Starts
 
 The `componentWillFadeIn` hook is called when a component is added to an existing Fade component and the animation has not started yet.
 
@@ -452,7 +452,7 @@ ReactDOM.render(
 );
 ```
 
-### componentDidFadeIn
+### After Animation Finishes
 
 The `componentDidFadeIn` hook is called when a component is added to an existing Fade component and the animation is now finished.
 
