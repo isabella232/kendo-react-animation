@@ -345,7 +345,7 @@ The Expand Animation component calls special hooks when children are declarative
 
 ### Before Animation Starts 
 
-The `componentWillExpand` hook is called when a component is added to an existing Expand component and the animation has not started yet.
+The [`componentWillExpand`]({% slug api_expand_kendouiforreact %}#componentwillexpand) hook is called when a component is added to an existing Expand component and the animation has not started yet.
 
 ```html-preview
   <style>
@@ -441,7 +441,7 @@ ReactDOM.render(
 
 ### After Animation Finishes
 
-The `componentDidExpand` hook is called when a component is added to an existing Expand component and the animation is now finished.
+The [`componentDidExpand`]({% slug api_expand_kendouiforreact %}#componentdidexpand) hook is called when a component is added to an existing Expand component and the animation is now finished.
 
 ```html-preview
   <style>
