@@ -434,9 +434,9 @@ ReactDOM.render(
 
 The Slide Animation component calls special hooks when children are declaratively added.
 
-### componentWillSlideIn
+### Before Animation Starts
 
-The `componentWillSlideIn` configuration is called when a component is added to an existing Slide component and the animation has not started yet.
+The `componentWillSlideIn` hook is called when a component is added to an existing Slide component and the animation has not started yet.
 
 ```html-preview
   <style>
@@ -530,9 +530,9 @@ ReactDOM.render(
 );
 ```
 
-### componentDidSlideIn
+### After Animation Finishes
 
-The `componentDidSlideIn` configuration is called when a component is added to an existing Slide component and the animation is now finished.
+The `componentDidSlideIn` hook is called when a component is added to an existing Slide component and the animation is now finished.
 
 ```html-preview
   <style>
@@ -632,7 +632,7 @@ Custom CSS classes can be set to the Slide component and to its children compone
 
 ### Decorate the Slide
 
-To set a CSS class to the Slide component, use the `className` property.
+To set a CSS class to the Slide component, use the [`className`]({% slug api_slide_kendouiforreact %}#classname-string) property.
 
 ```html
   <style>
@@ -706,7 +706,7 @@ ReactDOM.render(
 
 ### Decorate the Children
 
-To set a CSS class to the Slide children components, use the `componentChildClassName` property. Apply it to style the animated content.
+To set a CSS class to the Slide children components, use the [`componentChildClassName`]({% slug api_slide_kendouiforreact %}#componentchildclassname-string) property. Apply it to style the animated content.
 
 ```html
   <style>
