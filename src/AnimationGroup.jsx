@@ -9,6 +9,7 @@ import styles from '@telerik/kendo-theme-default/styles/animation/main';
 
 export default class AnimationGroup extends React.Component {
     static propTypes = {
+        childFactory: React.PropTypes.func,
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
@@ -67,7 +68,7 @@ export default class AnimationGroup extends React.Component {
     }
 
     render() {
-        const { children, className, component, style, ...other } = this.props;
+        const { childFactory, children, className, component, style, ...other } = this.props;
 
         const content = React.Children.map(children, (child, idx) => (
             <AnimationChild {...other} key={idx}>
@@ -76,6 +77,7 @@ export default class AnimationGroup extends React.Component {
         ));
 
         const transitionProps = {
+            childFactory: childFactory,
             className: classNames(styles['animation-container'], className),
             component: component,
             ref: "group",
