@@ -1,7 +1,7 @@
 {
   "name": "@telerik/kendo-react-animation",
   "description": "Kendo UI React Animation component",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/telerik/kendo-react-animation.git"

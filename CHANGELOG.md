@@ -1,3 +1,18 @@
+<a name="0.2.1"></a>
+## 0.2.1 (2016-05-03)
+
+
+### Bug Fixes
+
+* **expand-animation:** render the Expand component className properly ([d1390bc](https://github.com/telerik/kendo-react-animation/commit/d1390bc))
+
+### Features
+
+* **animation-group:** render CSS class name to the animated child ([6379081](https://github.com/telerik/kendo-react-animation/commit/6379081))
+* **expand-animation:** render a specified class name to the animated content ([7a9174f](https://github.com/telerik/kendo-react-animation/commit/7a9174f))
+* **fade-animation:** render a specified class name to the animated content ([f2c4f1b](https://github.com/telerik/kendo-react-animation/commit/f2c4f1b))
+* **slide-animation:** render a specified class name to the animated content ([55a28f1](https://github.com/telerik/kendo-react-animation/commit/55a28f1))
+
 <a name="0.2.0"></a>
 # 0.2.0 (2016-04-28)
 
