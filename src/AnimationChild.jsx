@@ -161,7 +161,12 @@ export default class AnimationChild extends React.Component {
 
     componentDidEnter() {
         this.resetState();
-        this.callHook(this.props.componentDidEnter);
+
+        clearTimeout(this.componentDidEnterTimeoutId);
+
+        this.componentDidEnterTimeoutId = setTimeout(() => (
+            this.callHook(this.props.componentDidEnter)
+        ));
     }
 
     componentWillLeave(done) {
