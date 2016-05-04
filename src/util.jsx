@@ -64,6 +64,32 @@ const mapTransitionClasses = (name, inputNames, outputNames) => {
     return assign({}, ...mappedClasses);
 };
 
+const outerHeight = (element) => {
+    if (!element) {
+        return 0;
+    }
+
+    const wnd = element.ownerDocument.defaultView;
+    const computedStyles = wnd.getComputedStyle(element);
+    const marginTop = parseFloat(computedStyles.marginTop, 10);
+    const marginBottom = parseFloat(computedStyles.marginBottom, 10);
+
+    return element.offsetHeight + marginTop + marginBottom;
+};
+
+const outerWidth = (element) => {
+    if (!element) {
+        return 0;
+    }
+
+    const wnd = element.ownerDocument.defaultView;
+    const computedStyles = wnd.getComputedStyle(element);
+    const marginLeft = parseFloat(computedStyles.marginLeft, 10);
+    const marginRight = parseFloat(computedStyles.marginRight, 10);
+
+    return element.offsetWidth + marginLeft + marginRight;
+};
+
 const noop = function() {};
 
 export default {
@@ -74,5 +100,7 @@ export default {
     getTimeoutField: getTimeoutField,
     guid: guid,
     mapTransitionClasses: mapTransitionClasses,
-    noop: noop
+    noop: noop,
+    outerHeight: outerHeight,
+    outerWidth: outerWidth
 };
