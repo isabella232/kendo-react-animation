@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import classnames from 'classnames';
 import raf from 'raf';
 
 export default class ExpandChild extends React.Component {
@@ -128,8 +129,10 @@ export default class ExpandChild extends React.Component {
     }
 
     render() {
+        const className = classnames(this.props.componentChildClassName, 'k-child-animation-container');
+
         return (
-            <div className={this.props.componentChildClassName} style={this.state.style}>
+            <div className={className} style={this.state.style}>
                 {this.props.children}
             </div>
         );
