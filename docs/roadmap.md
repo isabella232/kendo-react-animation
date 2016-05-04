@@ -10,6 +10,7 @@ These features should go in the first release of the Kendo React Animation packa
 - Expand component
 - Slide component
 - Push component
+- Zoom component
 
 ## Later version
 
