@@ -152,6 +152,68 @@ ReactDOM.render(
 );
 ```
 
+### Kendo UI Push for React
+
+The Push component slides the new content pushing the old one out.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { index: 1 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div>
+                <dl>
+                    <dt>
+                        Push:
+                    </dt>
+                    <dd>
+                        <button onClick={this.onClick}>Animate</button>
+                    </dd>
+                </dl>
+
+                <KendoReactAnimation.Push>
+                    <div className="content" key={index}>{index}</div>
+                </KendoReactAnimation.Push>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
 ### Kendo UI Slide for React
 
 The Slide component slides a single piece of content vertically.
@@ -205,6 +267,68 @@ class App extends React.Component {
                 <KendoReactAnimation.Slide>
                     {children}
                 </KendoReactAnimation.Slide>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+### Kendo UI Zoom for React
+
+The Zoom component shows a new content using zoom transition.
+
+```html-preview
+  <style>
+  .content {
+    width: 100px;
+    padding: 10px;
+    color: #787878;
+    background-color: #fcf7f8;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { index: 1 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div>
+                <dl>
+                    <dt>
+                        Zoom:
+                    </dt>
+                    <dd>
+                        <button onClick={this.onClick}>Animate</button>
+                    </dd>
+                </dl>
+
+                <KendoReactAnimation.Zoom>
+                    <div className="content" key={index}>{index}</div>
+                </KendoReactAnimation.Zoom>
             </div>
         );
     }
