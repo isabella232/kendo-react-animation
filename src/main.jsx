@@ -3,3 +3,4 @@ export Fade from './Fade';
 export Expand from './Expand';
 export Push from './Push';
 export Slide from './Slide';
+export Zoom from './Zoom';
