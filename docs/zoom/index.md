@@ -10,9 +10,9 @@ position: 1
 
 The Kendo UI Zoom component for React shows the entering element using a combination of zoom and fade animation effects. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
-By default, the entering component will zoom in and the leaving component will fade out.
+By default, the entering component zooms in and the leaving component fades out.
 
-> * In order for the Kendo UI Zoom component to work, it must always be present in the rendering tree.
+> In order for the Kendo UI Zoom component to work, it must always be present in the rendering tree.
 
 ## Demos
 
@@ -632,7 +632,7 @@ Custom CSS classes can be set to the Zoom component and to its children componen
 
 ### Decorate the Zoom
 
-To set a CSS class to the Zoom component use the `className` property.
+To set a CSS class to the Zoom component, use the `className` property.
 
 ```html
   <style>
@@ -703,9 +703,9 @@ ReactDOM.render(
 
 ### Decorate the Children
 
-#### Set a CSS class
+#### Set CSS Classes
 
-To set a CSS class to the Zoom children components use the `componentChildClassName` property. Use it to style the animated content.
+To set a CSS class to the Zoom children components, use the `componentChildClassName` property. Use it to style the animated content.
 
 ```html
   <style>
@@ -773,7 +773,7 @@ ReactDOM.render(
 );
 ```
 
-#### Use default child CSS class
+#### Use Default Child CSS Classes
 
 By default, the child component renders a `k-child-animation-container` CSS class. It can be used to style the element without the need of specifying a separate CSS class.
 
