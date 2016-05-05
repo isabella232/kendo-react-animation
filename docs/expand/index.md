@@ -343,7 +343,7 @@ ReactDOM.render(
 
 The Expand Animation component calls special hooks when children are declaratively added.
 
-### Before Animation Starts 
+### Before Animation Starts
 
 The [`componentWillExpand`]({% slug api_expand_kendouiforreact %}#componentwillexpand) hook is called when a component is added to an existing Expand component and the animation has not started yet.
 
@@ -615,6 +615,8 @@ ReactDOM.render(
 
 ### Decorate the Children
 
+#### Set a CSS class
+
 To set a CSS class to the Expand children components use the [`componentChildClassName`]({% slug api_expand_kendouiforreact %}#componentchildclassname-string) property. Apply it to style the animated content.
 
 ```html
@@ -671,6 +673,78 @@ class App extends React.Component {
                     </dl>
 
                     <KendoReactAnimation.Expand componentChildClassName="child">
+                        {children}
+                    </KendoReactAnimation.Expand>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+#### Use default child CSS class
+
+By default, the child component renders a `k-child-animation-container` CSS class. It can be used to style the element without the need of specifying a separate CSS class.
+
+```html
+  <style>
+  .k-animation-container > .k-child-animation-container {
+    color: black;
+    background-color: orange;
+  }
+
+  .content {
+    width: 100px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Expand:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Expand>
                         {children}
                     </KendoReactAnimation.Expand>
                 </div>
