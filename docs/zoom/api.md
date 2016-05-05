@@ -80,18 +80,18 @@ Specifies whether to animate the leaving (showing) element.
 
 ### componentWillZoomIn
 
-Called when a component is added to an existing Zoom component and the animation hasn't started yet.
+Called when a component is added to an existing Zoom component and the animation has not started yet.
 
 ### componentDidZoomIn
 
-Called when a component is added to an existing Zoom component and the animation is finished.
+Called when a component is added to an existing Zoom component and the animation is now finished.
 
 ## Class Name Decoration
 
 #### className `String`
 
-Specifies CSS class name(s), set to the animation component
+Specifies CSS class names, set to the animation component
 
 #### componentChildClassName `String`
 
-Specifies CSS class name(s), set to each of the animated children components
+Specifies CSS class names, set to each of the animated children components
