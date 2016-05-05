@@ -10,9 +10,9 @@ position: 1
 
 The Kendo UI Push component for React shows a new component with a push transition effect. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
-The entering element will slide in pushing the old one out. The push direction can be 'up', 'down', 'left' or 'right'.
+When using the Push component, the entering element slides in pushing the old one out. The push direction can be `up`, `down`, `left` or `right.
 
-> * In order for the Kendo UI Push component to work, it must always be present in the rendering tree.
+> In order for the Kendo UI Push component to work, it must always be present in the rendering tree.
 
 ## Demos
 
@@ -634,7 +634,7 @@ ReactDOM.render(
 
 Custom CSS classes can be set to the Push component and to its children components.
 
-### Decorate the Zoom
+### Decorate the Push
 
 To set a CSS class to the Push component use the `className` property.
 
@@ -709,7 +709,7 @@ ReactDOM.render(
 
 #### Set a CSS class
 
-To set a CSS class to the Push children components use the `componentChildClassName` property. Use it to style the animated content.
+To set a CSS class to the Push children components, use the `componentChildClassName` property. Use it to style the animated content.
 
 ```html
   <style>
@@ -777,7 +777,7 @@ ReactDOM.render(
 );
 ```
 
-#### Use default child CSS class
+#### Use Default Child CSS Class
 
 By default, the child component renders a `k-child-animation-container` CSS class. It can be used to style the element without the need of specifying a separate CSS class.
 
