@@ -632,7 +632,7 @@ Custom CSS classes can be set to the Zoom component and to its children componen
 
 ### Decorate the Zoom
 
-To set a CSS class to the Zoom component, use the `className` property.
+To set a CSS class to the Zoom component, use the [`className`]({% slug api_zoom_kendouiforreact %}#classname-string) property.
 
 ```html
   <style>
@@ -705,7 +705,7 @@ ReactDOM.render(
 
 #### Set CSS Classes
 
-To set a CSS class to the Zoom children components, use the `componentChildClassName` property. Use it to style the animated content.
+To set a CSS class to the Zoom children components, use the [`componentChildClassName`]({% slug api_zoom_kendouiforreact %}#componentchildclassname-string) property. Use it to style the animated content.
 
 ```html
   <style>
