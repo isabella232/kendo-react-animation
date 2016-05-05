@@ -636,7 +636,7 @@ Custom CSS classes can be set to the Push component and to its children componen
 
 ### Decorate the Push
 
-To set a CSS class to the Push component use the `className` property.
+To set a CSS class to the Push component, use the `className` property.
 
 ```html
   <style>
@@ -707,7 +707,7 @@ ReactDOM.render(
 
 ### Decorate the Children
 
-#### Set a CSS class
+#### Set CSS Classes
 
 To set a CSS class to the Push children components, use the `componentChildClassName` property. Use it to style the animated content.
 
@@ -777,7 +777,7 @@ ReactDOM.render(
 );
 ```
 
-#### Use Default Child CSS Class
+#### Use Default Child CSS Classes
 
 By default, the child component renders a `k-child-animation-container` CSS class. It can be used to style the element without the need of specifying a separate CSS class.
 
