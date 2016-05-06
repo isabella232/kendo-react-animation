@@ -8,6 +8,8 @@ position: 1
 
 # Slide Overview
 
+> Check [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic for better understandings of how the animation works
+
 The Kendo UI Slide component for React shows or hides a single element with vertical sliding effect. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
 The entering element will slide from top to bottom. The leaving element will slide from bottom to top.
