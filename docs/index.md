@@ -20,7 +20,7 @@ The Slide component for React slides a single piece of content vertically.
 
 Articles on the Kendo UI Animation components for React:
 
-* [Fundamentals]({% fundamentals_animation_kendouiforreact %})
+* [Fundamentals]({% slug fundamentals_animation_kendouiforreact %})
 * [Get Started with the Fade Component]({% slug overview_fade_kendouiforreact %})
 * [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
 * [Get Started with the Expand Component]({% slug overview_expand_kendouiforreact %})
