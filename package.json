@@ -25,6 +25,7 @@
     "react-dom": "~15.0.1"
   },
   "dependencies": {
+    "@telerik/kendo-theme-default": "^1.11.0",
     "classnames": "^2.2.3",
     "object-assign": "^4.0.1",
     "raf": "^3.2.0",
@@ -33,7 +34,6 @@
   "devDependencies": {
     "@telerik/eslint-config": "1.1.0",
     "@telerik/kendo-react-tasks": "^1.0.0",
-    "@telerik/kendo-theme-default": "^1.8.0",
     "cz-conventional-changelog": "^1.1.5",
     "ghooks": "^1.0.3",
     "gulp": "3.9.0",
