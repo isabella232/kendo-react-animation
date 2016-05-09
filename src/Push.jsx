@@ -63,10 +63,10 @@ export default class Push extends React.Component {
         const { direction } = this.props;
 
         return {
-            pushIn: styles[`${direction}-enter`],
-            pushInActive: styles[`${direction}-enter-active`],
-            pushOut: styles[`${direction}-leave`],
-            pushOutActive: styles[`${direction}-leave-active`]
+            pushIn: styles[`push-${direction}-enter`],
+            pushInActive: styles[`push-${direction}-enter-active`],
+            pushOut: styles[`push-${direction}-leave`],
+            pushOutActive: styles[`push-${direction}-leave-active`]
         };
     }
 
