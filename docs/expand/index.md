@@ -8,7 +8,7 @@ position: 1
 
 # Expand Overview
 
-> Check the [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic to get a better understanding of the animation basics.
+This article assumes that you are well-acquainted with the basics of the Animation component. For more information, refer to the [article on Animation fundamentals]({% slug fundamentals_animation_kendouiforreact %}). 
 
 The Kendo UI Expand component for React shows or hides a single element by animating the height of the root element. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving.
 
