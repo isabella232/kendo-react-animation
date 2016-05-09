@@ -8,6 +8,8 @@ position: 1
 
 # Push Overview
 
+> Check the [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic to get a better understanding of the animation basics.
+
 The Kendo UI Push component for React shows a new component with a push transition effect. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
 When using the Push component, the entering element slides in pushing the old one out. The push direction can be up, down, left or right.

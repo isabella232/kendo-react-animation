@@ -8,6 +8,8 @@ position: 1
 
 # Zoom Overview
 
+> Check the [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic to get a better understanding of the animation basics.
+
 The Kendo UI Zoom component for React shows the entering element using a combination of zoom and fade animation effects. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
 By default, the entering component zooms in and the leaving component fades out.
