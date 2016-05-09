@@ -22,6 +22,8 @@ The supported directions are:
 
 - (Default) The `down` direction&mdash;Slides the content from top to bottom on show, and vice-versa.
 - The `up` direction&mdash;Slides the content from bottom to top on show, and vice-versa.
+- The `left` direction&mdash;Slides the content from right to left on show, and vice-versa.
+- The `right` direction&mdash;Slides the content from left to right on show, and vice-versa.
 
 #### slideOutDuration `Number`*(default: 500)*
 
