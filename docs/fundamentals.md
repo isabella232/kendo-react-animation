@@ -14,7 +14,7 @@ This article explains the way Kendo UI Animation components work and how to anim
 
 ### Overview
 
-The Kendo UI Animation components are based on the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) add-on component and are an easy way to perform CSS transitions and animations when a React component enters or leaves the DOM. The Exapnd component is an exception from that rule and does not use CSS transition classes&mdash;it animates the `height` style property.
+The Kendo UI Animation components are based on the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) add-on component and are an easy way to perform CSS transitions and animations when a React component enters or leaves the DOM. The Expand component is an exception from that rule and does not use CSS transition classes&mdash;it animates the `height` style property.
 
 The Animation is a simple element that wraps all components that are to be animated. Every child element is enclosed in an `AnimationChild` component. It implements the required [special life-cycle hooks](https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup) called by `ReactTransitionGroup`. As a result, every child component is wrapped in an additional `div` element. 
 
