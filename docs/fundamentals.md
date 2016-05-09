@@ -122,7 +122,7 @@ To set a custom CSS class to the element that wraps the animated children, use t
 
 > The child component renders a default `k-child-animation-container` CSS class that can also be used for styling.
 
-![Custom CSS](images/custom-cs - child.png)
+![Custom CSS](images/custom-css - child.png)
 
 ## Differences from ReactCSSTransitionGroup
 
