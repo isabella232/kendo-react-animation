@@ -86,7 +86,7 @@ ReactDOM.render(
 
 In the case above, the `CONTENT` element is animated with an entering effect when added to the Slide component. When the `CONTENT` is removed, it is animated with a leaving effect.
 
-### Animate Entering Components
+### Animation of Entering Components
 
 The Animation component sets a `{name}-enter` CSS class to the entering animation child. In the next tick, it adds a `{name}-enter-active` CSS class to start the animation. The naming convention for the CSS class names is inherited from the `ReactTransitionGroup` component.
 
@@ -94,7 +94,7 @@ For example, the Slide component adds a `k-slide-enter` CSS class on enter and, 
 
 ![Slide enter](images/slide_enter.png)
 
-### Animate Leaving Components
+### Animation of Leaving Components
 
 The Animation component sets a `{name}-leave` CSS class to the leaving animation child. In the next tick, it adds a `{name}-leave-active` CSS class to start the animation. The naming convention for the CSS class names is inherited from the `ReactTransitionGroup` component.
 
@@ -104,7 +104,7 @@ For example, the Slide component adds a `k-slide-leave` CSS class on leave and, 
 
 ![Slide leave](images/slide_leave.png)
 
-## Style the Appearance
+## Styling the Appearance
 
 Custom CSS classes can be set to the Animation component and/or to its children components.
 
@@ -125,8 +125,6 @@ To set a custom CSS class to the element that wraps the animated children, use t
 ![Custom CSS](images/custom-css - child.png)
 
 ## Differences from ReactCSSTransitionGroup
-
-#### Animations in Action
 
 The Animation component will stop the active animation before a new one is started, while the `ReactCSSTransitionGroup` will leave the old animation until it finishes.
 
