@@ -3,7 +3,7 @@ title: Customize Animation
 page_title: Customize Animation | Kendo UI Animation Package for React
 description: "Customize the Kendo UI Animation components for React."
 slug: customizeanimation_kendouiforreact
-position: 2
+position: 3
 ---
 
 # Customize Animation
