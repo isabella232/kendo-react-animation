@@ -205,3 +205,4 @@ ReactDOM.render(
 
 * [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
 * [API Reference of the Slide Component]({% slug api_slide_kendouiforreact %})
+* [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})
