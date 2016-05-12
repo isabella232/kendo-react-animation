@@ -8,6 +8,8 @@ position: 1
 
 # Fade Overview
 
+This article assumes that you are well-acquainted with the basics of the Animation component. For more information, refer to the [article on Animation fundamentals]({% slug fundamentals_animation_kendouiforreact %}). 
+
 The Kendo UI Fade component for React shows or hides the elements with animated opacity. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving.
 
 All leaving elements will be removed with an animated opacity from 1 to 0. Entering elements will be added with animated opacity from 0 to 1.
@@ -15,9 +17,7 @@ All leaving elements will be removed with an animated opacity from 1 to 0. Enter
 > * Only entering or leaving elements from the DOM will be animated.
 > * In order for the Kendo UI Fade component to work, it must always be present in the rendering tree.
 
-## Demos
-
-### Default Setup
+## Default Setup
 
 The example below demonstrates the default setup of a Kendo UI Fade Animation for React.
 
@@ -624,6 +624,8 @@ ReactDOM.render(
 
 ### Decorate the Children
 
+#### Set a CSS Class
+
 To set a CSS class to the Fade children components, use the [`componentChildClassName`]({% slug api_fade_kendouiforreact %}#componentchildclassname-string) property. Apply it to style the animated content.
 
 ```html
@@ -678,6 +680,76 @@ class App extends React.Component {
                     </dl>
 
                     <KendoReactAnimation.Fade componentChildClassName="child">
+                        {<div className="content" key={index}>{index}</div>}
+                    </KendoReactAnimation.Fade>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+#### Use default child CSS class
+
+By default, the child component renders a `k-child-animation-container` CSS class. It can be used to style the element without the need of specifying a separate CSS class.
+
+```html
+  <style>
+  .k-animation-container > .k-child-animation-container {
+    color: black;
+    background-color: orange;
+  }
+
+  .content {
+    width: 100px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { index: 0 };
+    }
+
+    onClick = () => {
+        this.setState({
+            index: this.state.index + 1
+        });
+    }
+
+    render() {
+        const { index } = this.state;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Fade:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Fade>
                         {<div className="content" key={index}>{index}</div>}
                     </KendoReactAnimation.Fade>
                 </div>

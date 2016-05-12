@@ -8,6 +8,8 @@ position: 1
 
 # Slide Overview
 
+This article assumes that you are well-acquainted with the basics of the Animation component. For more information, refer to the [article on Animation fundamentals]({% slug fundamentals_animation_kendouiforreact %}). 
+
 The Kendo UI Slide component for React shows or hides a single element with vertical sliding effect. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
 The entering element will slide from top to bottom. The leaving element will slide from bottom to top.
@@ -15,9 +17,7 @@ The entering element will slide from top to bottom. The leaving element will sli
 > * Only entering or leaving elements from the DOM will be animated.
 > * In order for the Kendo UI Slide component to work, it must always be present in the rendering tree.
 
-## Demos
-
-### Default Setup
+## Default Setup
 
 The example below demonstrates the default setup of a Kendo UI Slide for React.
 
@@ -706,11 +706,85 @@ ReactDOM.render(
 
 ### Decorate the Children
 
+#### Set a CSS class
+
 To set a CSS class to the Slide children components, use the [`componentChildClassName`]({% slug api_slide_kendouiforreact %}#componentchildclassname-string) property. Apply it to style the animated content.
 
 ```html
   <style>
   .child {
+    color: black;
+    background-color: orange;
+  }
+
+  .content {
+    width: 100px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .example {
+    display: flex;
+  }
+  </style>
+  <div id="app"></div>
+```
+```jsx
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { show: false };
+    }
+
+    onClick = () => {
+        this.setState({
+            show: !this.state.show
+        });
+    }
+
+    render() {
+        const { show } = this.state;
+
+        const children = show ? (<div className="content">CONTENT</div>) : null;
+
+        return (
+            <div className="example">
+                <div>
+                    <dl>
+                        <dt>
+                            Slide:
+                        </dt>
+                        <dd>
+                            <button onClick={this.onClick}>Animate</button>
+                        </dd>
+                    </dl>
+
+                    <KendoReactAnimation.Slide componentChildClassName="child">
+                        {children}
+                    </KendoReactAnimation.Slide>
+                </div>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+```
+
+#### Use default child CSS class
+
+By default, the child component renders a `k-child-animation-container` CSS class. It can be used to style the element without the need of specifying a separate CSS class.
+
+```html
+  <style>
+  .k-animation-container > .k-child-animation-container {
     color: black;
     background-color: orange;
   }

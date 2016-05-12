@@ -175,7 +175,7 @@ export default class AnimationChild extends React.Component {
     }
 
     render() {
-        const className = classnames(this.state.className, this.props.componentChildClassName);
+        const className = classnames(this.state.className, this.props.componentChildClassName, 'k-child-animation-container');
 
         return (
             <div className={className}>

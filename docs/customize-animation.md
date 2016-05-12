@@ -3,7 +3,7 @@ title: Customize Animation
 page_title: Customize Animation | Kendo UI Animation Package for React
 description: "Customize the Kendo UI Animation components for React."
 slug: customizeanimation_kendouiforreact
-position: 2
+position: 3
 ---
 
 # Customize Animation
@@ -205,3 +205,4 @@ ReactDOM.render(
 
 * [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
 * [API Reference of the Slide Component]({% slug api_slide_kendouiforreact %})
+* [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})

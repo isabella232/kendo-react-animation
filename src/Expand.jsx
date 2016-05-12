@@ -43,7 +43,7 @@ export default class Expand extends React.Component {
 
     render() {
         const { className, style } = this.props;
-        const combinedClasses = classNames(styles['animation-container'], className);
+        const combinedClasses = classNames(styles['animation-container'], 'k-expand', className);
 
         return (
             <TransitionGroup className={combinedClasses} component="div" style={style}>
