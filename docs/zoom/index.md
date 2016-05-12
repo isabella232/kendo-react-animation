@@ -12,7 +12,7 @@ position: 1
 
 The Kendo UI Zoom component for React shows the entering element using a combination of zoom and fade animation effects. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
-By default, the entering component zooms in and the leaving component fades out.
+By default, the entering component zooms in and the leaving component fades out. Note that the Zoom component animates both (new and old) elements simultaneously.
 
 > In order for the Kendo UI Zoom component to work, it must always be present in the rendering tree.
 
@@ -165,11 +165,11 @@ ReactDOM.render(
 );
 ```
 
-### Set Zoom-In Duration
+### Set Zoom Duration
 
-The component enables you to control the animation duration of the entering component. To modify the zoom-in duration, update the [`zoomInDuration`]({% slug api_zoom_kendouiforreact %}#zoominduration-numberdefault-300) property and update the duration in the corresponding CSS class.
+The component enables you to control the animation duration of the zoom transition. To modify the zoom duration, update the [`duration`]({% slug api_zoom_kendouiforreact %}#duration-numberdefault-300) property and update the duration in the corresponding CSS class.
 
-> Sync up the `zoomInDuration` property with the transition duration defined in the static `k-zoom-{direction}-enter-active` CSS class.
+> Sync up the `duration` property with the transition duration defined in the static `k-zoom-{direction}-enter-active` and `k-zoom-{direction}-leave-active` CSS classes.
 
 ```html
   <style>
@@ -177,79 +177,10 @@ The component enables you to control the animation duration of the entering comp
         transition: transform 800ms ease-in-out;
     }
 
-    .content {
-        width: 100px;
-        padding: 10px;
-        color: #787878;
-        background-color: #fcf7f8;
-        font-size: 13px;
-        font-family: Helvetica, Arial, sans-serif;
-        letter-spacing: 1px;
-        text-align: center;
-        border: 1px solid rgba(0,0,0,.05);
-    }
-  </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { index: 1 };
-    }
-
-    onClick = () => {
-        this.setState({
-            index: this.state.index + 1
-        });
-    }
-
-    render() {
-        const { index } = this.state;
-
-        const zoomProps = {
-            zoomInDuration: 800
-        };
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Zoom:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Zoom {...zoomProps}>
-                    <div className="content" key={index}>{index}</div>
-                </KendoReactAnimation.Zoom>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Set Zoom-Out Duration
-
-The component enables you to control the animation duration of the leaving component. To modify the zoom-out duration, update the [`zoomOutDuration`]({% slug api_zoom_kendouiforreact %}#zoomoutduration-numberdefault-300-1) property and update the duration in the corresponding CSS class.
-
-> Sync up the `zoomOutDuration` property with the transition duration defined in the static `k-zoom-{direction}-leave-active` CSS class.
-
-```html
-  <style>
     .k-zoom-out-leave-active {
         transition: transform 800ms ease-in-out;
     }
-  </style>
-  <style>
+
     .content {
         width: 100px;
         padding: 10px;
@@ -282,7 +213,7 @@ class App extends React.Component {
         const { index } = this.state;
 
         const zoomProps = {
-            zoomOutDuration: 800
+            duration: 800
         };
 
         return (
@@ -310,73 +241,9 @@ ReactDOM.render(
 );
 ```
 
-### Disable Zoom-In Animation
+### Disable Zoom Animation
 
-The Zoom component allows you to disable the showing animation, which will result in an instant element display. To disable the zoom-in animation, set the [`animateOnZoomIn`]({% slug api_zoom_kendouiforreact %}#animateonzoomin-booleandefault-true) option to `false`.
-
-```html
-  <style>
-  .content {
-    width: 100px;
-    padding: 10px;
-    color: #787878;
-    background-color: #fcf7f8;
-    font-size: 13px;
-    font-family: Helvetica, Arial, sans-serif;
-    letter-spacing: 1px;
-    text-align: center;
-    border: 1px solid rgba(0,0,0,.05);
-  }
-  </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { index: 1 };
-    }
-
-    onClick = () => {
-        this.setState({
-            index: this.state.index + 1
-        });
-    }
-
-    render() {
-        const { index } = this.state;
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Zoom:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Zoom animateOnZoomIn={false}>
-                    <div className="content" key={index}>{index}</div>
-                </KendoReactAnimation.Zoom>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Disable Zoom-Out Animation
-
-The Zoom component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the zoom-out animation, set the [`animateOnZoomOut`]({% slug api_zoom_kendouiforreact %}#animateonzoomout-booleandefault-false) option to `false`.
-
-By default, the zoom-out animation is disabled.
+The Zoom component allows you to disable the animation, which will result in an instant element display. To disable the zoom animation, set the [`animateOnZoom`]({% slug api_zoom_kendouiforreact %}#animateonzoom-booleandefault-true) option to `false`.
 
 ```html
   <style>
@@ -422,7 +289,7 @@ class App extends React.Component {
                     </dd>
                 </dl>
 
-                <KendoReactAnimation.Zoom animateOnZoomOut={false}>
+                <KendoReactAnimation.Zoom animateOnZoom={false}>
                     <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Zoom>
             </div>

@@ -12,29 +12,21 @@ Represents the Kendo UI Zoom Animation component for React.
 
 ## Define Direction
 
-#### direction `String`*(default: "left")*
+#### direction `String`*(default: "out")*
 
 Specifies the direction of the `zoom` animation.
 
 > The `direction` property is ignored if a custom `transitionName` configuration is defined. In such cases, change the animation direction with the custom CSS classes that are used.
 
 The supported directions are:
-- (Default) The `left` direction&mdash;Zoomes the content from right to left.
-- The `right` direction&mdash;Zoomes the content from left to right.
-- The `up` direction&mdash;Zoomes the content from bottom to top.
-- The `down` direction&mdash;Zoomes the content from top to bottom.
+- (Default) The `out` direction&mdash;Zooms in the entering element and fades out leaving one.
+- The `in` direction&mdash;Fades in the entering element and zooms out the leaving one.
 
 ## Set Duration
 
-#### zoomInDuration `Number`*(default: 300)*
+#### duration `Number`*(default: 300)*
 
-Specifies the duration of the `zoom in` animation. After the time runs out, the animation will be terminated.
-
-> The `duration` value should be synchronized with the duration of the CSS transition animation.
-
-#### zoomOutDuration `Number`*(default: 300)*
-
-Specifies the duration of the `zoom out` animation. After the time runs out, the animation will be terminated.
+Specifies the duration of the `zoom` animation. After the time runs out, the animation will be terminated.
 
 > The `duration` value should be synchronized with the duration of the CSS transition animation.
 
@@ -68,13 +60,9 @@ Specifies the CSS class that is added to the leaving element after the `zoomOut`
 
 ## Disable Animation
 
-#### animateOnZoomIn `Boolean`*(default: true)*
+#### animateOnZoom `Boolean`*(default: true)*
 
-Specifies whether to animate the entering (showing) element.
-
-#### animateOnZoomOut `Boolean`*(default: false)*
-
-Specifies whether to animate the leaving (showing) element.
+Specifies whether to animate the entering (showing) element and leaving (hiding) elements.
 
 ## Wire Life-cycle hooks
 
