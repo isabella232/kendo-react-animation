@@ -12,29 +12,23 @@ Represents the Kendo UI Push Animation component for React.
 
 ## Define Direction
 
-#### direction `String`*(default: "left")*
+#### direction `String`*(default: "right")*
 
 Specifies the direction of the `push` animation.
 
 > The `direction` property is ignored if a custom `transitionName` configuration is defined. In such cases, change the animation direction with the custom CSS classes that are used.
 
 The supported directions are:
-- (Default) The `left` direction&mdash;Pushes the content from right to left.
-- The `right` direction&mdash;Pushes the content from left to right.
+- (Default) The `right` direction&mdash;Pushes the content from left to right.
+- The `left` direction&mdash;Pushes the content from right to left.
 - The `up` direction&mdash;Pushes the content from bottom to top.
 - The `down` direction&mdash;Pushes the content from top to bottom.
 
 ## Set Duration
 
-#### pushInDuration `Number`*(default: 300)*
+#### duration `Number`*(default: 300)*
 
-Specifies the duration of the `push in` animation. After the time runs out, the animation will be terminated.
-
-> The `duration` value should be synchronized with the duration of the CSS transition animation.
-
-#### pushOutDuration `Number`*(default: 300)*
-
-Specifies the duration of the `push out` animation. After the time runs out, the animation will be terminated.
+Specifies the duration of the `push` animation. After the time runs out, the animation will be terminated.
 
 > The `duration` value should be synchronized with the duration of the CSS transition animation.
 
@@ -68,13 +62,9 @@ Specifies the CSS class that is added to the leaving element after the `pushOut`
 
 ## Disable Animation
 
-#### animateOnPushIn `Boolean`*(default: true)*
+#### animateOnPush `Boolean`*(default: true)*
 
-Specifies whether to animate the entering (showing) element.
-
-#### animateOnPushOut `Boolean`*(default: false)*
-
-Specifies whether to animate the leaving (showing) element.
+Specifies whether to animate the entering (showing) and leaving (hiding) elements.
 
 ## Wire Life-Cycle Hooks
 

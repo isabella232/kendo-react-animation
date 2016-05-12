@@ -10,7 +10,9 @@ position: 1
 
 > Check the [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic to get a better understanding of the animation basics.
 
-The Kendo UI Push component for React shows a new component with a push transition effect. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
+The Kendo UI Push component for React shows a new component with a push transition effect. The new element will push out the old one from the animation container.
+
+The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
 When using the Push component, the entering element slides in pushing the old one out. The push direction can be up, down, left or right.
 
@@ -84,11 +86,11 @@ ReactDOM.render(
 
 ### Define Direction
 
-The component enables you to control the push direction of the entering element. Use the [`direction`]({% slug api_push_kendouiforreact %}#direction-stringdefault-left) property to control the push direction.
+The component enables you to control the push direction of the entering element. Use the [`direction`]({% slug api_push_kendouiforreact %}#direction-stringdefault-right) property to control the push direction.
 
 The supported directions are:
-- (Default) The `left` direction&mdash;Pushes the content from right to left.
-- The `right` direction&mdash;Pushes the content from left to right.
+- (Default) The `right` direction&mdash;Pushes the content from left to right.
+- The `left` direction&mdash;Pushes the content from right to left.
 - The `up` direction&mdash;Pushes the content from bottom to top.
 - The `down` direction&mdash;Pushes the content from top to bottom.
 
@@ -113,7 +115,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { direction: "left", index: 1 };
+        this.state = { direction: "right", index: 1 };
     }
 
     onClick = () => {
@@ -169,15 +171,19 @@ ReactDOM.render(
 );
 ```
 
-### Set Push-In Duration
+### Set Push Duration
 
-The component enables you to control the animation duration of the entering component. To modify the push-in duration, update the [`pushInDuration`]({% slug api_push_kendouiforreact %}#pushinduration-numberdefault-300) property and update the duration in the corresponding CSS class.
+The component enables you to control the animation duration of the entering and leaving components. To modify the push duration, update the [`duration`]({% slug api_push_kendouiforreact %}#duration-numberdefault-300) property and update the duration in the corresponding CSS class.
 
-> Sync up the `pushInDuration` property with the transition duration defined in the static `k-push-{direction}-enter-active` CSS class.
+> Sync up the `duration` property with the transition duration defined in the static `k-push-{direction}-enter-active` and `k-push-{direction}-leave-active` CSS classes.
 
 ```html
   <style>
-    .k-push-left-enter-active {
+    .k-push-right-enter-active {
+        transition: transform 800ms ease-in-out;
+    }
+
+    .k-push-right-leave-active {
         transition: transform 800ms ease-in-out;
     }
 
@@ -213,7 +219,7 @@ class App extends React.Component {
         const { index } = this.state;
 
         const pushProps = {
-            pushInDuration: 800
+            duration: 800
         };
 
         return (
@@ -241,82 +247,9 @@ ReactDOM.render(
 );
 ```
 
-### Set Push-Out Duration
+### Disable Push Animation
 
-The component enables you to control the animation duration of the leaving component. To modify the push-out duration, update the [`pushOutDuration`]({% slug api_push_kendouiforreact %}#pushoutduration-numberdefault-300-1) property and update the duration in the corresponding CSS class.
-
-> Sync up the `pushOutDuration` property with the transition duration defined in the static `k-push-{direction}-leave-active` CSS class.
-
-```html
-  <style>
-    .k-push-left-leave-active {
-        transition: transform 800ms ease-in-out;
-    }
-  </style>
-  <style>
-    .content {
-        width: 100px;
-        padding: 10px;
-        color: #787878;
-        background-color: #fcf7f8;
-        font-size: 13px;
-        font-family: Helvetica, Arial, sans-serif;
-        letter-spacing: 1px;
-        text-align: center;
-        border: 1px solid rgba(0,0,0,.05);
-    }
-  </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { index: 1 };
-    }
-
-    onClick = () => {
-        this.setState({
-            index: this.state.index + 1
-        });
-    }
-
-    render() {
-        const { index } = this.state;
-
-        const pushProps = {
-            pushOutDuration: 800
-        };
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Push:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Push {...pushProps}>
-                    <div className="content" key={index}>{index}</div>
-                </KendoReactAnimation.Push>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Disable Push-In Animation
-
-The Push component allows you to disable the showing animation, which will result in an instant element display. To disable the push-in animation, set the [`animateOnPushIn`]({% slug api_push_kendouiforreact %}#animateonpushin-booleandefault-true) option to `false`.
+The Push component allows you to disable the animation, which will result in an instant element display. To disable the push animation, set the [`animateOnPush`]({% slug api_push_kendouiforreact %}#animateonpush-booleandefault-true) option to `false`.
 
 ```html
   <style>
@@ -362,71 +295,7 @@ class App extends React.Component {
                     </dd>
                 </dl>
 
-                <KendoReactAnimation.Push animateOnPushIn={false}>
-                    <div className="content" key={index}>{index}</div>
-                </KendoReactAnimation.Push>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-);
-```
-
-### Disable Push-Out Animation
-
-The Push component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the push-out animation, set the [`animateOnPushOut`]({% slug api_push_kendouiforreact %}#animateonpushout-booleandefault-false) option to `false`.
-
-By default, the push-out animation is disabled.
-
-```html
-  <style>
-  .content {
-    width: 100px;
-    padding: 10px;
-    color: #787878;
-    background-color: #fcf7f8;
-    font-size: 13px;
-    font-family: Helvetica, Arial, sans-serif;
-    letter-spacing: 1px;
-    text-align: center;
-    border: 1px solid rgba(0,0,0,.05);
-  }
-  </style>
-  <div id="app"></div>
-```
-```jsx
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { index: 1 };
-    }
-
-    onClick = () => {
-        this.setState({
-            index: this.state.index + 1
-        });
-    }
-
-    render() {
-        const { index } = this.state;
-
-        return (
-            <div>
-                <dl>
-                    <dt>
-                        Push:
-                    </dt>
-                    <dd>
-                        <button onClick={this.onClick}>Animate</button>
-                    </dd>
-                </dl>
-
-                <KendoReactAnimation.Push animateOnPushOut={false}>
+                <KendoReactAnimation.Push animateOnPush={false}>
                     <div className="content" key={index}>{index}</div>
                 </KendoReactAnimation.Push>
             </div>
