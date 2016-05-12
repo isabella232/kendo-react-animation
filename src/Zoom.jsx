@@ -10,8 +10,7 @@ import util from './util';
 
 export default class Zoom extends React.Component {
     static propTypes = {
-        animateOnZoomIn: React.PropTypes.bool,
-        animateOnZoomOut: React.PropTypes.bool,
+        animateOnZoom: React.PropTypes.bool,
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
@@ -21,6 +20,7 @@ export default class Zoom extends React.Component {
         componentDidZoomIn: React.PropTypes.func,
         componentWillZoomIn: React.PropTypes.func,
         direction: React.PropTypes.oneOf([ 'in', 'out' ]),
+        duration: React.PropTypes.number,
         fixedContainer: React.PropTypes.bool,
         style: React.PropTypes.object,
         transitionName: React.PropTypes.oneOfType([
@@ -31,17 +31,13 @@ export default class Zoom extends React.Component {
                 zoomOut: React.PropTypes.string,
                 zoomOutActive: React.PropTypes.string
             })
-        ]),
-        zoomInDuration: React.PropTypes.number,
-        zoomOutDuration: React.PropTypes.number
+        ])
     }
 
     static defaultProps = {
-        animateOnZoomIn: true,
-        animateOnZoomOut: true,
-        zoomInDuration: 300,
-        zoomOutDuration: 300,
+        animateOnZoom: true,
         direction: 'out',
+        duration: 300,
         fixedContainer: true
     }
 
@@ -103,12 +99,10 @@ export default class Zoom extends React.Component {
 
     getChildProps() {
         const {
-            animateOnZoomIn,
-            animateOnZoomOut,
+            animateOnZoom,
             componentChildClassName,
             componentWillZoomIn,
-            zoomInDuration,
-            zoomOutDuration,
+            duration,
             transitionName = this.getDefaultTransitionName()
         } = this.props;
 
@@ -123,10 +117,10 @@ export default class Zoom extends React.Component {
             componentDidEnter: this.componentDidEnter,
             componentWillEnter: componentWillZoomIn,
             transitionAppear: false,
-            transitionEnter: animateOnZoomIn,
-            transitionEnterTimeout: zoomInDuration,
-            transitionLeave: animateOnZoomOut,
-            transitionLeaveTimeout: zoomOutDuration,
+            transitionEnter: animateOnZoom,
+            transitionEnterTimeout: duration,
+            transitionLeave: animateOnZoom,
+            transitionLeaveTimeout: duration,
             transitionName: mappedTransitionName
         };
     }
