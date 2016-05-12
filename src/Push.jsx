@@ -10,8 +10,7 @@ import util from './util';
 
 export default class Push extends React.Component {
     static propTypes = {
-        animateOnPushIn: React.PropTypes.bool,
-        animateOnPushOut: React.PropTypes.bool,
+        animateOnPush: React.PropTypes.bool,
         children: React.PropTypes.oneOfType([
             React.PropTypes.element,
             React.PropTypes.node
@@ -21,9 +20,8 @@ export default class Push extends React.Component {
         componentDidPushIn: React.PropTypes.func,
         componentWillPushIn: React.PropTypes.func,
         direction: React.PropTypes.oneOf([ 'up', 'down', 'left', 'right' ]),
+        duration: React.PropTypes.number,
         fixedContainer: React.PropTypes.bool,
-        pushInDuration: React.PropTypes.number,
-        pushOutDuration: React.PropTypes.number,
         style: React.PropTypes.object,
         transitionName: React.PropTypes.oneOfType([
             React.PropTypes.string,
@@ -37,11 +35,9 @@ export default class Push extends React.Component {
     }
 
     static defaultProps = {
-        animateOnPushIn: true,
-        animateOnPushOut: true,
-        pushInDuration: 300,
-        pushOutDuration: 300,
-        direction: "left",
+        animateOnPush: true,
+        direction: "right",
+        duration: 300,
         fixedContainer: true
     }
 
@@ -103,12 +99,10 @@ export default class Push extends React.Component {
 
     getChildProps() {
         const {
-            animateOnPushIn,
-            animateOnPushOut,
+            animateOnPush,
             componentChildClassName,
             componentWillPushIn,
-            pushInDuration,
-            pushOutDuration,
+            duration,
             transitionName = this.getDefaultTransitionName()
         } = this.props;
 
@@ -123,10 +117,10 @@ export default class Push extends React.Component {
             componentDidEnter: this.componentDidEnter,
             componentWillEnter: componentWillPushIn,
             transitionAppear: false,
-            transitionEnter: animateOnPushIn,
-            transitionEnterTimeout: pushInDuration,
-            transitionLeave: animateOnPushOut,
-            transitionLeaveTimeout: pushOutDuration,
+            transitionEnter: animateOnPush,
+            transitionEnterTimeout: duration,
+            transitionLeave: animateOnPush,
+            transitionLeaveTimeout: duration,
             transitionName: mappedTransitionName
         };
     }
