@@ -1,3 +1,22 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2016-05-13)
+
+
+### Bug Fixes
+
+* **animation-group:** call componentDidEnter callback with a timeout ([5bc2ef9](https://github.com/telerik/kendo-react-animation/commit/5bc2ef9))
+
+### Features
+
+* **animation-group:** render a 'k-child-animation-component' CSS class to the animated children ([c691811](https://github.com/telerik/kendo-react-animation/commit/c691811))
+* **animation-group:** render child components using childFactory prop ([f391d50](https://github.com/telerik/kendo-react-animation/commit/f391d50))
+* **expand-animation:** add a 'k-expand' CSS class name to the animation container ([df26284](https://github.com/telerik/kendo-react-animation/commit/df26284))
+* **expand-animation:** render a 'k-child-animation-container' CSS class to the animated children ([7f5cf82](https://github.com/telerik/kendo-react-animation/commit/7f5cf82))
+* **push-animation:** add a Push animation component ([d616457](https://github.com/telerik/kendo-react-animation/commit/d616457))
+* **slide-animation:** support horizontal slide animation ([d95f817](https://github.com/telerik/kendo-react-animation/commit/d95f817))
+* **zoom-animation:** add a Zoom animation component ([12a9a10](https://github.com/telerik/kendo-react-animation/commit/12a9a10))
+
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2016-05-03)
 
