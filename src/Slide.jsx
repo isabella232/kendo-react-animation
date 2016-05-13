@@ -18,7 +18,7 @@ export default class Slide extends React.Component {
         componentChildClassName: React.PropTypes.string,
         componentDidSlideIn: React.PropTypes.func,
         componentWillSlideIn: React.PropTypes.func,
-        direction: React.PropTypes.oneOf([ 'up', 'down' ]),
+        direction: React.PropTypes.oneOf([ 'up', 'down', 'left', 'right' ]),
         slideInDuration: React.PropTypes.number,
         slideOutDuration: React.PropTypes.number,
         style: React.PropTypes.object,

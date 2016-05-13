@@ -14,7 +14,11 @@ The Fade component for React animates newly-added children with a fade-in effect
 
 The Expand component for React animates the CSS `height` property of the container element.
 
+The Push component for React slides the new component pushing the old one out.
+
 The Slide component for React slides a single piece of content vertically.
+
+The Zoom component for React displays the content with a zoom transition effect.
 
 ## Suggested Links
 
@@ -25,5 +29,9 @@ Articles on the Kendo UI Animation components for React:
 * [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
 * [Get Started with the Expand Component]({% slug overview_expand_kendouiforreact %})
 * [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})
+* [Get Started with the Push Component]({% slug overview_push_kendouiforreact %})
+* [API Reference of the Push Component]({% slug api_push_kendouiforreact %})
 * [Get Started with the Slide Component]({% slug overview_slide_kendouiforreact %})
 * [API Reference of the Slide Component]({% slug api_slide_kendouiforreact %})
+* [Get Started with the Zoom Component]({% slug overview_zoom_kendouiforreact %})
+* [API Reference of the Zoom Component]({% slug api_zoom_kendouiforreact %})
