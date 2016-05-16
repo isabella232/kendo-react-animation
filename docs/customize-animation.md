@@ -203,6 +203,9 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
-* [API Reference of the Slide Component]({% slug api_slide_kendouiforreact %})
-* [API Reference of the Expand Component]({% slug api_expand_kendouiforreact %})
+* [Learn the Fundamentals]({% slug fundamentals_animation_kendouiforreact %})
+* [Get Started with the Fade Component]({% slug overview_fade_kendouiforreact %})
+* [Get Started with the Expand Component]({% slug overview_expand_kendouiforreact %})
+* [Get Started with the Push Component]({% slug overview_push_kendouiforreact %})
+* [Get Started with the Slide Component]({% slug overview_slide_kendouiforreact %})
+* [Get Started with the Zoom Component]({% slug overview_zoom_kendouiforreact %})
