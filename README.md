@@ -17,7 +17,9 @@ This repository contains the source code and documentation of the Kendo UI Anima
 Currently, the package includes the following Animation components:
 * Fade
 * Expand
+* Push
 * Slide
+* Zoom
 
 For more information on forthcoming Animation package features, refer to the [Roadmap](https://github.com/telerik/kendo-react-animation/blob/master/docs/roadmap.md).
 
