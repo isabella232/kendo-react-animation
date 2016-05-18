@@ -12,9 +12,9 @@
 
 ## Overview
 
-This repository contains the source code and documentation of the Kendo UI Animation components for React.
+This repository contains the source code and documentation of the Kendo UI Animation package for React.
 
-Currently, the package includes the following components:
+Currently, it includes the following components:
 
 * Fade
 * Expand
@@ -28,7 +28,7 @@ For more information on upcoming Animation features, refer to the [Roadmap](http
 
 The Animation components use the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to animate elements that appear, enter, or leave.
 
-### Kendo UI Fade for React
+### Kendo UI Fade
 
 The Fade animates newly-added children with a fade-in effect.
 
@@ -93,7 +93,7 @@ ReactDOM.render(
 
 For more examples and available configuration options, refer to the [Fade documentation](https://github.com/telerik/kendo-react-animation/blob/master/docs/fade/index.md).
 
-### Kendo UI Expand for React
+### Kendo UI Expand
 
 The Expand animates the CSS `height` property of the container element.
 
@@ -159,7 +159,7 @@ ReactDOM.render(
 
 For more examples and available configuration options, refer to the [Exapnd documentation](https://github.com/telerik/kendo-react-animation/blob/master/docs/expand/index.md).
 
-### Kendo UI Push for React
+### Kendo UI Push
 
 The Push slides the new content pushing the old one out.
 
@@ -223,7 +223,7 @@ ReactDOM.render(
 
 For more examples and available configuration options, refer to the [Push documentation](https://github.com/telerik/kendo-react-animation/blob/master/docs/push/index.md).
 
-### Kendo UI Slide for React
+### Kendo UI Slide 
 
 The Slide slides a single piece of content vertically.
 
@@ -289,7 +289,7 @@ ReactDOM.render(
 
 For more examples and available configuration options, refer to the [Slide documentation](https://github.com/telerik/kendo-react-animation/blob/master/docs/slide/index.md).|
 
-### Kendo UI Zoom for React
+### Kendo UI Zoom
 
 The Zoom shows new content using a zoom transition.
 
@@ -355,7 +355,7 @@ For more examples and available configuration options, refer to the [Zoom docume
 
 ## Installation
 
-The Animation is published as a [public scoped NPM package](https://docs.npmjs.com/misc/scope) in the [Telerik organization](https://www.npmjs.com/~telerik) in http://npmjs.org/.
+The Animation components are published as a [public scoped NPM package](https://docs.npmjs.com/misc/scope) in the [Telerik organization](https://www.npmjs.com/~telerik) in http://npmjs.org/.
 
 Install it using NPM.
 
@@ -376,7 +376,7 @@ var Fade = require('kendo-react-animation').Fade;
 
 ## Browser Support
 
-The Animation components support all browsers supported by the React framework&mdash;Internet Explorer 9 and later versions.
+The Animation components work in all browsers supported by the React framework&mdash;Internet Explorer 9 and later versions.
 
 ## Glossary
 
