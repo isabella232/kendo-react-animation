@@ -8,21 +8,19 @@ position: 1
 
 # Push Overview
 
-> Check the [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic to get a better understanding of the animation basics.
+> Check the [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic to get a better understanding of the Animation basics.
 
-The Kendo UI Push component for React shows a new component with a push transition effect. The new element will push out the old one from the animation container.
+The Kendo UI Push for React shows a new component with a push transition effect. The new element pushes out the old one from the animation container.
 
-The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
+The Push uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
-When using the Push component, the entering element slides in pushing the old one out. The push direction can be up, down, left or right.
+When using the Push, the entering element slides in pushing the old one out. The push direction can be up, down, left or right.
 
-> In order for the Kendo UI Push component to work, it must always be present in the rendering tree.
+> In order for the Push to work, it must always be present in the rendering tree.
 
 ## Demos
 
 ### Default Setup
-
-The example below demonstrates the default setup of a Kendo UI Push for React.
 
 ```html-preview
   <style>
@@ -86,7 +84,7 @@ ReactDOM.render(
 
 ### Define Direction
 
-The component enables you to control the push direction of the entering element. Use the [`direction`]({% slug api_push_kendouiforreact %}#direction-stringdefault-right) property to control the push direction.
+The component enables you to control the push direction of the entering element through the [`direction`]({% slug api_push_kendouiforreact %}#direction-stringdefault-right) property.
 
 The supported directions are:
 - (Default) The `right` direction&mdash;Pushes the content from left to right.
@@ -249,7 +247,7 @@ ReactDOM.render(
 
 ### Disable Push Animation
 
-The Push component allows you to disable the animation, which will result in an instant element display. To disable the push animation, set the [`animateOnPush`]({% slug api_push_kendouiforreact %}#animateonpush-booleandefault-true) option to `false`.
+The Push component allows you to disable the animation, which results in an instant element display. To disable the push animation, set the [`animateOnPush`]({% slug api_push_kendouiforreact %}#animateonpush-booleandefault-true) option to `false`.
 
 ```html
   <style>
@@ -311,7 +309,7 @@ ReactDOM.render(
 
 ## Wire Life-Cycle Hooks
 
-The Push Animation component calls special hooks when children are declaratively added.
+The Push calls special hooks when children are declaratively added.
 
 ### Before Animation Starts
 
@@ -503,7 +501,7 @@ ReactDOM.render(
 
 ## Style the Appearance
 
-Custom CSS classes can be set to the Push component and to its children components.
+Custom CSS classes can be set to the Push and to its children components.
 
 ### Decorate the Push
 
@@ -580,7 +578,7 @@ ReactDOM.render(
 
 #### Set CSS Classes
 
-To set a CSS class to the Push children components, use the [`componentChildClassName`]({% slug api_push_kendouiforreact %}#componentchildclassname-string) property. Use it to style the animated content.
+To set a CSS class to the Push children components and to style the animated content, use the [`componentChildClassName`]({% slug api_push_kendouiforreact %}#componentchildclassname-string) property. 
 
 ```html
   <style>
@@ -720,4 +718,4 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [API Reference of the Push Component]({% slug api_push_kendouiforreact %})
+* [API Reference of the Push]({% slug api_push_kendouiforreact %})
