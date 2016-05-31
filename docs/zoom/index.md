@@ -16,6 +16,8 @@ By default, the entering component zooms in and the leaving component fades out.
 
 > In order for the Zoom to work, it must always be present in the rendering tree.
 
+The Zoom is part of the [kendo-react-animation npm package](https://www.npmjs.com/package/@telerik/kendo-react-animation).
+
 ## Demos
 
 ### Default Setup
