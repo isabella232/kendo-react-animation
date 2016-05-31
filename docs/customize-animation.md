@@ -8,12 +8,12 @@ position: 3
 
 # Customize Animation
 
-The Kendo UI Animation components accept custom CSS classes that can be used to customize the animation effects. Except for the Expand component for React, all Animation components support this functionality.
+The Kendo UI Animation components for React accept custom CSS classes that can be used to customize the animation effects. Except for the Expand, all Animation components support this functionality.
 
-The Animation effect can be updated through the usage of the `transitionName` property. It defines the class name that will be added to the enter or leave elements. The terms come from the `ReactTransitionGroup` context.
+The Animation effect can be updated through the usage of the `transitionName` property. It defines the class name that is added to the enter or leave elements. The terms come from the `ReactTransitionGroup` context.
 
 Below are listed the conventions of their meaning:
-- Appear element&mdash;The Appear element is an element that is part of the rendered Animation component.
+- Appear element&mdash;The Appear element is part of the rendered Animation component.
 - Enter element&mdash;An element that is added to the children collection of the Animation component.
 - Leave element&mdash;An element that is removed from the children collection of the Animation component.
 
@@ -204,8 +204,8 @@ ReactDOM.render(
 ## Suggested Links
 
 * [Learn the Fundamentals]({% slug fundamentals_animation_kendouiforreact %})
-* [Get Started with the Fade Component]({% slug overview_fade_kendouiforreact %})
-* [Get Started with the Expand Component]({% slug overview_expand_kendouiforreact %})
-* [Get Started with the Push Component]({% slug overview_push_kendouiforreact %})
-* [Get Started with the Slide Component]({% slug overview_slide_kendouiforreact %})
-* [Get Started with the Zoom Component]({% slug overview_zoom_kendouiforreact %})
+* [Get Started with the Fade]({% slug overview_fade_kendouiforreact %})
+* [Get Started with the Expand]({% slug overview_expand_kendouiforreact %})
+* [Get Started with the Push]({% slug overview_push_kendouiforreact %})
+* [Get Started with the Slide]({% slug overview_slide_kendouiforreact %})
+* [Get Started with the Zoom]({% slug overview_zoom_kendouiforreact %})
