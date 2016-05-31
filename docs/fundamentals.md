@@ -14,15 +14,13 @@ This article explains the way Kendo UI Animation components work and how to anim
 
 ### Overview
 
-The Kendo UI Animation components are based on the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) add-on component and are an easy way to perform CSS transitions and animations when a React component enters or leaves the DOM. The Expand component is an exception from that rule and does not use CSS transition classes&mdash;it animates the `height` style property.
+The Animation components are based on the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) add-on component and are an easy way to perform CSS transitions and animations when a React component enters or leaves the DOM. The Expand is an exception from that rule and does not use CSS transition classes&mdash;it animates the `height` style property.
 
 The Animation is a simple element that wraps all components that are to be animated. Every child element is enclosed in an `AnimationChild` component. It implements the required [special life-cycle hooks](https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup) called by `ReactTransitionGroup`. As a result, every child component is wrapped in an additional `div` element. 
 
 > The CSS transition classes are set to the `div` element that wraps the child component.
 
 ### Default Setup
-
-The example below demonstrates the default setup of a Kendo UI Animation component for React.
 
 ```html
   <style>
@@ -84,13 +82,13 @@ ReactDOM.render(
 );
 ```
 
-In the case above, the `CONTENT` element is animated with an entering effect when added to the Slide component. When the `CONTENT` is removed, it is animated with a leaving effect.
+In the case above, the `CONTENT` element is animated with an entering effect when added to the Slide. When the `CONTENT` is removed, it is animated with a leaving effect.
 
 ### Animation of Entering Components
 
 The Animation component sets a `{name}-enter` CSS class to the entering animation child. In the next tick, it adds a `{name}-enter-active` CSS class to start the animation. The naming convention for the CSS class names is inherited from the `ReactTransitionGroup` component.
 
-For example, the Slide component adds a `k-slide-enter` CSS class on enter and, in the next tick, adds a `k-slide-enter-active` to activate the transition.
+For example, the Slide adds a `k-slide-enter` CSS class on enter and, in the next tick, adds a `k-slide-enter-active` to activate the transition.
 
 ![Slide enter](images/slide_enter.png)
 
@@ -98,7 +96,7 @@ For example, the Slide component adds a `k-slide-enter` CSS class on enter and, 
 
 The Animation component sets a `{name}-leave` CSS class to the leaving animation child. In the next tick, it adds a `{name}-leave-active` CSS class to start the animation. The naming convention for the CSS class names is inherited from the `ReactTransitionGroup` component.
 
-For example, the Slide component adds a `k-slide-leave` CSS class on leave and, in the next tick, adds a `k-slide-leave-active` to activate the transition.
+For example, the Slide adds a `k-slide-leave` CSS class on leave and, in the next tick, adds a `k-slide-leave-active` to activate the transition.
 
 > Leaving components are present in the DOM until the animation finishes.
 
@@ -112,7 +110,7 @@ Custom CSS classes can be set to the Animation component and/or to its children 
 
 To set a custom CSS class to the element that wraps all animated components, use the `className` property.
 
-> The Animation component renders a default `k-animation-container` CSS class that can also be used for styling.
+> The Animation renders a default `k-animation-container` CSS class that can also be used for styling.
 
 ![Custom CSS](images/custom-css.png)
 
@@ -126,15 +124,15 @@ To set a custom CSS class to the element that wraps the animated children, use t
 
 ## Differences from ReactCSSTransitionGroup
 
-The Animation component will stop the active animation before a new one is started, while the `ReactCSSTransitionGroup` will leave the old animation until it finishes.
+The Animation stops the active animation before a new one is started, while the `ReactCSSTransitionGroup` leaves the old animation until it finishes.
 
 ## Suggested Links
 
 Articles on the Kendo UI Animation components for React:
 
 * [Customize Animations]({% slug customizeanimation_kendouiforreact %})
-* [Get Started with the Fade Component]({% slug overview_fade_kendouiforreact %})
-* [Get Started with the Expand Component]({% slug overview_expand_kendouiforreact %})
-* [Get Started with the Push Component]({% slug overview_push_kendouiforreact %})
-* [Get Started with the Slide Component]({% slug overview_slide_kendouiforreact %})
-* [Get Started with the Zoom Component]({% slug overview_zoom_kendouiforreact %})
+* [Get Started with the Fade]({% slug overview_fade_kendouiforreact %})
+* [Get Started with the Expand]({% slug overview_expand_kendouiforreact %})
+* [Get Started with the Push]({% slug overview_push_kendouiforreact %})
+* [Get Started with the Slide]({% slug overview_slide_kendouiforreact %})
+* [Get Started with the Zoom]({% slug overview_zoom_kendouiforreact %})
