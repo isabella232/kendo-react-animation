@@ -17,6 +17,8 @@ The entering element is shown with a gradual height transition from 0% to 100%. 
 > * Only entering or leaving elements from the DOM are animated.
 > * In order for the Expand to work, it must always be present in the rendering tree.
 
+The Expand is part of the [kendo-react-animation npm package](https://www.npmjs.com/package/@telerik/kendo-react-animation).
+
 ## Default Setup
 
 ```html-preview
