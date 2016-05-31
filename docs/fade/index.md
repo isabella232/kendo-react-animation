@@ -8,18 +8,16 @@ position: 1
 
 # Fade Overview
 
-This article assumes that you are well-acquainted with the basics of the Animation component. For more information, refer to the [article on Animation fundamentals]({% slug fundamentals_animation_kendouiforreact %}). 
+This article assumes that you are well-acquainted with the basics of the Animation component. For more information, refer to the [article on its fundamentals]({% slug fundamentals_animation_kendouiforreact %}). 
 
-The Kendo UI Fade component for React shows or hides the elements with animated opacity. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving.
+The Kendo UI Fade shows or hides the elements with animated opacity. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect which children are entering or leaving.
 
-All leaving elements will be removed with an animated opacity from 1 to 0. Entering elements will be added with animated opacity from 0 to 1.
+All leaving elements are removed with an animated opacity from 1 to 0. Entering elements are added with animated opacity from 0 to 1.
 
-> * Only entering or leaving elements from the DOM will be animated.
-> * In order for the Kendo UI Fade component to work, it must always be present in the rendering tree.
+> * Only entering or leaving elements from the DOM are animated.
+> * In order for the Fade to work, it must always be present in the rendering tree.
 
 ## Default Setup
-
-The example below demonstrates the default setup of a Kendo UI Fade Animation for React.
 
 ```html-preview
   <style>
@@ -228,7 +226,7 @@ ReactDOM.render(
 
 ### Disable Fade-In Animations
 
-The Fade component allows you to disable the showing animation, which will result in an instant element display. To disable the fade-in animation, set the [`animateOnFadeIn`]({% slug api_fade_kendouiforreact %}#animateonfadein-booleandefault-true) option to `false`.
+The Fade component allows you to disable the showing animation, which results in an instant element display. To disable the fade-in animation, set the [`animateOnFadeIn`]({% slug api_fade_kendouiforreact %}#animateonfadein-booleandefault-true) option to `false`.
 
 ```html
   <style>
@@ -291,7 +289,7 @@ ReactDOM.render(
 
 ### Disable Fade-Out Animations
 
-The Fade component allows you to disable the hiding animation, which will result in an instant element hiding. To disable the fade-out animation, set the [`animateOnFadeOut`]({% slug api_fade_kendouiforreact %}#animateonfadeout-booleandefault-false) option to `false`.
+The Fade component allows you to disable the hiding animation, which results in an instant element hiding. To disable the fade-out animation, set the [`animateOnFadeOut`]({% slug api_fade_kendouiforreact %}#animateonfadeout-booleandefault-false) option to `false`.
 
 By default, the fade-out animation is disabled.
 
@@ -356,7 +354,7 @@ ReactDOM.render(
 
 ## Wire Life-Cycle Hooks
 
-The Fade Animation component calls special hooks when children are declaratively added.
+The Fade calls special hooks when children are declaratively added.
 
 ### Before Animation Starts
 
@@ -548,11 +546,11 @@ ReactDOM.render(
 
 ## Style the Appearance
 
-Custom CSS classes can be set to the Fade component and to its children components.
+Custom CSS classes can be set to the Fade and to its children components.
 
 ### Decorate the Fade
 
-To set a CSS class to the Fade component, use the [`className`]({% slug api_fade_kendouiforreact %}#classname-string) property.
+To set a CSS class to the Fade, use the [`className`]({% slug api_fade_kendouiforreact %}#classname-string) property.
 
 ```html
   <style>
@@ -624,7 +622,7 @@ ReactDOM.render(
 
 ### Decorate the Children
 
-#### Set a CSS Class
+#### Set CSS Classes
 
 To set a CSS class to the Fade children components, use the [`componentChildClassName`]({% slug api_fade_kendouiforreact %}#componentchildclassname-string) property. Apply it to style the animated content.
 
@@ -694,7 +692,7 @@ ReactDOM.render(
 );
 ```
 
-#### Use default child CSS class
+#### Use Default Child CSS Classes
 
 By default, the child component renders a `k-child-animation-container` CSS class. It can be used to style the element without the need of specifying a separate CSS class.
 
@@ -766,4 +764,4 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [API Reference of the Fade Component]({% slug api_fade_kendouiforreact %})
+* [API Reference of the Fade]({% slug api_fade_kendouiforreact %})
