@@ -17,6 +17,8 @@ The entering element slides from top to bottom. The leaving element slides from 
 > * Only entering or leaving elements from the DOM are animated.
 > * In order for the Slide to work, it must always be present in the rendering tree.
 
+The Slide is part of the [kendo-react-animation npm package](https://www.npmjs.com/package/@telerik/kendo-react-animation).
+
 ## Default Setup
 
 ```html-preview
