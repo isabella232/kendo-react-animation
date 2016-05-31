@@ -10,17 +10,15 @@ position: 1
 
 > Check the [Fundamentals]({% fundamentals_animation_kendouiforreact %}) help topic to get a better understanding of the animation basics.
 
-The Kendo UI Zoom component for React shows the entering element using a combination of zoom and fade animation effects. The component uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
+The Kendo UI Zoom component for React shows the entering element using a combination of zoom and fade animation effects. It uses the [ReactTransitionGroup](https://facebook.github.io/react/docs/animation.html) component to detect whether the content is entering or leaving.
 
 By default, the entering component zooms in and the leaving component fades out. Note that the Zoom component animates both (new and old) elements simultaneously.
 
-> In order for the Kendo UI Zoom component to work, it must always be present in the rendering tree.
+> In order for the Zoom to work, it must always be present in the rendering tree.
 
 ## Demos
 
 ### Default Setup
-
-The example below demonstrates the default setup of a Kendo UI Zoom for React.
 
 ```html-preview
   <style>
@@ -84,7 +82,7 @@ ReactDOM.render(
 
 ### Define Direction
 
-The component enables you to control the zoom direction of the entering element. Use the [`direction`]({% slug api_zoom_kendouiforreact %}#direction-stringdefault-in) property to control the zoom direction.
+The Zoom enables you to control the zoom direction of the entering element through the [`direction`]({% slug api_zoom_kendouiforreact %}#direction-stringdefault-in) property.
 
 The supported directions are:
 - (Default) The `out` direction&mdash;Zooms in the entering element and fades out leaving one.
@@ -167,7 +165,7 @@ ReactDOM.render(
 
 ### Set Zoom Duration
 
-The component enables you to control the animation duration of the zoom transition. To modify the zoom duration, update the [`duration`]({% slug api_zoom_kendouiforreact %}#duration-numberdefault-300) property and update the duration in the corresponding CSS class.
+The Zoom enables you to control the animation duration of the zoom transition. To modify the zoom duration, update the [`duration`]({% slug api_zoom_kendouiforreact %}#duration-numberdefault-300) property and update the duration in the corresponding CSS class.
 
 > Sync up the `duration` property with the transition duration defined in the static `k-zoom-{direction}-enter-active` and `k-zoom-{direction}-leave-active` CSS classes.
 
@@ -243,7 +241,7 @@ ReactDOM.render(
 
 ### Disable Zoom Animation
 
-The Zoom component allows you to disable the animation, which will result in an instant element display. To disable the zoom animation, set the [`animateOnZoom`]({% slug api_zoom_kendouiforreact %}#animateonzoom-booleandefault-true) option to `false`.
+The Zoom component allows you to disable the animation, which results in an instant element display. To disable the zoom animation, set the [`animateOnZoom`]({% slug api_zoom_kendouiforreact %}#animateonzoom-booleandefault-true) option to `false`.
 
 ```html
   <style>
@@ -305,7 +303,7 @@ ReactDOM.render(
 
 ## Wire Life-Cycle Hooks
 
-The Zoom Animation component calls special hooks when children are declaratively added.
+The Zoom calls special hooks when children are declaratively added.
 
 ### Before Animation Starts
 
@@ -497,11 +495,11 @@ ReactDOM.render(
 
 ## Style the Appearance
 
-Custom CSS classes can be set to the Zoom component and to its children components.
+Custom CSS classes can be set to the Zoom and to its children components.
 
 ### Decorate the Zoom
 
-To set a CSS class to the Zoom component, use the [`className`]({% slug api_zoom_kendouiforreact %}#classname-string) property.
+To set a CSS class to the Zoom, use the [`className`]({% slug api_zoom_kendouiforreact %}#classname-string) property.
 
 ```html
   <style>
@@ -574,7 +572,7 @@ ReactDOM.render(
 
 #### Set CSS Classes
 
-To set a CSS class to the Zoom children components, use the [`componentChildClassName`]({% slug api_zoom_kendouiforreact %}#componentchildclassname-string) property. Use it to style the animated content.
+To set a CSS class to the Zoom children components and to style the animated content, use the [`componentChildClassName`]({% slug api_zoom_kendouiforreact %}#componentchildclassname-string) property.
 
 ```html
   <style>
@@ -714,4 +712,4 @@ ReactDOM.render(
 
 ## Suggested Links
 
-* [API Reference of the Zoom Component]({% slug api_zoom_kendouiforreact %})
+* [API Reference of the Zoom]({% slug api_zoom_kendouiforreact %})
