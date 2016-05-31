@@ -18,6 +18,8 @@ When using the Push, the entering element slides in pushing the old one out. The
 
 > In order for the Push to work, it must always be present in the rendering tree.
 
+The Push is part of the [kendo-react-animation npm package](https://www.npmjs.com/package/@telerik/kendo-react-animation).
+
 ## Demos
 
 ### Default Setup
