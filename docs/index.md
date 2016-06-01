@@ -22,7 +22,7 @@ The Zoom displays the content with a zoom transition effect.
 
 ## Suggested Links
 
-Articles on the Animation package for React:
+Articles on the Animation components for React:
 
 * [Learn the Fundamentals]({% slug fundamentals_animation_kendouiforreact %})
 * [Customize Animations]({% slug customizeanimation_kendouiforreact %})
