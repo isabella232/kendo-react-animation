@@ -157,7 +157,7 @@ ReactDOM.render(
 );
 ```
 
-For more examples and available configuration options, refer to the [Exapnd documentation](https://github.com/telerik/kendo-react-animation/blob/master/docs/expand/index.md).
+For more examples and available configuration options, refer to the [Expand documentation](https://github.com/telerik/kendo-react-animation/blob/master/docs/expand/index.md).
 
 ### Kendo UI Push
 
