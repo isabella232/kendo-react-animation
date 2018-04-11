@@ -1,5 +1,7 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
+>This package is now deprecated and has been archived. For the current version of the Kendo UI Animations for React, refer to the official [website](https://www.telerik.com/kendo-react-ui/components/)
+
 # Kendo UI Animation for React
 
 * [Overview](https://github.com/telerik/kendo-react-animation#overview)
